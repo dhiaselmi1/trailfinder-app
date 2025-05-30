@@ -1,0 +1,57 @@
+
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gestion_rando
+    username: postgres
+    password: dhia
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: summitsells1@gmail.com
+    password: pvmtotpndqpyfzhi
+
+    default-encoding: utf-8
+    properties:
+      mail:
+        mime:
+          charset: UTF
+        smtp:
+          writetimeout: 10000
+          connectiontimeout: 10000
+          timeout: 10000
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    verify:
+      host: http://localhost:8080
+server:
+  error:
+
+    include-message: always
+    include-binding-errors: always
+application:
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/auth/activate_account
+paypal:
+  client-id: AXqg3QoSnR4eGX16FiKzmo12DrIpvJnGUwlSSmWXw5zD_R4E5cL1BzXqtL_c1tLmqBeF2KdknN_r3waB
+  client-secret: EIt925EWwWb68a9vpkKv_xzFumRGCK0FOQgAEM_KI1iMjMPinc3apkT3GuGhDttRP569r75F7fnLVPvM
+  mode: sandbox
+flouci:
+  app_token: "39d1bee4-731f-456f-b0f5-a1fa97ed2477"
+  app_secret: "3c45c424-cb2c-4828-a895-f6dc19fb4bba"
+  developer_tracking_id : "7ad4b799-ea87-472b-bb39-2b57ba247f0c"
