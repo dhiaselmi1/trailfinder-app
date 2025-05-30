@@ -1,0 +1,112 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{partner.name}}</h1>
+    </div>
+</div>
+
+<div class="blog-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="blog-details-desc">
+                    <div style="border-top-right-radius: 40px; border-top-left-radius: 40px" class="article-image">
+                        <img style="width: 800px; border-top-left-radius:40px; border-top-right-radius:40px;  "[src]="partner.imageToShow.__zone_symbol__value" alt="image">
+                    </div>
+                    <div style="border-bottom-right-radius: 40px; border-bottom-left-radius: 40px" class="article-content">
+                        <p>{{partner.description}}</p>
+                        <ul class="wp-block-gallery columns-3">
+                            <li class="blocks-gallery-item">
+                                <figure>
+                                    <img [src]="images[0].__zone_symbol__value" alt="image">
+                                </figure>
+                            </li>
+                            <li class="blocks-gallery-item">
+                                <figure>
+                                    <img style="width: 250px" [src]="images[1].__zone_symbol__value" alt="image">
+                                </figure>
+                            </li>
+                            <li class="blocks-gallery-item">
+                                <figure>
+                                    <img [src]="images[2].__zone_symbol__value" alt="image">
+                                </figure>
+                            </li>
+                        </ul>
+                        <h3>Avantages du partenariat:</h3>
+                        <ul class="features-list">
+                            <li><i class='bx bx-check'></i> Expertise et guidance</li>
+                            <li><i class='bx bx-check'></i> Crédibilité et légitimité </li>
+                            <li><i class='bx bx-check'></i>Réseau et partenariats</li>
+                        </ul>
+                        <h3>Remerciement</h3>
+                        <p>Nous tenons à exprimer notre profonde gratitude au Ministère du Tourisme en Tunisie pour son précieux soutien et son partenariat financier. Sans votre engagement et votre confiance, notre plateforme n'aurait pas pu réaliser son plein potentiel dans la promotion du tourisme tunisien. </p>
+                    </div>
+                    <div style="border-radius: 40px" class="article-footer">
+                        <div class="article-tags">
+                            <span><i class='bx bx-dollar'></i></span>
+                            <a routerLink="/blog-grid">{{partner.category}}</a>
+                        </div>
+                        <div  class="article-share">
+                            <ul class="social">
+                                <li><span>Réseaux sociaux:</span></li>
+                                <li><a href="#" class="facebook" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                                <li><a href="#" class="linkedin" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                                <li><a href="#" class="instagram" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <aside class="widget-area">
+                    <div style="border-radius: 40px" class="widget widget_tag_cloud">
+                        <h3  class="widget-title">Nos autres partenaires</h3>
+                        <div class="tagcloud" >
+                            <button style="border-color: #005f73; background-color: #f6fff8; border-radius: 15px; margin: 3px; " *ngFor="let item of data" [hidden]="partner.id == item.id" (click)="navigate(item.id)">{{ item.name }} </button>
+
+                        </div>
+                    </div>
+                    <div style="border-radius: 40px" class="widget widget_marxa_posts_thumb">
+                        <h3 class="widget-title">Vous serez peut être intéressé(e) par</h3>
+                        <article class="item">
+                            <a routerLink="/blog-details" class="thumb"><img src="assets/img/agences/photos-evenements/clifftophike.jpg"></a>
+                            <div class="info">
+                                <h4 class="title usmall" style="font-size: 20px" style="font-size: 20px"><a routerLink="/blog-details">Clifftop Hike</a></h4>
+                                <ul class="meta">
+                                    <li><i class='bx bx-calendar'></i>15 Mai, 2024</li>
+                                     </ul>
+                                <a><i class='bx bx-time'></i> 10h</a>
+                            </div>
+                        </article>
+                        <article class="item">
+                            <a routerLink="/blog-details" class="thumb"><img src="assets/img/agences/photos-evenements/desertdreamer.jpg"></a><div class="info">
+                                <h4 class="title usmall" style="font-size: 20px"><a routerLink="/blog-details">Desert Dreamer</a></h4>
+                                <ul class="meta">
+                                    <li><i class='bx bx-calendar'></i>24 Avril, 2024</li>
+                                     </ul>
+                                <a><i class='bx bx-time'></i> 16h</a>
+                            </div>
+                        </article>
+                        <article class="item">
+                            <a routerLink="/blog-details" class="thumb"><img src="assets/img/agences/photos-evenements/randonneemystique.jpg"></a><div class="info">
+                                <h4 class="title usmall" style="font-size: 20px"><a routerLink="/blog-details">Randonnée mystique</a></h4>
+                                <ul class="meta">
+                                    <li><i class='bx bx-calendar'></i> 29 Avril, 2024</li>
+                                     </ul>
+                                <a><i class='bx bx-time'></i> 9h</a>
+                            </div>
+                        </article>
+                        <article class="item">
+                            <a routerLink="/blog-details" class="thumb"><img src="assets/img/agences/photos-evenements/mountainmuse.jpg"></a><div class="info">
+                                <h4 class="title usmall" style="font-size: 20px"><a routerLink="/blog-details">Mountain Muse</a></h4>
+                                <ul class="meta">
+                                    <li><i class='bx bx-calendar'></i> 02 Mai, 2024</li>
+                                     </ul>
+                                <a><i class='bx bx-time'></i> 9h30</a>
+                            </div>
+                        </article>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+.loader-wrapper.loderhide {
+  display: none;
+}
+
+
+//.loader-wrapper {
+//  position: relative;
+//}
+
+.spinner {
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #2a9d8d;
+  border-radius: 50%;
+  animation: spin 1s ease infinite;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Start rotation from 0 degrees */
+  }
+  100% {
+    transform: rotate(340deg); /* End rotation at 360 degrees (full circle) */
+  }
+}
+
+.loaderhide {
+  display: none;
+}

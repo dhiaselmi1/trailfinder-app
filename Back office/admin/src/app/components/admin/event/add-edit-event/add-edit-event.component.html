@@ -1,0 +1,275 @@
+
+<div  class="card b-l-primary border-3">
+    <div  class="card-header ">
+        <h5 >Ajouter un événement</h5>
+    </div>
+    <div class="row">
+        <div class="form theme-form ng-untouched ng-pristine ng-valid">
+
+            <div  class="card-body">
+                <div  class="row">
+                    <div  class="col">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nom de l'événement</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       placeholder="Nom événement"
+                                       class="form-control"
+                                       [(ngModel)]="event.event.name"
+                                       name="Name"
+                                       class="input"
+                                       #Name="ngModel"
+                                       required
+                                       [ngClass]="{ 'is-invalid': Name.invalid && (Name.dirty || Name.touched) }">
+                                <div *ngIf="Name.invalid && (Name.dirty || Name.touched)" class="text-danger">
+                                    <div *ngIf="Name.errors.required">
+                                        Ce champs est obligatoire
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div [hidden]="!isCreateEvent"  class="form-group row" >
+                            <label  class="col-sm-3 col-form-label">Nom de l'agence</label>
+                            <div  class="col-sm-9">
+                <select class="js-example-basic-single ng-pristine ng-valid ng-touched input" style="width: 133px" [(ngModel)]="event.event.agencyId"
+                        [disabled]="isFromAgency">
+                            <option *ngFor="let item of data" [value]="item.agency.id">{{item.agency.agency}}</option>
+                        </select>
+                            </div>
+                        </div>
+                        <div  class="form-group row">
+                            <label  class="col-sm-3 col-form-label">Date</label>
+                            <div  class="col-sm-9">
+                                <input type="date" id="start" [(ngModel)]="event.event.date"
+                                       name="trip-start"
+                                       min="2024-06-03"
+                                       max="2025-12-31" >
+                            </div>
+                        </div>
+
+                        <div  class="form-group row">
+                            <label  class="col-sm-3 col-form-label">Temps</label>
+                            <div  class="col-sm-9">
+                                <input id="time" [(ngModel)]="event.event.time"
+                                       style="width: 133px"
+                                       type="time"
+                                       name="time"
+                                        />
+                            </div>
+                        </div>
+
+<br><br>
+                        <div >
+                            <table style="margin-top: -45px">
+                                <tr >
+                                    <td style="width: 150px; ">
+                            <label  class="col-sm-3 col-form-label">Durée</label>
+                                        <div style="margin-top: -25px" class="quantity">
+                                            <button type="button" class="button-quantity" (click)="minus()"><i class="fa fa-minus" ></i></button>
+                                            <input type="text" class="input-quantity" [value]="quantity">
+                                            <button type="button" class="button-quantity" (click)="plus()"><i class="fa fa-plus" ></i></button>
+                                        </div>
+                                    </td>
+
+                                    <td  style="width: 50px ;">
+                            <div  class="col-sm-9 form-group row">
+                            <select class="js-example-basic-single ng-pristine ng-valid ng-touched input" style="width: 133px; margin-top: -20px" [(ngModel)]="duration" >
+                                <option  value="Heures">Heures</option>
+                                <option  value="Nuitée">Nuitées</option>
+                            </select>
+                        </div></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="margin-top: -20px" class="form-group row">
+                            <label class="col-sm-3 col-form-label">Lieu</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       placeholder="Lieu"
+                                       class="form-control"
+                                       [(ngModel)]="event.event.location"
+                                       name="lieu"
+                                       class="input"
+                                       #lieu="ngModel"
+                                       required
+                                       [ngClass]="{ 'is-invalid': lieu.invalid && (lieu.dirty || lieu.touched) }">
+                                <div *ngIf="lieu.invalid && (lieu.dirty || lieu.touched)" class="text-danger">
+                                    <div *ngIf="lieu.errors.required">
+                                        Ce champs est obligatoire
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Nombre de places</label>
+                        <div class="col-sm-9">
+                            <input type="text"
+                                   placeholder="1000"
+                                   class="form-control m-input digits"
+                                   [(ngModel)]="event.event.capacity"
+                                   name="capacity"
+                                   class="input"
+                                   #capacity="ngModel"
+                                   required
+                                   (keypress)="validateNumberOfPlaces($event)"
+                                   [ngClass]="{ 'is-invalid': capacity.invalid && (capacity.dirty || capacity.touched) }">
+                            <div *ngIf="capacity.invalid && (capacity.dirty || capacity.touched)" class="text-danger">
+                                <div *ngIf="capacity.errors.required">
+                                    Ce champs est obligatoire
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Prix du billet</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       placeholder="1000"
+                                       class="form-control m-input digits"
+                                       [(ngModel)]="event.event.ticket_price"
+                                       name="ticket_price"
+                                       class="input"
+                                       #ticket_price="ngModel"
+                                       required
+                                       (keypress)="validateNumberOfPlaces($event)"
+                                       [ngClass]="{ 'is-invalid': ticket_price.invalid && (ticket_price.dirty || ticket_price.touched) }">
+                                <div *ngIf="ticket_price.invalid && (ticket_price.dirty || ticket_price.touched)" class="text-danger">
+                                    <div *ngIf="ticket_price.errors.required">
+                                        Ce champs est obligatoire
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    <div  class="form-group row mb-0">
+                        <Table>
+                            <tr>
+                                    <label  class="col-sm-3 col-form-label">Catégorie  de l'événement</label>
+                            </tr>
+                                <tr style=" display: flex; justify-content: center; align-items: center; margin-left: 150px">
+                                    <div  class="col-sm-9">
+                                        <input style="margin-top: -25px"  type="text" placeholder="Catégorie" class="form-control input2" disabled [(ngModel)]="event.event.category">
+                                    </div>
+                            </tr>
+                        </Table>
+                    </div>
+
+
+                    <table>
+<tr>
+
+
+                        <td style=" padding-right: 150px;">
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Randonnée')" id="checkbox-primary1" type="checkbox" (change)="onActivityChanges($event)" value=" Randonnée">
+                                <label for="checkbox-primary1" class="form-label">Randonnée</label>
+                            </div>
+                        </td>
+                        <td style=" padding-right: 150px;">
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('VTT')" id="checkbox-primary2" type="checkbox" (change)="onActivityChanges($event)" value="VTT">
+                                <label for="checkbox-primary2" class="form-label">VTT</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Excursion  à cheval')" id="checkbox-primary3" type="checkbox" (change)="onActivityChanges($event)" value="Excursion  à cheval">
+                                <label for="checkbox-primary3" class="form-label">Excursion  à cheval</label>
+                            </div>
+                        </td>
+</tr>
+                        <tr>
+
+
+                        <td style=" padding-right: 150px;">
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Kayak')" id="checkbox-primary4" type="checkbox" (change)="onActivityChanges($event)" value="Kayak">
+                                <label for="checkbox-primary4" class="form-label">Kayak</label>
+                            </div>
+                        </td>
+                            <td style=" padding-right: 150px;">
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Camping')" id="checkbox-primary5" type="checkbox" (change)="onActivityChanges($event)" value="Camping">
+                                <label for="checkbox-primary5" class="form-label">Camping</label>
+                            </div>
+                            </td>
+                            <td>
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Escalade')" id="checkbox-primary6" type="checkbox" (change)="onActivityChanges($event)" value="Escalade">
+                                <label for="checkbox-primary6" class="form-label">Escalade</label>
+                            </div>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td style=" padding-right: 150px;">
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Safari')" id="checkbox-primary7" type="checkbox" (change)="onActivityChanges($event)" value="Safari">
+                                <label for="checkbox-primary7" class="form-label">Safari</label>
+                            </div>
+</td>
+                            <td style=" padding-right: 150px;">
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Tyrolienne')" id="checkbox-primary8" type="checkbox" (change)="onActivityChanges($event)"
+                                       value="Tyrolienne"  >
+                                <label for="checkbox-primary8" class="form-label">Tyrolienne</label>
+                            </div>
+                        </td>
+                            <td style=" padding-right: 150px;">
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Exploration de grottes')" id="checkbox-primary9" type="checkbox" (change)="onActivityChanges($event)"
+                                       value="Exploration de grottes"  >
+                                <label for="checkbox-primary9" class="form-label">Exploration de grottes</label>
+                            </div>
+                        </td>
+                        </tr>
+                    </table>
+
+                    <div  class="form-group row mb-0">
+                        <label  class="col-sm-3 col-form-label">Description</label>
+                        <div  class="col-sm-9">
+                             <textarea  rows="5" cols="5" placeholder="   Décrire votre agence brièvement" class="form-control" [(ngModel)]="event.event.description">
+
+                             </textarea>
+                        </div>
+                    </div>
+
+                    <div [hidden]="!isCreateEvent">
+                        <table>
+                            <td style="width: 250px;"><label class="col-sm-3 col-form-label">Affiche</label></td>
+                            <td class="drag">
+                                <div class="file-container" *ngIf="!file">
+                                    <table>
+                                        <tr style="height: 100px;"><p style="padding: 50px; margin-top: 40px; font-size: 16px;">Glissez l'affiche de votre événement ici ou cliquez pour choisir une image.</p></tr>
+                                        <tr><input type="file" (change)="getFile($event)" class="file"/></tr>
+                                    </table>
+                                </div>
+                                    <div class="cancel-section" *ngIf="file">
+                                    <p class="file-info">File name: {{file.name}}</p>
+                                    <button class="cancel-button" (click)="file=undefined">Annuler</button>
+                                </div>
+                            </td>
+                        </table>
+                    </div>
+
+                    <div  class="card-footer">
+                        <div  class="col-sm-9 offset-sm-3">
+                            <button  type="submit" class="btn btn-primary btn-pill" style="width: 100px; height: 30px; margin-right: 10px" (click)="saveEvent()" >Valider</button>
+                            <button  type="reset"  class="btn btn-light ms-1 btn-pill" style="width: 100px; height: 30px"  (click)="resetEvent()">Annuler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+

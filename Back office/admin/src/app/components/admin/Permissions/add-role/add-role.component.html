@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div  class="card b-l-primary border-3">
+                <div  class="card-header ">
+                    <h5>Ajouter un rôle
+                    </h5>
+                </div>
+                <div class="card-body">
+                        <div class="form-row">
+                            <div class="col-md-8 mb-3">
+                                <label for="validationCustomUsername" class="form-label">Nom
+                                </label>
+                                <div class="input-group">
+                                    <input  [(ngModel)]="role.name"
+                                            id="validationCustomUsername"
+                                            type="text"
+                                            placeholder="Nom"
+                                            #roleName="ngModel"
+                                            aria-describedby="inputGroupPrepend"
+                                            required=""
+                                            class="form-control input-radius">
+                                </div>
+                            </div>
+                            <div *ngIf="roleName.invalid && (roleName.dirty || roleName.touched)" class="text-danger">
+                                <div *ngIf="roleName.errors.required" style="margin-left: 110px;">
+                                    Ce champs est obligatoire
+                                </div>
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <table>
+                                    <td>
+                                <label for="validationCustomUsername" class="form-label">Supprimable :
+                                </label>
+                                    </td>
+                                    <td style="vertical-align: bottom; padding-left: 30px">
+                                <div class="checkbox-wrapper-7">
+                                    <input class="tgl tgl-ios" id="cb2-7" type="checkbox"    [(ngModel)]="role.removable"/>
+                                    <label class="tgl-btn" for="cb2-7">
+                                    </label>
+                                </div>
+                                    </td>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-8 mb-3">
+                                <label for="validationCustom03" class="form-label">Description
+                                </label>
+                                <textarea  [(ngModel)]="role.description"
+                                           rows="5"
+                                           cols="5"
+                                           placeholder="Description du role"
+                                           class="form-control input-radius"
+                                           #roleDescription="ngModel"
+                                ></textarea>
+                            </div>
+                        </div>
+                    <div *ngIf="roleDescription.invalid && (roleDescription.dirty || roleDescription.touched)" class="text-danger">
+                        <div *ngIf="roleDescription.errors.required" style="margin-left: 110px;">
+                            Ce champs est obligatoire
+                        </div>
+                    </div>
+                        <button type="button" class="btn btn-primary ms-1 btn-pill" (click)="saveRole()">Valider
+                        </button>
+                        <button  type="reset"  class="btn btn-light ms-1 btn-pill" (click)="resetRole()">Annuler</button>
+
+                </div></div></div>
+    </div></div>
+

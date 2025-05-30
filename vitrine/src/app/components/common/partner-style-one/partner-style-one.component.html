@@ -1,0 +1,24 @@
+<div  class="container">
+    <div style="border-radius: 25px" class="partner-inner-area ptb-70">
+        <div class="row">
+            <div class="col-lg-5 col-md-12">
+                <div class="section-title text-start" *ngFor="let Title of sectionTitle;">
+                    <h2>{{Title.title}}</h2>
+                    <h2 style="font-size: 16px; margin-top: 80px;margin-right: 65px; color: rgba(0, 0, 0, 0.3);  line-height: 2;  font-weight: normal">{{Title.paragraph}}</h2>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-12">
+                <div class="partner-list">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-6" *ngFor="let item of data;">
+                            <div class="partner-item post-image">
+                                <a  class="d-block"  [routerLink]="['/partenaire', item.id]" (click)="navigate(item.id)">    <img style="border-radius: 25px"  [src]="item.imageToShow.__zone_symbol__value" alt="image" ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

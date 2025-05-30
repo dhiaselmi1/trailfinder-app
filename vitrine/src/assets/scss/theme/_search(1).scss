@@ -1,0 +1,149 @@
+/**=====================
+     51. Search CSS Start
+==========================**/
+.search-page {
+  .nav-material{
+    --bs-nav-tabs-border-color: transparent;
+    margin-bottom: 0;
+    ngx-tabset{
+      width: 100%;
+    }
+    ul.nav-tabset{
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #dee2e6;
+      margin-bottom: 30px;
+      li.nav-tab{
+        padding: 0.5rem 1rem;
+        color: #aaa;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        span{
+          &::before{
+            margin-right: 8px;
+            vertical-align: -1px;
+          }
+        }
+        &:first-child{
+          span{
+            &::before{
+              content: "\e607";
+              font-family: themify;
+            }
+          }
+        }
+        &:nth-child(2){
+          span{
+            &::before{
+              content: "\e633";
+              font-family: themify;
+            }
+          }
+        }
+        &:nth-child(3){
+          span{
+            &::before{
+              content: "\e6ce";
+              font-family: themify;
+            }
+          }
+        }
+        &:hover{
+          border: 1px solid #e9ecef;
+        }
+        &:active, &.active{
+          background-color: rgba($primary-color, 0.1);
+          border: 1px solid rgba($primary-color, 0.2);
+          span{
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+  ngb-tabset {
+    width: 100%;
+  }
+  .search-form {
+    input {
+      background-position: 99%;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .nav-tabs {
+    &.border-tab-primary {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+  .nav-link {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .nav-tabset{
+    .nav-link{
+      color: $semi-dark;
+      &.active{
+        background-color: rgba($primary-color, 0.2);
+        border: 1px solid rgba($primary-color, 0.2);
+        color: $primary-color;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+    }
+  }
+  .info-block {
+    + .info-block {
+      padding-top: 30px;
+      border-top: 1px solid $light-color;
+      margin-top: 30px;
+    }
+  }
+  .border-tab.nav-tabset{
+    align-items: left;
+    justify-content: end;
+    .nav-item{
+      width: auto;
+    }
+  }
+  .search-links {
+    h6 {
+      margin-bottom: 0;
+    }
+  }
+  p {
+    text-transform: lowercase;
+    margin-bottom: 0;
+    color: $dark-gray;
+  }
+  ul.search-info {
+    li {
+      display: inline-block;
+      font-size: 12px;
+      line-height: 1;
+      color: #586082;
+      + li {
+        border-left: 1px solid lighten($dark-color, 50%);
+        padding-left: 8px;
+        margin-left: 8px;
+      }
+      i {
+        color: $warning-color;
+        margin-right: 0;
+      }
+    }
+  }
+  #video-links {
+    .embed-responsive + .embed-responsive {
+      margin-top: 30px;
+    }
+  }
+}
+/**=====================
+    51. Search CSS Ends
+==========================**/

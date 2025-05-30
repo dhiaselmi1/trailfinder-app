@@ -1,0 +1,122 @@
+<div   style="flex: 0 1 auto">
+    <div  class="card b-l-primary border-3">
+        <div  class="card-header ">
+            <h5>Liste des événements</h5>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-pill" type="submit" style="border-radius: 25px; height: 32px;  display: flex;   align-items: center; justify-content: center;" routerLink="/events/add-edit">Ajouter un événement</button>
+            <form class="form-inline search-form" >
+                <div class="form-group">
+                    <div class="Typeahead Typeahead--twitterUsers">
+                        <div class="u-posRelative">
+                            <input
+                                    (input)="onSearchChange($event.target.value)"
+                                    class="Typeahead-input form-control-plaintext"
+                                    id="demo-input"
+                                    type="text"
+                                    name="q"
+                                    placeholder="Recherche..."
+                                    autocomplete="off"/>
+                            <div class="Typeahead-menu custom-scrollbar"  id="search-outer">
+
+                            </div>
+                            <div class="Typeahead-menu custom-scrollbar"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div style="margin-bottom: 20px;"></div>
+
+            <table  class="table">
+                <thead >
+                <tr >
+                    <th  scope="col" sortable="name">Affiche</th>
+                    <th  scope="col" sortable="name">Nom</th>
+                    <th  scope="col" sortable="gender">Agence</th>
+                    <th  scope="col" sortable="gender">Lieu</th>
+                    <th  scope="col" sortable="company_name">Date</th>
+                    <th  scope="col" sortable="age">Heure</th>
+                    <th  scope="col" sortable="age">Durée</th>
+                    <th  scope="col" sortable="action">Modifier</th>
+                    <th  scope="col" sortable="action" >Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of filteredData  | paginate: { itemsPerPage: itemPerPage, currentPage: p }">
+                    <td class="default-text mb-0 f-w-700 f-18" scope="row">
+                        <div class="user-image rounded-circle" (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
+                            <div class="image-containing">
+                                <div class="avatar">
+                                    <img class="rounded-circle" style="width: 100px; height: 100px;" [src]="item.imageToShow.__zone_symbol__value">
+                                </div>
+                                <div class="hover-image" >
+                                    <img src="assets/images/agences/write.png" alt="Logo" style="width: 45px" (click)="openChangeLogo(item.event)">
+                                </div>
+                            </div>
+                            <div class="modal-overlay" *ngIf="showChangeLogo" (click)="closeChangeLogo()">
+                                <div class="modal-content" (click)="$event.stopPropagation()">
+                                    <h1>Sélectionner une image</h1>
+                                    <span (click)=" closeChangeLogo()" class="close-button">X</span>
+                                    <input id="validatedCustomFile"
+                                           type="file" required=""
+                                           class="form-control"
+                                           (change)="getFile($event)">
+                                    <button mat-raised-button class="btnNon color-warn"
+                                            style="width: 120px; height: 30px;
+                                                                 font-size: 15px; display: flex;
+                                                                  align-items: center; justify-content:
+                                                                           center; margin-left: 100px"
+                                            (click)="changeLogo()">Valider</button>
+                                </div>
+                            </div>
+                        </div>                    </td>
+                    <td class="center-vertically">{{item.event.name}}</td>
+                    <td class="center-vertically">{{item.agencyName}}</td>
+                    <td class="center-vertically">{{item.event.location}}</td>
+                    <td class="center-vertically">{{item.event.date}}</td>
+                    <td class="center-vertically">{{item.event.time}}</td>
+                    <td class="center-vertically">{{item.event.duration}}</td>
+                    <td class="center-vertically">
+                        <button class="btn" (click)="update(item.event.id)"><i class="fa fa-pencil"></i></button>
+                    </td>
+                    <td class="center-vertically">
+                        <button class="btn" (click)="openDelete(item)"><i class="fa fa-trash"></i></button>
+                    </td>
+
+                    <div  class="dropdown-content" [ngClass]="{'show': item.isDropdownOpen}">
+                        <div class="rectangle">
+                            Savoir Plus
+                        </div>
+                        <div class="rectanglee rectangle1" style="font-size: 13.5px" style="font-size: 13.5px" [class.clicked]="activeDiv === 'addevent'" (click)="changeActiveDiv('events')">
+                            <a href="#">Ajouter un événement</a>
+                        </div>
+                        <div class="rectanglee rectangle2" style="font-size: 13.2px"  [class.clicked]="activeDiv === 'events'" (click)="changeActiveDiv('events')">
+                            <a href="#">Evénements</a>
+                        </div>
+                        <div class="rectanglee rectangle3" [class.clicked]="activeDiv === 'profile'" (click)="changeActiveDiv('profile')">
+                            <a href="http://localhost:4200/profil/profil">Profil</a>
+                        </div>
+                        <div class="rectanglee rectangle4" [class.clicked]="activeDiv === 'activity'" (click)="changeActiveDiv('activity')">
+                            <a href="#">Activité</a>
+                        </div>
+                    </div>
+                    <div class="modal-overlay" *ngIf="showDelete" (click)="closeDelete()">
+                        <div class="modal-content" (click)="$event.stopPropagation()">
+                            <span class="close-button" (click)="closeDelete()">X</span>
+                            <h1>Êtes-vous sur(e) de vouloir supprimer cette agence?</h1>
+                            <button mat-raised-button class="btnOui color-primary" (click)="delete()">Oui</button>
+                            <button mat-raised-button class="btnNon color-warn" (click)="closeDelete()">Non</button>
+                        </div>
+                    </div>
+                </tr>
+                </tbody>
+            </table>
+            <div class="mt-8 py-5 flex justify-center align-items-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>
+
+

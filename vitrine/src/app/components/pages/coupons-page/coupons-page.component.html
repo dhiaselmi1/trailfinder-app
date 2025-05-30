@@ -1,0 +1,119 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<div class="deals-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12">
+                <div class="single-deals-coupon-box" *ngFor="let Content of singleDealsCouponBox;">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="deals-coupon-image" style="background-image: url({{Content.image}});">
+                                <img [src]="Content.image" class="main-image" alt="image">
+                                <div class="content">
+                                    <img [src]="Content.logo" alt="image">
+                                    <a routerLink="/{{Content.logoLink}}" class="link-btn">{{Content.logoText}}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <div class="deals-coupon-content">
+                                <h3><a routerLink="/{{Content.detailsLink}}">{{Content.title}}</a></h3>
+                                <p>{{Content.paragraph}}</p>
+                                <div class="show-coupon-code">
+                                    <span>Coupon Code:</span>
+                                    <a routerLink="/{{Content.detailsLink}}" class="code-btn" target="_blank" ngxClipboard [cbContent]="[Content.couponCode]" [container]="container" tooltip="Click to Copy" placement="right" show-delay="100">Show Coupon Code <i class="bx bx-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-12">
+                <aside class="widget-area">
+                    <div class="widget widget_search">
+                        <form class="search-form">
+                            <label>
+                                <span class="screen-reader-text">Search for:</span>
+                                <input type="search" class="search-field" placeholder="Search...">
+                            </label>
+                            <button type="submit"><i class="bx bx-search-alt"></i></button>
+                        </form>
+                    </div>
+
+                    <div class="widget widget_categories">
+                        <h3 class="widget-title">Category</h3>
+                        <ul>
+                            <li><a routerLink="/search-page"><i class='bx bx-happy-beaming'></i> Beauty</a></li>
+                            <li><a routerLink="/search-page"><i class='bx bxs-t-shirt'></i> Clothing</a></li>
+                            <li><a routerLink="/search-page"><i class='bx bx-laptop'></i> Computers</a></li>
+                            <li><a routerLink="/search-page"><i class='bx bx-devices'></i> Electronics</a></li>
+                            <li><a routerLink="/search-page"><i class='bx bx-chair'></i> Furniture</a></li>
+                            <li><a routerLink="/search-page"><i class='bx bx-first-aid'></i> Health</a></li>
+                            <li><a routerLink="/search-page"><i class='bx bx-camera'></i> Photography</a></li>
+                            <li><a routerLink="/search-page"><i class='bx bx-bowling-ball'></i> Baby and Kids</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="widget widget_stores">
+                        <h3 class="widget-title">Stores</h3>
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="excavator" name="excavator" value="Excavator">
+                                <label for="excavator">Excavator <span class="count">(0)</span></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="theBird" name="theBird" value="The Bird">
+                                <label for="theBird">The Bird <span class="count">(1)</span></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="tripleOne" name="tripleOne" value="Triple One">
+                                <label for="tripleOne">Triple One <span class="count">(2)</span></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="hiTech" name="hiTech" value="Hi-Tech">
+                                <label for="hiTech">Hi-Tech <span class="count">(3)</span></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="desire" name="desire" value="Desire">
+                                <label for="desire">Desire <span class="count">(4)</span></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="lorem" name="lorem" value="Lorem">
+                                <label for="lorem">Lorem <span class="count">(5)</span></label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="widget widget_looking_for">
+                        <h3 class="widget-title">I'm looking for</h3>
+                        <ul>
+                            <li>
+                                <input type="radio" id="all" name="lookingFor" value="lookingFor">
+                                <label for="all">All</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="dealsOnly" name="lookingFor" value="lookingFor">
+                                <label for="dealsOnly">Deals Only</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="couponsOnly" name="lookingFor" value="lookingFor" checked>
+                                <label for="couponsOnly">Coupons Only</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="widget widget_custom_ads">
+                        <a href="#" class="d-block" target="_blank">
+                            <img src="assets/img/custom-ads1.jpg" alt="image">
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>

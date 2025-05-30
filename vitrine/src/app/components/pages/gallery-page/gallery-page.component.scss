@@ -1,0 +1,20 @@
+.single-gallery-item {
+    margin-bottom: 30px;
+    overflow: hidden;
+    cursor: zoom-in;
+
+    a {
+        display: block;
+        
+        img {
+            transition: var(--transition);
+        }
+    }
+    &:hover {
+        a {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

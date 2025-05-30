@@ -1,0 +1,87 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{agency.agency}}</h1>
+    </div>
+</div>
+
+<div class="blog-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="blog-details-desc">
+                    <div class="article-content">
+                        <div class="article-image">
+                            <img style="width: 400px; margin-left: 200px"[src]="agency.imageToShow.__zone_symbol__value" alt="image">
+                        </div>
+
+                        <p style="margin-top: 20px">{{agency.description}}</p>
+                        <h3 style="font-size: 24px" class="widget-title"  >Types d'activité</h3>
+                        <div class="widget widget_categories">
+
+                            <a style="padding-right: 100px; font-size: 20px" routerLink="/"  *ngFor="let item of activity"><i class='bx bx-leaf'></i> {{item}}</a>
+
+                        </div>
+
+                        <div style="height: 30px"></div>
+                        <h3 style="font-size: 24px" class="widget-title">Evénements récents</h3>
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-6 col-sm-6 col-md-6" *ngFor="let item of data | paginate: { itemsPerPage: 12, currentPage: dealsGrid }">
+                                <div class="single-deals-box">
+                                    <div class="deals-image">
+                                        <a [routerLink]="['/evenement', item.event.id]" (click)="navigate(item.event.id)" class="d-block">
+                                            <img [src]="item.imageToShow" alt="image">
+                                        </a>
+                                        <a href="javascript:void(0)" class="bookmark-save"></a>
+                                    </div>
+                                    <div class="deals-content">
+
+                                        <h3><a [routerLink]="['/evenement', item.event.id]" (click)="navigate(item.event.id)">{{item.event.name}}</a></h3>
+
+                                        <h6 class='bx bxs-calendar'> {{item.event.date}}</h6>
+                                        <span class="location"><i class='bx bxs-map'></i> {{item.event.location}}</span>
+                                    </div>
+                                    <div class="box-footer">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="price">
+                                                <span class="new-price">{{item.event.ticket_price}} TND</span>
+                                            </div>
+                                            <a [routerLink]="['/evenement', item.event.id]" (click)="navigate(item.event.id)" class="details-btn">Voir les détails</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-12">
+                <aside class="widget-area">
+                    <div  style="border-radius: 20px; width: 345px" class="widget widget_stores">
+                        <h3 class="widget-title">Pays</h3>
+                        <img style="border-radius: 15px ; width: 80% ; margin-left: 30px" src="assets/img/agences/angleterre.png">
+                        <p style=" margin-left: 40px" class="country">{{ agency.country}}</p>
+                    </div>
+
+                    <div style="border-radius: 20px; width: 345px" class="widget widget_looking_for">
+                        <h3 class="widget-title">Contacts</h3>
+                        <ul class="social">
+                            <li><a href="#" class="linkedin" target="_blank"><i class='bx bx-mail-send'></i> {{ agency.email}}</a></li>
+                            <li><a href="#" class="linkedin" target="_blank"><i class='bx bx-dialpad'></i> +{{ agency.phone_number}}</a></li>
+                            <li><a href="#" class="facebook" target="_blank"><i class='bx bxl-facebook'></i> Trailblaze Expeditions</a></li>
+                            <li><a href="#" class="instagram" target="_blank"><i class='bx bxl-instagram'></i> Trailblaze Expeditions</a></li>
+                        </ul>
+                    </div>
+                    <div style="border-radius: 20px; width: 345px" class="widget widget_looking_for">
+                        <h3 class="widget-title">Méthodes de paiement acceptées</h3>
+                        <ul class="social">
+                            <div  class="d-flex updates-faq-main"><div  class="updates-faq"><div  class="font-primary" _nghost-ng-c1040871746=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign" _ngcontent-ng-c1040871746=""><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div></div><div  class="d-flex-body updates-bottom-time"><p >PayPal</p></div></div>
+                            <div  class="d-flex updates-faq-main"><div  class="updates-faq"><div  class="font-primary" _nghost-ng-c1040871746=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign" _ngcontent-ng-c1040871746=""><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div></div><div  class="d-flex-body updates-bottom-time"><p >MasterCard</p></div></div>
+                            <div  class="d-flex updates-faq-main"><div  class="updates-faq"><div  class="font-primary" _nghost-ng-c1040871746=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign" _ngcontent-ng-c1040871746=""><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div></div><div  class="d-flex-body updates-bottom-time"><p >Visa*/Card</p></div></div></ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,139 @@
+<div class="page-main-header">
+  <div class="main-header-right">
+    <div class="main-header-left text-center">
+      <div class="logo-wrapper">
+          <a href="javascript:void(0)" routerLink="/">
+          <img class="logo-dimensions" src="assets/images/logo/logoslogan.png" alt="" /></a>
+      </div>
+    </div>
+    <div class="mobile-sidebar">
+      <div class="flex-grow-1 text-end switch-sm">
+        <label class="switch ms-3"
+          ><input id="sidebar-toggle" type="checkbox" checked="checked" (click)="collapseSidebar()" />
+          <app-feather-icons class="font-primary" [icon]="'align-center'"></app-feather-icons>
+        </label>
+      </div>
+    </div>
+    <div class="vertical-mobile-sidebar"><i class="fa fa-bars sidebar-bar"> </i></div>
+    <div class="nav-right col pull-right right-menu">
+      <ul class="nav-menus" [ngClass]="{ open: openNav }">
+        <li>
+          <form class="form-inline search-form" method="get">
+            <div class="form-group">
+              <div class="Typeahead Typeahead--twitterUsers">
+                <div class="u-posRelative">
+                  <input
+                    class="Typeahead-input form-control-plaintext"
+                    [class.open]="navServices.openclass"
+                    id="demo-input"
+                    type="text"
+                    name="q"
+                    placeholder="Recherche..."
+                    [(ngModel)]="text"
+                    [ngModelOptions]="{ standalone: true }"
+                    (keyup)="searchTerm(text)"
+                    autocomplete="off"
+                  />
+                  <div class="Typeahead-menu custom-scrollbar" [class.is-open]="searchResult" *ngIf="menuItems?.length" id="search-outer">
+                    <div class="ProfileCard u-cf" *ngFor="let menuItem of menuItems | slice : 0 : 8">
+                      <div class="ProfileCard-avatar">
+                        <i class="pe-7s-{{ menuItem.icon }}"></i>
+                      </div>
+                      <div class="ProfileCard-details">
+                        <div class="ProfileCard-realName">
+                          <a [routerLink]="menuItem?.path" class="realname" (click)="removeFix()">{{ menuItem?.title }}</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="Typeahead-menu custom-scrollbar" [class.is-open]="searchResultEmpty">
+                    <div class="tt-dataset tt-dataset-0">
+                      <div class="EmptyMessage"> Opps!! Aucun résultat trouvé. </div>
+                    </div>
+                  </div>
+                  <div class="spinner-border Typeahead-spinner" role="status"><span class="sr-only">Loading...</span> </div
+                  ><span class="d-sm-none mobile-search" (click)="opensearch()">
+                    <app-feather-icons [icon]="'search'"></app-feather-icons>
+                  </span>
+                </div>
+                <div class="Typeahead-menu custom-scrollbar"></div>
+              </div>
+            </div>
+          </form>
+        </li>
+        <li class="text-dark" (click)="toggleFullScreen()">
+          <app-feather-icons [icon]="'maximize'"></app-feather-icons>
+        </li>
+
+
+
+<!--        <li class="onhover-dropdown">-->
+<!--          <app-bookmark></app-bookmark>-->
+<!--        </li>-->
+        <li class="onhover-dropdown">
+<span class="d-flex user-header">
+            <img class="img-fluid" src="assets/images/dashboard/like.png" />
+</span>
+
+        </li>
+<!--        <li class="onhover-dropdown">-->
+<!--            <span class="d-flex user-header">-->
+
+<!--                <img class="img-fluid" src="assets/images/dashboard/notification.png" alt="" />-->
+<!--            </span>-->
+
+<!--          <ul class="onhover-show-div notification-dropdown">-->
+<!--            <li class="gradient-primary"> <h5 class="f-w-700">Notifications</h5><span>Vous avez 6 messages non lus</span> </li>-->
+<!--            <li>-->
+<!--              <div class="d-flex">-->
+<!--                <div class="notification-icons bg-success me-3"><app-feather-icons class="mt-0" [icon]="'thumbs-up'"></app-feather-icons></div>-->
+<!--                <div class="flex-grow-1">-->
+<!--                  <h6>Someone Likes Your Posts</h6>-->
+<!--                  <p class="mb-0"> 2 Hours Ago</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </li>-->
+<!--            <li class="pt-0">-->
+<!--              <div class="d-flex">-->
+<!--                <div class="notification-icons bg-info me-3"><app-feather-icons class="mt-0" [icon]="'message-circle'"></app-feather-icons></div>-->
+<!--                <div class="flex-grow-1">-->
+<!--                  <h6>3 New Comments</h6>-->
+<!--                  <p class="mb-0"> 1 Hours Ago</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </li>-->
+<!--            <li class="bg-light txt-dark"><a href="#">All </a> notification</li>-->
+<!--          </ul>-->
+<!--        </li>-->
+          <li class="onhover-dropdown" style="width: 50px">
+            <span class="d-flex user-header">
+                <img class="img-fluid" src="assets/images/dashboard/user.png" alt="" />
+            </span>
+              <ul class="onhover-show-div droplet-dropdown bookmark-dropdown">
+                  <li class="gradient-primary" > <h5 class="f-w-700" style="text-align: center;">{{ login }}</h5>
+                      <div style="text-align: center;">{{ role }}</div> </li>
+<!--                  <li [routerLink]="['user/profile']"
+="text-align: center;"><app-feather-icons [icon]="'user'"></app-feather-icons>Profil</li>-->
+<!--                  <li [routerLink]="['to-do']" style="text-align: center;"><app-feather-icons [icon]="'file-text'"></app-feather-icons>Notes</li>-->
+                  <li (click)="navigate()" style="text-align: center;" *ngIf="role=='Agence'">Profil</li>
+
+                  <li style="text-align: center;"><a href="javascript:void(0)" (click)="logout()"> <app-feather-icons [icon]="'log-out'"></app-feather-icons>Se déconnecter</a></li>
+              </ul>
+          </li>
+      </ul>
+      <div class="d-lg-none mobile-toggle pull-right">
+        <app-feather-icons [icon]="'more-horizontal'" (click)="openMobileNav()"></app-feather-icons>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

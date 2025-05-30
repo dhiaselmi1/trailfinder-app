@@ -1,0 +1,466 @@
+/**=====================
+     38. Table  CSS Start
+==========================**/
+.pills-component {
+  width: 20%;
+}
+.product-page-width {
+  width: 80%;
+}
+.table {
+  margin-bottom: $table-b-margin;
+  th,
+  td {
+    padding: $table-padding;
+  }
+  th {
+    color: $table-heading-color;
+  }
+  td {
+    color: $table-row-color;
+  }
+  [class*="bg-"] {
+    color: $white;
+  }
+  .bg-light {
+    color: $theme-body-font-color;
+  }
+  tfoot {
+    font-weight: $table-footer-font-weight;
+  }
+  .double {
+    th,
+    td {
+      border-bottom-style: double;
+      border-color: $light-gray;
+    }
+    &:last-child {
+      th,
+      td {
+        border-bottom: none;
+      }
+    }
+    thead {
+      th {
+        border-bottom-style: double;
+      }
+    }
+  }
+  thead {
+    .double {
+      th {
+        border-top: 1px double $light-gray;
+        border-bottom-style: double !important;
+        border-color: $light-gray !important;
+      }
+    }
+  }
+  .dotted {
+    th,
+    td {
+      border-bottom-style: dotted;
+      border-color: $light-gray;
+    }
+    &:last-child {
+      th,
+      td {
+        border-bottom: none;
+      }
+    }
+    thead {
+      th {
+        border-bottom-style: dotted;
+      }
+    }
+  }
+  thead {
+    .dotted {
+      th {
+        border-top: 1px dotted $light-gray;
+        border-bottom-style: dotted !important;
+        border-color: $light-gray !important;
+      }
+    }
+  }
+  .dashed {
+    th,
+    td {
+      border-bottom-style: dashed;
+      border-color: $light-gray;
+    }
+    &:last-child {
+      th,
+      td {
+        border-bottom: none;
+      }
+    }
+    thead {
+      th {
+        border-bottom-style: dashed;
+      }
+    }
+  }
+  thead {
+    .dashed {
+      th {
+        border-top: 1px dashed $light-gray;
+        border-bottom-style: dashed !important;
+        border-color: $light-gray !important;
+      }
+    }
+  }
+}
+.table-inverse {
+  th,
+  td {
+    color: $white;
+  }
+}
+.table[class*="bg-"] {
+  th,
+  td {
+    color: $white;
+  }
+}
+.table-hover {
+  tbody {
+    tr:hover {
+      background-color: $table-hover-color;
+    }
+  }
+}
+.thead-dark {
+  tr {
+    th {
+      color: $white;
+      background-color: #343a40;
+      border-color: #454d55;
+    }
+  }
+}
+.thead-light{
+  tr{
+    th{
+      color: #495057;
+      background-color: #e9ecef;
+      border-color: #dee2e6;
+    }
+  }
+}
+.bg-primary {
+  tr {
+    th {
+      color: $white;
+    }
+  }
+}
+.table {
+  &.table-primary {
+    th,
+    td {
+      color: $white;
+    }
+    &.table-hover {
+      tr {
+        &:hover {
+          td {
+            color: $theme-body-font-color;
+          }
+        }
+      }
+    }
+  }
+}
+//Sizing class
+.table-xl {
+  td,
+  th {
+    padding: $table-xl-padding;
+    font-size: $table-xl-font;
+  }
+}
+.table-lg {
+  td,
+  th {
+    padding: $table-lg-padding;
+    font-size: $table-lg-font;
+  }
+}
+.table-de {
+  td,
+  th {
+    padding: $table-de-padding;
+  }
+}
+.table-sm {
+  th,
+  td {
+    padding: $table-sm-padding;
+    font-size: $table-sm-font;
+  }
+}
+.table-xs {
+  th,
+  td {
+    padding: $table-xs-padding;
+    font-size: $table-xs-font;
+  }
+}
+//Table Border
+.table-border-horizontal {
+  tr,
+  th,
+  td {
+    border-top: 1px solid $horizontal-border-color;
+    padding: $horizontal-padding;
+  }
+}
+.table-border-vertical {
+  tr,
+  th,
+  td {
+    border-top: 0 !important;
+    border-right: 1px solid $horizontal-border-color;
+  }
+  tr {
+    td {
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+.table-bordernone {
+  tr{
+    th{
+      border: none;
+    }
+  }
+  td {
+    border: 0 !important;
+  }
+  .bd-t-none {
+    border-top: none !important;
+  }
+  .u-s-tb {
+    padding: 11px;
+  }
+}
+.table-inverse {
+  color: $white;
+  background-color: $table-inverse-bg-color;
+  th,
+  td {
+    border-color: $white;
+  }
+  &.table-bordered {
+    border: 0;
+  }
+}
+.table-striped {
+  tbody {
+    tr {
+      &:nth-of-type(odd) {
+        background-color: rgba(245, 247, 250, 0.5);
+        *{
+          --bs-table-accent-bg: unset;
+          color: $theme-body-font-color;
+        }
+      }
+    }
+  }
+  &.table-hover {
+    tbody {
+      tr {
+        &:nth-of-type(even) {
+          &:hover {
+            th,
+            td {
+              color: $theme-body-font-color;
+            }
+          }
+        }
+        &:nth-of-type(odd) {
+          &:hover {
+            th,
+            td {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.table-components{
+  .card{
+    .card-block{
+      .table-responsive{
+        padding: 30px;
+      }
+    }
+  }
+}
+.border-bottom-primary{
+  th{
+    border-bottom: 2px solid $primary-color !important;
+  }
+}
+.table{
+  tbody:not(:first-child){
+    border-top: 2px solid $horizontal-border-color;
+  }
+}
+.table-border-vertical{
+  &.table-bordered{
+    th,td{
+      border: 1px solid #dee2e6 !important;
+    }
+    tbody{
+      tr{
+        &:last-child{
+          border-bottom: unset;
+        }
+      }
+    }
+  }
+  tr,td,th{
+    border-bottom: unset;
+  }
+}
+.tables-wrapper{
+  .row{
+    > div{
+      .card{
+        overflow: hidden;
+        .table-responsive{
+          tbody{
+            tr{
+              &:last-child{
+                th, td{
+                  border-bottom: unset;
+                }
+              }
+            }
+          }
+          tfoot{
+            tr{
+              &:last-child{
+                th,td{
+                  border-bottom: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.table-styling{
+  &.table-striped{
+    tbody{
+      tr{
+        &:hover{
+          &:nth-of-type(odd){
+            color: $white;
+          }
+        }
+        &:nth-of-type(odd){
+          background-color: rgba(245,247,250,.5);
+        }
+      }
+    }
+  }
+  &.table-primary{
+    &.table-striped{
+      tbody{
+        tr{
+          &:nth-child(even){
+            --bs-table-hover-bg: #fdfeff;
+          }
+        }
+      }
+    }
+    thead{
+      th{
+        background-color: $primary-color;
+      }
+    }
+    tbody{
+      background-color: rgba($light, 0.8) !important;
+      td, th,tr{
+        background-color: rgba($primary-color, 0.5);
+        color: $white;
+      }
+    }
+  }
+}
+.close-dark{
+  &.btn-close{
+    filter: unset;
+    top: 8px;
+  }
+}
+.custom-datatable{
+  tbody{
+    .d-flex{
+      align-items: flex-start;
+    }
+  }
+}
+.custom-datatable.basic-table{
+  thead{
+    tr{
+      th{
+        &:last-child{
+          text-align: right;
+        }
+      }
+    }
+  }
+  tbody{
+    tr{
+      td{
+        button.btn{
+          padding: 6px 14px;
+        }
+        &:last-child{
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+.table-responsive{
+  table{
+    tbody{
+      tr{
+        &:last-child{
+          th,td{
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  >.table-bordered{
+    border: transparent;
+  }
+}
+.table{
+  &.table-striped{
+    tbody{
+      border-top: 2px solid #dee2e6;
+    }
+  }
+} 
+.table-bordered {
+  td,
+  th {
+    border-color: $light;
+  }
+}
+/**=====================
+     38.Table CSS Ends
+==========================**/

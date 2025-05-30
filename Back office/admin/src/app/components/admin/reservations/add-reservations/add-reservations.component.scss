@@ -1,0 +1,54 @@
+.button-quantity {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none; /* Remove the outline when clicked */
+}
+
+/* Style minus and plus buttons */
+.button-quantity i {
+  font-size: 1.5rem;
+  color: #0a9396;
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover effect for buttons */
+.button-quantity:hover i {
+  color: #00d2d7;
+}
+
+/* Style input field */
+.input-quantity {
+  width: 70px;
+  height: 35px;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1px solid #0a9396;
+  border-radius: 20px; /* Rounded shape */
+  outline: none;
+  transition: border-color 0.3s ease; /* Smooth transition for border color change */
+  background-color: #0a9396;
+}
+
+/* Change border color when input is focused */
+.input-quantity:focus {
+  border-color: #0a9396;
+}
+
+/* Container styles */
+.quantity {
+  display: flex;
+  margin-left: 300px;
+  padding-bottom: 15px; /* Add some padding around the elements */
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+/* Add some space between buttons and input field */
+.button-quantity:first-child {
+  margin-right: 10px;
+}
+
+.button-quantity:last-child {
+  margin-left: 10px;
+}

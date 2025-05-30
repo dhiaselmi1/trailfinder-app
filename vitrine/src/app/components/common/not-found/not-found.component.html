@@ -1,0 +1,10 @@
+<div class="error-area ptb-100">
+    <div class="container">
+        <div class="error-content" *ngFor="let Content of errorContent;">
+            <img [src]="Content.image" alt="image">
+            <h3>{{Content.title}}</h3>
+            <p>{{Content.paragraph}}</p>
+            <a routerLink="/" class="default-btn">{{Content.buttonText}}</a>
+        </div>
+    </div>
+</div>

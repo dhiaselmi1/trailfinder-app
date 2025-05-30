@@ -1,0 +1,87 @@
+<div   style="flex: 0 1 auto">
+    <div  class="card b-l-primary border-3">
+        <div  class="card-header ">
+            <h5>Liste des produits</h5>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-pill" type="submit" routerLink="/boutique/add-edit" style="border-radius: 25px; height: 32px;  display: flex;   align-items: center; justify-content: center; margin-bottom: 10px">Ajouter un produit</button>
+            <form class="form-inline search-form" >
+                <div class="form-group">
+                    <div class="Typeahead Typeahead--twitterUsers">
+                        <div class="u-posRelative">
+                            <input
+                                    (input)="onSearchChange($event.target.value)"
+                                    class="Typeahead-input form-control-plaintext"
+                                    id="demo-input"
+                                    type="text"
+                                    name="q"
+                                    placeholder="Recherche..."
+                                    autocomplete="off"/>
+                            <div class="Typeahead-menu custom-scrollbar"  id="search-outer">
+
+                            </div>
+                            <div class="Typeahead-menu custom-scrollbar"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div style="margin-bottom: 20px;"></div>
+            <table  class="table">
+                <thead >
+                <tr >
+                    <th  scope="col" sortable="name">Image</th>
+                    <th  scope="col" sortable="name">Nom</th>
+                    <th  scope="col" sortable="name">Stock</th>
+                    <th  scope="col" sortable="company_name">Statut</th>
+                    <th  scope="col" sortable="company_name">prix</th>
+
+                    <th  scope="col" sortable="action">Modifier</th>
+                    <th  scope="col" sortable="action" >Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of filteredData | paginate: { itemsPerPage: itemPerPage, currentPage: p }">
+                    <td class="default-text mb-0 f-w-700 f-18" scope="row">
+
+
+
+                            <div class="image-containing">
+                                <div class="avatar">
+                                    <img class="rounded-circle" style="width: 100px; height: 100px;" [src]="item.imageToShow.__zone_symbol__value">
+                                </div>
+
+                            </div>
+                    </td>
+                    <td > {{item.name}}</td>
+                    <td>{{item.stock}}</td>
+                    <td>{{item.status}}</td>
+                    <td>{{item.price}}</td>
+
+                    <td>
+                        <button class="btn" (click)="update(item.id)"><i class="fa fa-pencil"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn" (click)="openDelete(item)"><i class="fa fa-trash"></i></button>
+                    </td>
+
+
+                    <div class="modal-overlay" *ngIf="showDelete" (click)="closeDelete()">
+                        <div class="modal-content" (click)="$event.stopPropagation()">
+                            <span class="close-button" (click)="closeDelete()">X</span>
+                            <h1 style="font-size: 24px">Etes-vous sur(e) de vouloir supprimer cet utilisateur ?</h1>
+                            <button mat-raised-button class="btnOui color-primary" (click)="delete()">Oui</button>
+                            <button mat-raised-button class="btnNon color-warn" (click)="closeDelete()">Non</button>
+                        </div>
+                    </div>
+                </tr>
+                </tbody>
+            </table>
+            <div class="mt-8 py-5 flex justify-center align-items-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+
+        </div>
+
+    </div>
+</div>

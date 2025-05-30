@@ -1,0 +1,435 @@
+<!--<div class="col-sm-12 col-xl-6">-->
+<!--    <div class="card">-->
+<!--        <div class="card-header">-->
+<!--            <h5>Basic Datepicker-->
+<!--            </h5>-->
+<!--        </div>-->
+<!--        <div class="card-body custom-datepicker">-->
+<!--            <ngb-datepicker class="ng-untouched ng-pristine ng-valid">-->
+<!--                &lt;!&ndash;&ndash;&gt;-->
+<!--                &lt;!&ndash;&ndash;&gt;-->
+<!--                <div class="ngb-dp-header">-->
+<!--                    <ngb-datepicker-navigation class="ng-star-inserted">-->
+<!--                        <div class="ngb-dp-arrow ngb-dp-arrow-prev">-->
+<!--                            <button type="button" aria-label="Previous month" title="Previous month" class="btn btn-link ngb-dp-arrow-btn">-->
+<!--                                <span class="ngb-dp-navigation-chevron">-->
+
+<!--                                </span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                        <ngb-datepicker-navigation-select class="ngb-dp-navigation-select ng-star-inserted">-->
+<!--                            <select aria-label="Select month" title="Select month" class="form-select">-->
+<!--                                <option value="1" aria-label="January" class="ng-star-inserted">Jan-->
+<!--                                </option>-->
+<!--                                <option value="2" aria-label="February" class="ng-star-inserted">Feb-->
+<!--                                </option>-->
+<!--                                <option value="3" aria-label="March" class="ng-star-inserted">Mar-->
+<!--                                </option>-->
+<!--                                <option value="4" aria-label="April" class="ng-star-inserted">Apr-->
+<!--                                </option>-->
+<!--                                <option value="5" aria-label="May" class="ng-star-inserted">May-->
+<!--                                </option>-->
+<!--                                <option value="6" aria-label="June" class="ng-star-inserted">Jun-->
+<!--                                </option>-->
+<!--                                <option value="7" aria-label="July" class="ng-star-inserted">Jul-->
+<!--                                </option>-->
+<!--                                <option value="8" aria-label="August" class="ng-star-inserted">Aug-->
+<!--                                </option>-->
+<!--                                <option value="9" aria-label="September" class="ng-star-inserted">Sep-->
+<!--                                </option>-->
+<!--                                <option value="10" aria-label="October" class="ng-star-inserted">Oct-->
+<!--                                </option>-->
+<!--                                <option value="11" aria-label="November" class="ng-star-inserted">Nov-->
+<!--                                </option>-->
+<!--                                <option value="12" aria-label="December" class="ng-star-inserted">Dec-->
+<!--                                </option>-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                            </select>-->
+<!--                            <select aria-label="Select year" title="Select year" class="form-select">-->
+<!--                                <option value="2014" class="ng-star-inserted">2014-->
+<!--                                </option>-->
+<!--                                <option value="2015" class="ng-star-inserted">2015-->
+<!--                                </option>-->
+<!--                                <option value="2016" class="ng-star-inserted">2016-->
+<!--                                </option>-->
+<!--                                <option value="2017" class="ng-star-inserted">2017-->
+<!--                                </option>-->
+<!--                                <option value="2018" class="ng-star-inserted">2018-->
+<!--                                </option>-->
+<!--                                <option value="2019" class="ng-star-inserted">2019-->
+<!--                                </option>-->
+<!--                                <option value="2020" class="ng-star-inserted">2020-->
+<!--                                </option>-->
+<!--                                <option value="2021" class="ng-star-inserted">2021-->
+<!--                                </option>-->
+<!--                                <option value="2022" class="ng-star-inserted">2022-->
+<!--                                </option>-->
+<!--                                <option value="2023" class="ng-star-inserted">2023-->
+<!--                                </option>-->
+<!--                                <option value="2024" class="ng-star-inserted">2024-->
+<!--                                </option>-->
+<!--                                <option value="2025" class="ng-star-inserted">2025-->
+<!--                                </option>-->
+<!--                                <option value="2026" class="ng-star-inserted">2026-->
+<!--                                </option>-->
+<!--                                <option value="2027" class="ng-star-inserted">2027-->
+<!--                                </option>-->
+<!--                                <option value="2028" class="ng-star-inserted">2028-->
+<!--                                </option>-->
+<!--                                <option value="2029" class="ng-star-inserted">2029-->
+<!--                                </option>-->
+<!--                                <option value="2030" class="ng-star-inserted">2030-->
+<!--                                </option>-->
+<!--                                <option value="2031" class="ng-star-inserted">2031-->
+<!--                                </option>-->
+<!--                                <option value="2032" class="ng-star-inserted">2032-->
+<!--                                </option>-->
+<!--                                <option value="2033" class="ng-star-inserted">2033-->
+<!--                                </option>-->
+<!--                                <option value="2034" class="ng-star-inserted">2034-->
+<!--                                </option>-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                            </select>-->
+<!--                        </ngb-datepicker-navigation-select>-->
+<!--                        &lt;!&ndash;&ndash;&gt;-->
+<!--                        &lt;!&ndash;&ndash;&gt;-->
+<!--                        <div class="ngb-dp-arrow ngb-dp-arrow-next">-->
+<!--                            <button type="button" aria-label="Next month" title="Next month" class="btn btn-link ngb-dp-arrow-btn">-->
+<!--                                <span class="ngb-dp-navigation-chevron">-->
+
+<!--                                </span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </ngb-datepicker-navigation>-->
+<!--                    &lt;!&ndash;&ndash;&gt;-->
+<!--                </div>-->
+<!--                <div class="ngb-dp-content ngb-dp-months">-->
+<!--                    <div class="ngb-dp-month ng-star-inserted">-->
+<!--                        &lt;!&ndash;&ndash;&gt;-->
+<!--                        <ngb-datepicker-month role="grid">-->
+<!--                            <div role="row" class="ngb-dp-week ngb-dp-weekdays ng-star-inserted">-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                                <div role="columnheader" class="ngb-dp-weekday small ng-star-inserted">Mo-->
+<!--                                </div>-->
+<!--                                <div role="columnheader" class="ngb-dp-weekday small ng-star-inserted">Tu-->
+<!--                                </div>-->
+<!--                                <div role="columnheader" class="ngb-dp-weekday small ng-star-inserted">We-->
+<!--                                </div>-->
+<!--                                <div role="columnheader" class="ngb-dp-weekday small ng-star-inserted">Th-->
+<!--                                </div>-->
+<!--                                <div role="columnheader" class="ngb-dp-weekday small ng-star-inserted">Fr-->
+<!--                                </div>-->
+<!--                                <div role="columnheader" class="ngb-dp-weekday small ng-star-inserted">Sa-->
+<!--                                </div>-->
+<!--                                <div role="columnheader" class="ngb-dp-weekday small ng-star-inserted">Su-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash;&ndash;&gt;-->
+<!--                            <div role="row" class="ngb-dp-week ng-star-inserted">-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Monday, February 26, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light text-muted outside ng-star-inserted">26-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Tuesday, February 27, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light text-muted outside ng-star-inserted">27-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Wednesday, February 28, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light text-muted outside ng-star-inserted">28-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Thursday, February 29, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light text-muted outside ng-star-inserted">29-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Friday, March 1, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">1-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Saturday, March 2, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">2-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Sunday, March 3, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">3-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash;&ndash;&gt;-->
+<!--                            <div role="row" class="ngb-dp-week ng-star-inserted">-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Monday, March 4, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">4-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Tuesday, March 5, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">5-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Wednesday, March 6, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">6-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Thursday, March 7, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">7-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Friday, March 8, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">8-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Saturday, March 9, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">9-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Sunday, March 10, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">10-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash;&ndash;&gt;-->
+<!--                            <div role="row" class="ngb-dp-week ng-star-inserted">-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Monday, March 11, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">11-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ngb-dp-today ng-star-inserted" tabindex="0" aria-label="Tuesday, March 12, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">12-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Wednesday, March 13, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">13-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Thursday, March 14, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">14-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Friday, March 15, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">15-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Saturday, March 16, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">16-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Sunday, March 17, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">17-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash;&ndash;&gt;-->
+<!--                            <div role="row" class="ngb-dp-week ng-star-inserted">-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Monday, March 18, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">18-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Tuesday, March 19, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">19-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Wednesday, March 20, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">20-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Thursday, March 21, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">21-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Friday, March 22, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">22-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Saturday, March 23, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">23-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Sunday, March 24, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">24-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash;&ndash;&gt;-->
+<!--                            <div role="row" class="ngb-dp-week ng-star-inserted">-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Monday, March 25, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">25-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Tuesday, March 26, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">26-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Wednesday, March 27, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">27-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Thursday, March 28, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">28-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Friday, March 29, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">29-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Saturday, March 30, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">30-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Sunday, March 31, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light ng-star-inserted">31-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash;&ndash;&gt;-->
+<!--                            <div role="row" class="ngb-dp-week ng-star-inserted">-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Monday, April 1, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light text-muted outside ng-star-inserted">1-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Tuesday, April 2, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light text-muted outside ng-star-inserted">2-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Wednesday, April 3, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light text-muted outside ng-star-inserted">3-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Thursday, April 4, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light text-muted outside ng-star-inserted">4-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Friday, April 5, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light text-muted outside ng-star-inserted">5-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Saturday, April 6, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light text-muted outside ng-star-inserted">6-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                <div role="gridcell" class="ngb-dp-day ng-star-inserted" tabindex="-1" aria-label="Sunday, April 7, 2024">-->
+<!--                                    <div ngbdatepickerdayview="" class="btn-light text-muted outside ng-star-inserted">7-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                    &lt;!&ndash;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash;&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash;&ndash;&gt;-->
+<!--                            &lt;!&ndash;&ndash;&gt;-->
+<!--                        </ngb-datepicker-month>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;&ndash;&gt;-->
+<!--                    &lt;!&ndash;&ndash;&gt;-->
+<!--                </div>-->
+<!--                &lt;!&ndash;&ndash;&gt;-->
+<!--            </ngb-datepicker>-->
+<!--            <hr>-->
+<!--            <div class="btn-showcase">-->
+<!--                <button class="btn btn-sm btn-outline-primary me-2">Select Today-->
+<!--                </button>-->
+<!--                <button class="btn btn-sm btn-outline-primary me-2">To current month-->
+<!--                </button>-->
+<!--                <button class="btn btn-sm btn-outline-primary me-2">To Feb 2013-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <hr>-->
+<!--            <span class="d-block">Month: 3.2024-->
+<!--            </span>-->
+<!--            <span class="d-block">Model:-->
+<!--            </span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

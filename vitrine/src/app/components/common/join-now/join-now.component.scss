@@ -1,0 +1,87 @@
+.join-now-area {
+    background-color: var(--mainColor);
+}
+.join-now-content {
+    max-width: 720px;
+    text-align: center;
+    position: relative;
+    margin: {
+        left: auto;
+        right: auto;
+    };
+    h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+        color: var(--whiteColor);
+    }
+    p {
+        opacity: .90;
+        color: var(--whiteColor);
+    }
+    .default-btn {
+        margin-top: 15px;
+        color: var(--whiteColor);
+        background-color: var(--blackColor);
+        
+        &:hover {
+            color: var(--blackColor);
+            background-color: var(--whiteColor);
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .join-now-content {
+        h2 {
+            font-size: 19px;
+        }
+        .default-btn {
+            margin-top: 5px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .join-now-content {
+        h2 {
+            font-size: 23px;
+        }
+        .default-btn {
+            margin-top: 10px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+
+
+}
+
+/* Min width 1200px to Max width 1355px */
+@media only screen and (min-width: 1200px) and (max-width: 1355px) {
+
+
+
+}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {
+
+    
+
+}

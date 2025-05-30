@@ -1,0 +1,111 @@
+<div style="width: 80%; padding-top: 20px" class="container-fluid product-wrapper" [class.sidebaron]="openSidebar">
+    <div class="product-grid">
+        <div class="feature-products">
+            <div class="row">
+                <div class="col-md-6 products-total">
+
+                    <span class="d-none-productlist filter-toggle" (click)="sidebarToggle()">
+                Filtres
+
+          </span>
+                    <div class="grid-options d-inline-block">
+                        <ul>
+                            <li (click)="gridColumn(6)"><a class="product-2-layout-view" href="javascript:void(0);"><span class="line-grid line-grid-1 bg-primary"></span><span class="line-grid line-grid-2 bg-primary"></span></a></li>
+                            <li (click)="gridColumn(4)"><a class="product-3-layout-view" href="javascript:void(0);"><span class="line-grid line-grid-3 bg-primary"></span><span class="line-grid line-grid-4 bg-primary"></span><span class="line-grid line-grid-5 bg-primary"></span></a></li>
+                            <li (click)="gridColumn(3)"><a class="product-4-layout-view" href="javascript:void(0);"><span class="line-grid line-grid-6 bg-primary"></span><span class="line-grid line-grid-7 bg-primary"></span><span class="line-grid line-grid-8 bg-primary"></span><span class="line-grid line-grid-9 bg-primary"></span></a></li>
+                            <li (click)="gridColumn(2)"><a class="product-6-layout-view" href="javascript:void(0);"><span class="line-grid line-grid-10 bg-primary"></span><span class="line-grid line-grid-11 bg-primary"></span><span class="line-grid line-grid-12 bg-primary"></span><span class="line-grid line-grid-13 bg-primary"></span><span class="line-grid line-grid-14 bg-primary"></span><span class="line-grid line-grid-15 bg-primary"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div  class="select2-drpdwn-product select-options d-inline-block">
+                        <select style="border-radius: 20px" class="form-control btn-square" name="select">
+                            <option value="opt1">Prix</option>
+                            <option value="opt2">Plus haut</option>
+                            <option value="opt3">Plus bas</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="product-sidebar " [class.open]="openSidebar">
+                        <div class="filter-section ">
+                            <div class="card">
+                                <div style="border-radius: 50px"  class="card-header " (click)="sidebarToggle()">
+                                    <h6 class="mb-0 f-w-600 ">Filtres<img style="padding-left: 120px; width: 70%; height: 40%" src="assets/img/articles/hack2.PNG"></h6>
+                                </div>
+                                <div style="border-radius: 30px; margin-top:20px " class="left-filter">
+                                    <div  class="card-body filter-cards-view animate-chk">
+                                        <div  class="product-filter">
+                                            <h6 class="f-w-600">Catégories d'équipement</h6>
+                                            <div class="checkbox-animated mt-0">
+                                                <label class="d-block form-label" for="chk-ani">
+                                                    <input class="checkbox_animated" id="chk-ani" type="radio" data-original-title="" title="">Randonnée
+                                                </label>
+                                                <label class="d-block form-label" for="chk-ani1">
+                                                    <input class="checkbox_animated" id="chk-ani1" type="radio" data-original-title="" title="">Camping
+                                                </label>
+                                                <label class="d-block form-label" for="chk-ani2">
+                                                    <input class="checkbox_animated" id="chk-ani2" type="radio" data-original-title="" title="">Safari
+                                                </label>
+                                                <label class="d-block form-label" for="chk-ani3">
+                                                    <input class="checkbox_animated" id="chk-ani3" type="radio" data-original-title="" title="">Tyrolienne
+                                                </label>
+                                                <label class="d-block form-label" for="chk-ani4">
+                                                    <input class="checkbox_animated" id="chk-ani4" type="radio" data-original-title="" title="">VTT
+                                                </label>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-sm-12">
+                    <form>
+                        <div class="form-group m-0">
+                            <input class="form-control border" type="search" placeholder="Rechercher.." data-original-title="" title=""><i class="bx bx-search-alt-2"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="product-wrapper-grid" [class.list-view]="listView">
+            <div class="row">
+                <div [class]="'col-xxl-'+col+' col-xl-'+cols+' col-md-'+cols" [class.col-xl-12]="listView" *ngFor="let item of filteredData">
+                    <div class="card">
+                        <div class="product-box">
+                            <div class="product-img"><img class="img-fluid article" [src]="item.imageToShow.__zone_symbol__value" alt="">
+                                <div class="product-hover ">
+                                    <ul >
+                                        <li>
+                                            <button class="btn" type="button" (click)="add(item)"><i class="bx bx-cart "></i></button>
+                                        </li>
+                                        <li>
+                                            <button class="btn" type="button" (click)="QuickView.openModal()"><i  class="bx bx-show"></i></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-details">
+                                <h4>{{item.name}}</h4>
+                                <p>{{item.status}}</p>
+                                <div class="product-price">{{item.price}}$
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->

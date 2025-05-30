@@ -1,0 +1,119 @@
+<div  class="card b-l-primary border-3">
+    <div  class="card-header ">
+        <h5 >Ajouter un partenaire</h5>
+    </div>
+    <div class="row">
+        <div class="form theme-form ng-untouched ng-pristine ng-valid">
+
+            <div  class="card-body">
+                <div  class="row">
+                    <div  class="col">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nom du partenaire</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       placeholder="Partenaire"
+                                       class="form-control"
+                                       name="partnerName"
+                                [(ngModel)]="partner.name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">N° Téléphone</label>
+                            <div class="col-sm-9">
+                                <input type="tel"
+                                       placeholder="+216 11 111 111"
+                                       class="form-control m-input digits"
+                                       name="partnerNumber"
+                                       [(ngModel)]="partner.phone_number">
+
+<!--                                <div *ngIf="partnerNumber.invalid && (partnerNumber.dirty || partnerNumber.touched)" class="text-danger">-->
+<!--                                    <div *ngIf="partnerNumber.errors.required">-->
+<!--                                        Ce champs est obligatoire-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                            </div>
+                        </div>   </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">E-mail</label>
+                        <div class="col-sm-9">
+                            <input type="email"
+                                   placeholder="partenaire@summitsells.com"
+                                   class="form-control"
+                                   name="email"
+                                   [(ngModel)]="partner.email">
+
+<!--                                   [ngClass]="{ 'is-invalid': email.invalid && (email.dirty || email.touched) }">-->
+<!--                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">-->
+<!--                                <div *ngIf="email.errors.required">-->
+<!--                                    Ce champs est obligatoire-->
+<!--                                </div>-->
+<!--                                <div *ngIf="email.errors.email">-->
+<!--                                    Le format de l'e-mail est invalide-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+
+
+
+                    <div  class="form-group row mb-0">
+                        <label  class="col-sm-3 col-form-label">Type de partenariat</label>
+                        <div  class="col-sm-9"></div>
+                    </div>
+                    <table>
+                        <td style="padding-left: 10px">
+                            <label>
+                                <input type="radio"    name="e" value="Subvention en nature" [(ngModel)]="selectedType" >Subvention en nature</label>
+                        </td>
+                        <td>
+                            <label><input type="radio" name="e" value="Aide financière" [(ngModel)]="selectedType" >Aide financière</label>
+                        </td>
+                        <td>
+                            <label><input type="radio" name="e" value="Service" [(ngModel)]="selectedType" >Service</label>
+                        </td>
+                    </table>
+
+                    <div  class="form-group row mb-0">
+                        <label  class="col-sm-3 col-form-label">Description</label>
+                        <div  class="col-sm-9">
+                             <textarea  rows="5" cols="5" placeholder="Description du partenaire" class="form-control"  [(ngModel)]="partner.description">
+                             </textarea>
+                        </div>
+                    </div>
+
+
+
+                    <div >
+                        <table [hidden]="!isCreatePartner">
+                            <td style="width: 250px;"><label class="col-sm-3 col-form-label">Logo</label></td>
+                            <td class="drag">
+                                <div class="file-container" *ngIf="!file">
+                                    <table>
+                                        <tr style="height: 100px;"><p style="padding: 50px; margin-top: 40px; font-size: 16px;">Glissez le logo de votre agence ici ou cliquez pour choisir une image.</p></tr>
+                                        <tr><input type="file" (change)="getFile($event)" class="file"/></tr>
+                                    </table>
+
+                                </div>
+
+                                <div class="cancel-section" *ngIf="file">
+                                    <p class="file-info">File name: {{file.name}}</p>
+                                    <button class="cancel-button" (click)="file=undefined">Annuler</button>
+                                </div>
+                            </td>
+                        </table>
+                    </div>
+
+                    <div  class="card-footer">
+                        <div  class="col-sm-9 offset-sm-3">
+                            <button  type="submit" class="btn btn-primary btn-pill" (click)="savePartner()" >Valider</button>
+                            <button  type="reset"  class="btn btn-light ms-1 btn-pill" (click)="resetPartner()" >Annuler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

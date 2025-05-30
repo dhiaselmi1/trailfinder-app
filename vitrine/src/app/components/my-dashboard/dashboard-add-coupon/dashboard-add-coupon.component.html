@@ -1,0 +1,128 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<div class="dashboard-area ptb-100">
+    <div class="container">
+        <div class="dashboard-tabs-list">
+            <ul>
+                <li><a routerLink="/dashboard">Dashboard</a></li>
+                <li><a routerLink="/dashboard-profile">Profile</a></li>
+                <li><a routerLink="/dashboard-store">Store</a></li>
+                <li><a routerLink="/dashboard-coupons" class="active">Coupons</a></li>
+                <li><a routerLink="/dashboard-deals">Deals</a></li>
+                <li><a routerLink="/dashboard-vouchers">Vouchers</a></li>
+                <li><a routerLink="/dashboard-agents">Agents</a></li>
+                <li><a routerLink="/">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="dashboard-profile-box">
+                    <div class="image">
+                        <img src="assets/img/user1.jpg" alt="image">
+                        <span>Jason Smith</span>
+                    </div>
+                    <p>You have <strong>$19,321</strong> dollars left, <a routerLink="/">earn mores</a></p>
+                    <a routerLink="/" class="logout">Log Out</a>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-12">
+                <div class="dashboard-stats">
+                    <div class="alert alert-info">Submission of the coupon is charged $7.99</div>
+                    <form>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <label>Title <span>*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <label>Description <span>*</span></label>
+                                    <textarea cols="30" rows="5" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <label>Featured Image <span>*</span></label>
+                                    <input type="file" multiple>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Category Name <span>*</span></label>
+                                    <select>
+                                        <option>-Select-</option>
+                                        <option>Excavator</option>
+                                        <option>The Bird</option>
+                                        <option>Triple One</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Store Name <span>*</span></label>
+                                    <select>
+                                        <option>-Select-</option>
+                                        <option>Excavator</option>
+                                        <option>The Bird</option>
+                                        <option>Triple One</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <label>Location <span>*</span></label>
+                                    <select>
+                                        <option>-Select-</option>
+                                        <option>USA</option>
+                                        <option>Dubai</option>
+                                        <option>New York</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Expire Date <span>*</span></label>
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Coupon Type <span>*</span></label>
+                                    <select>
+                                        <option>-Select-</option>
+                                        <option>Excavator</option>
+                                        <option>The Bird</option>
+                                        <option>Triple One</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Affiliate Link</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <button type="submit" class="default-btn">Finish</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

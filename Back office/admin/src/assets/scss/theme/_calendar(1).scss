@@ -1,0 +1,44 @@
+/**=====================
+     66. Calendar CSS Start
+==========================**/
+.btn-group {
+  &.btn-showcase {
+    .btn {
+      border-radius: 6px !important;
+    }
+  }
+}
+.cal-month-view {
+  .cal-open-day-events {
+    background-color: #555 !important;
+    box-shadow: none !important;
+    color: $white !important;
+  }
+}
+.cal-month-view {
+  .cal-day-badge {
+    color: $white !important;
+  }
+}
+.cal-month-view {
+  .cal-day-cell.cal-weekend {
+    .cal-day-number {
+      color: $danger-color !important;
+    }
+  }
+}
+.calendar-event {
+  tbody {
+    tr {
+      td {
+        input[type="color"] {
+          border-radius: 0;
+          padding: 3px;
+        }
+      }
+    }
+  }
+}
+/**=====================
+    66. Calendar CSS End
+==========================**/

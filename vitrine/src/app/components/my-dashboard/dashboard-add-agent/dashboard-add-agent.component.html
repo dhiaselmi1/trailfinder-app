@@ -1,0 +1,72 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<div class="dashboard-area ptb-100">
+    <div class="container">
+        <div class="dashboard-tabs-list">
+            <ul>
+                <li><a routerLink="/dashboard">Dashboard</a></li>
+                <li><a routerLink="/dashboard-profile">Profile</a></li>
+                <li><a routerLink="/dashboard-store">Store</a></li>
+                <li><a routerLink="/dashboard-coupons">Coupons</a></li>
+                <li><a routerLink="/dashboard-deals">Deals</a></li>
+                <li><a routerLink="/dashboard-vouchers">Vouchers</a></li>
+                <li><a routerLink="/dashboard-agents" class="active">Agents</a></li>
+                <li><a routerLink="/">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="dashboard-profile-box">
+                    <div class="image">
+                        <img src="assets/img/user1.jpg" alt="image">
+                        <span>Jason Smith</span>
+                    </div>
+                    <p>You have <strong>$19,321</strong> dollars left, <a routerLink="/">earn mores</a></p>
+                    <a routerLink="/" class="logout">Log Out</a>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-12">
+                <div class="dashboard-stats">
+                    <form>
+                        <p>Populate fields bellow and click on Add Agent button. Once you are done email with notification will be sent to the agent.</p>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Agent Username <span>*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Agent Email <span>*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Password <span>*</span></label>
+                                    <input type="password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Repeat Password <span>*</span></label>
+                                    <input type="password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <button type="submit" class="default-btn">Add Agent</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

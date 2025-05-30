@@ -1,0 +1,55 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<div class="container-fluid p-0">
+    <div class="signup-container">
+        <div class="signup-form">
+            <h2>Créer un compte</h2>
+                <tr>
+                    <td>
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input [(ngModel)]="register.last_name" style="width: 300px; margin-right: 20px" type="text" id="name" name="name" required>
+                </div>
+                    </td><td>
+                <div class="form-group">
+                    <label for="name">Prénom</label>
+                    <input [(ngModel)]="register.first_name"  style="width: 300px" type="text" name="name" required>
+                </div>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                <div class="form-group">
+                    <label for="name">N° Téléphone</label>
+                    <input style="width: 300px; margin-right: 20px" [(ngModel)]="register.phone_number" type="text" name="name" required>
+                </div>
+                    </td><td>
+                <div class="form-group">
+                    <label for="name">E-mail</label>
+                    <input style="width: 300px" type="text" name="name" [(ngModel)]="register.email" required>
+                </div>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input style="width: 300px; margin-right: 20px" type="password" id="password" name="password" [(ngModel)]="register.password" required>
+                </div>
+                    </td><td>
+                <div class="form-group">
+                    <label for="name">Confirmer Mot de passe</label>
+                    <input style="width: 300px" type="password" name="name" [(ngModel)]="register.passwordConfirmation" required>
+                </div>
+                </td>
+                </tr>
+                <div>
+                    <button type="submit" (click)="create()">Créer un compte</button>
+                </div>
+
+        </div>
+    </div></div>

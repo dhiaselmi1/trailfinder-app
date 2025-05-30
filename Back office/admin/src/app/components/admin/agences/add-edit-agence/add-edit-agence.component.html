@@ -1,0 +1,262 @@
+<div  class="card b-l-primary border-3">
+    <div  class="card-header ">
+        <h5 >Ajouter une agence</h5>
+    </div>
+    <div class="row">
+        <div class="form theme-form ng-untouched ng-pristine ng-valid">
+
+            <div  class="card-body">
+                <div  class="row">
+                    <div  class="col">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nom de l'agence</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       placeholder="Agence"
+                                       class="form-control"
+                                       [(ngModel)]="agency.agency"
+                                       name="agencyName"
+                                       #agencyName="ngModel"
+                                       required
+                                       [ngClass]="{ 'is-invalid': agencyName.invalid && (agencyName.dirty || agencyName.touched) }">
+                                <div *ngIf="agencyName.invalid && (agencyName.dirty || agencyName.touched)" class="text-danger">
+                                    <div *ngIf="agencyName.errors.required" >
+                                        Ce champs est obligatoire
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Responsable</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       placeholder="Nom et prénom"
+                                       class="form-control"
+                                       [(ngModel)]="agency.representative"
+                                       name="representative"
+                                       #representative="ngModel"
+                                       required
+                                       [ngClass]="{ 'is-invalid': representative.invalid && (representative.dirty || representative.touched) }">
+                                <div *ngIf="representative.invalid && (representative.dirty || representative.touched)" class="text-danger">
+                                    <div *ngIf="representative.errors.required">
+                                        Ce champs est obligatoire
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">N° Téléphone</label>
+                            <div class="col-sm-9">
+                                <input type="tel"
+                                       placeholder="+216 11 111 111"
+                                       class="form-control m-input digits"
+                                       [(ngModel)]="agency.phone_number"
+                                       name="phoneNumber"
+                                       #phoneNumber="ngModel"
+                                       required
+                                       (keypress)="validatePhoneNumber($event)"
+                                       [ngClass]="{ 'is-invalid': phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched) }">
+                                <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="text-danger">
+                                    <div *ngIf="phoneNumber.errors.required">
+                                        Ce champs est obligatoire
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">E-mail</label>
+                        <div class="col-sm-9">
+                            <input type="email"
+                                   placeholder="monadresse@summitsells.com"
+                                   class="form-control"
+                                   [(ngModel)]="agency.email"
+                                   name="email"
+                                   #email="ngModel"
+                                   required
+                                   email
+                                   [ngClass]="{ 'is-invalid': email.invalid && (email.dirty || email.touched) }">
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                                <div *ngIf="email.errors.required">
+                                    Ce champs est obligatoire
+                                </div>
+                                <div *ngIf="email.errors.email">
+                                    Le format de l'e-mail est invalide
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Pays</label>
+                        <div class="col-sm-9">
+                            <input type="text"
+                                   placeholder="Tunisie"
+                                   class="form-control m-input digits"
+                                   [(ngModel)]="agency.country"
+                                   name="country"
+                                   #country="ngModel"
+                                   required
+                                   [ngClass]="{ 'is-invalid': country.invalid && (country.dirty || country.touched) }">
+                            <div *ngIf="country.invalid && (country.dirty || country.touched)" class="text-danger">
+                                <div *ngIf="country.errors.required">
+                                    Ce champs est obligatoire
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row"  [hidden]="!isCreateAgency">
+                        <label class="col-sm-3 col-form-label">Mot de passe</label>
+                        <div class="col-sm-9">
+                            <input type="password"
+                                   placeholder="Choisir un mot de passe"
+                                   class="form-control"
+                                   [(ngModel)]="agency.password"
+                                   name="password"
+                                   #password="ngModel"
+                                   required
+                                   [ngClass]="{ 'is-invalid': password.invalid && (password.dirty || password.touched) }"
+                                  >
+                            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                                <div *ngIf="password.errors.required">
+                                    Ce champ est obligatoire
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" [hidden]="!isCreateAgency">
+                        <label class="col-sm-3 col-form-label">Confirmer mot de passe</label>
+                        <div class="col-sm-9">
+                            <input type="password"
+                                   placeholder="Confirmer le mot de passe"
+                                   class="form-control"
+                                   [(ngModel)]="agency.passwordConfirmation"
+                                   name="passwordConfirmation"
+                                   #passwordConfirmation="ngModel"
+                                   required
+                                   [ngClass]="{ 'is-invalid': passwordConfirmation.invalid && (passwordConfirmation.dirty || passwordConfirmation.touched) }"
+                                   >
+                            <div *ngIf="passwordConfirmation.invalid && passwordConfirmation.errors.required && (passwordConfirmation.dirty || passwordConfirmation.touched)" class="text-danger">
+                                Ce champ est obligatoire
+                            </div>
+                            <div *ngIf="passwordConfirmation.value !== agency.password && passwordConfirmation.value !== '' && (passwordConfirmation.dirty || passwordConfirmation.touched)" class="text-danger">
+                                Les mots de passe ne correspondent pas
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div  class="form-group row mb-0">
+                        <Table>
+                            <tr>
+                                <td style="width: 480px;">
+                                    <label  class="col-sm-3 col-form-label">Type d'activité</label>
+                                </td>
+                                <td>
+
+                                    <div  class="col-sm-9">
+                                        <input  type="text" placeholder="activité" class="form-control" disabled [(ngModel)]="agency.activity">
+                                    </div>
+                                </td>
+                            </tr>
+                        </Table>
+                    </div>
+
+
+                    <table>
+
+                        <td>
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Randonnée')" id="checkbox-primary1" type="checkbox" (change)="onActivityChanges($event)" value=" Randonnée">
+                                <label for="checkbox-primary1" class="form-label">Randonnée</label>
+                            </div>
+
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('VTT')" id="checkbox-primary2" type="checkbox" (change)="onActivityChanges($event)" value="VTT">
+                                <label for="checkbox-primary2" class="form-label">VTT</label>
+                            </div>
+
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Excursion à cheval')" id="checkbox-primary3" type="checkbox" (change)="onActivityChanges($event)" value="Excursion à cheval">
+                                <label for="checkbox-primary3" class="form-label">Excursion à cheval</label>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Kayak')" id="checkbox-primary4" type="checkbox" (change)="onActivityChanges($event)" value="Kayak">
+                                <label for="checkbox-primary4" class="form-label">Kayak</label>
+                            </div>
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Camping')" id="checkbox-primary5" type="checkbox" (change)="onActivityChanges($event)" value="Camping">
+                                <label for="checkbox-primary5" class="form-label">Camping</label>
+                            </div>
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Escalade')" id="checkbox-primary6" type="checkbox" (change)="onActivityChanges($event)" value="Escalade">
+                                <label for="checkbox-primary6" class="form-label">Escalade</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Safari')" id="checkbox-primary7" type="checkbox" (change)="onActivityChanges($event)" value="Safari">
+                                <label for="checkbox-primary7" class="form-label">Safari</label>
+                            </div>
+
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Tyrolienne')" id="checkbox-primary8" type="checkbox" (change)="onActivityChanges($event)"
+                                       value="Tyrolienne"  >
+                                <label for="checkbox-primary8" class="form-label">Tyrolienne</label>
+                            </div>
+                            <div class="checkbox checkbox-success">
+                                <input [checked]="checkActivity('Exploration de grottes')" id="checkbox-primary9" type="checkbox" (change)="onActivityChanges($event)" value="Exploration de grottes">
+                                <label for="checkbox-primary9" class="form-label">Exploration de grottes</label>
+                            </div>
+                        </td>
+
+                    </table>
+
+                    <div  class="form-group row mb-0">
+                        <label  class="col-sm-3 col-form-label">Description</label>
+                        <div  class="col-sm-9">
+                             <textarea  rows="5" cols="5" placeholder="Décrire votre agence brièvement" class="form-control" [(ngModel)]="agency.description">
+
+                             </textarea>
+                        </div>
+                    </div>
+
+
+
+                    <div [hidden]="!isCreateAgency">
+                        <table>
+                            <td style="width: 250px;"><label class="col-sm-3 col-form-label">Logo</label></td>
+                            <td class="drag">
+                                <div class="file-container" *ngIf="!file">
+                                    <table>
+                                        <tr style="height: 100px;"><p style="padding: 50px; margin-top: 40px; font-size: 16px;">Glissez le logo de votre agence ici ou cliquez pour choisir une image.</p></tr>
+                                        <tr><input type="file" (change)="getFile($event)" class="file"/></tr>
+                                    </table>
+
+                                </div>
+
+                                <div class="cancel-section" *ngIf="file">
+                                    <p class="file-info">File name: {{file.name}}</p>
+                                    <button class="cancel-button" (click)="file=undefined">Annuler</button>
+                                </div>
+                            </td>
+                        </table>
+                    </div>
+
+                    <div  class="card-footer">
+                        <div  class="col-sm-9 offset-sm-3">
+                            <button  type="submit" class="btn btn-primary btn-pill" (click)="saveAgence()" >Valider</button>
+                            <button  type="reset"  class="btn btn-light ms-1 btn-pill" (click)="resetAgence()">Annuler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

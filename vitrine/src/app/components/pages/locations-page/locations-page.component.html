@@ -1,0 +1,40 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<div class="locations-area pt-100 pb-70">
+    <div class="container">
+        <div class="filter-block">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-8">
+                    <ul>
+                        <li><a routerLink="/locations" class="active">All</a></li>
+                        <li><a routerLink="/locations">A</a></li>
+                        <li><a routerLink="/locations">B</a></li>
+                        <li><a routerLink="/locations">C</a></li>
+                        <li><a routerLink="/locations">D</a></li>
+                        <li><a routerLink="/locations">Z</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <form>
+                        <input type="text" class="form-control" placeholder="Search Locations">
+                        <button type="submit"><i class='bx bx-search-alt'></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let Content of locationsBox;">
+                <div class="locations-box">
+                    <h3><a routerLink="/{{Content.link}}">{{Content.city}}</a></h3>
+                    <ul>
+                        <li *ngFor="let Text of Content.locationsList"><a routerLink="/{{Content.link}}">{{Text.name}} <span class="count">{{Text.count}}</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

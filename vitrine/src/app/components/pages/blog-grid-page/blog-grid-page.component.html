@@ -1,0 +1,426 @@
+<!--<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">-->
+<!--    <div class="container">-->
+<!--        <h1>{{Content.title}}</h1>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div class="blog-area ptb-100">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-4 col-md-6" *ngFor="let Content of singleBlogPost | paginate: { itemsPerPage: 6, currentPage: blogGrid }">-->
+<!--                <div class="single-blog-post">-->
+<!--                    <div class="post-image">-->
+<!--                        <a routerLink="/{{Content.detailsLink}}" class="d-block">-->
+<!--                            <img [src]="Content.image" alt="image">-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    <div class="post-content">-->
+<!--                        <ul class="meta">-->
+<!--                            <li><i class="bx bx-purchase-tag"></i> <a routerLink="/{{Content.tagLink}}">{{Content.tag}}</a></li>-->
+<!--                        </ul>-->
+<!--                        <h3><a routerLink="/{{Content.detailsLink}}">{{Content.title}}</a></h3>-->
+<!--                        <p>{{Content.paragraph}}</p>-->
+<!--                        <a routerLink="/{{Content.detailsLink}}" class="link-btn">{{Content.detailsText}} <i class='bx bx-right-arrow-alt'></i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-lg-12 col-md-12">-->
+<!--                <div class="pagination-area text-center">-->
+<!--                    <pagination-controls previousLabel="" nextLabel="" (pageChange)="blogGrid = $event"></pagination-controls>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+                <div class="row">
+                    <div class="col-sm-12 social-app-tab">
+                        <div class="card hovercard mb-0">
+                            <div class="cardheader socialheader">
+                                <img style="width: 1500px" alt="" src="assets/img/agences/new.jpg">
+                            </div>
+                            <div class="user-image">
+                                <div class="avatar">
+                                    <img style="width: 150px" alt="" src="assets/img/logo/Capture-modified.png">
+                                </div>
+                                <ul class="share-icons">
+                                    <li>
+                                        <a href="javascript:void(0)" class="social-icon bg-teal test">
+                                            <i class="bx bxl-instagram">
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" class="social-icon bg-success-border-subtle">
+                                            <i  class="bx bxl-facebook"></i>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:void(0)" class="social-icon bg-success">
+                                            <i class="bx bxl-linkedin">
+
+                                            </i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="height: 110px"></div>
+                            <div class="info market-tabs p-0">
+                                <ul ngbnav="" class="nav-tabs nav" role="tablist">
+                                    <li disabled="true" class="nav-item" role="presentation">
+                                        <a href="" ngbnavlink="" id="ngb-nav-12" role="tab" tabindex="-1" aria-selected="false" aria-disabled="true" class="nav-link disabled">
+                                            <div class="title">
+                                                <a style="font-size: 32px; text-align: center; color: #0a9396; font-weight: bolder; padding-right: 75px" target="_blank" href="">SummitSells
+                                                </a>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="mt-2 tab-content">
+                                    <div ngbnavpane="" class="tab-pane fade show active ng-star-inserted" id="ngb-nav-10-panel" role="tabpanel" aria-labelledby="ngb-nav-10">
+                                        <div id="timeline" role="tabpanel" aria-labelledby="timeline" class="tab-pane fade show ng-star-inserted">
+                                            <div class="row">
+                                                <div class="col-xl-3 xl-40 col-lg-12 col-md-5 box-col-4a xl-40 desh-xl-40">
+                                                    <div id="accordion" class="default-according style-1 faq-accordion job-accordion">
+                                                        <div class="row">
+                                                                <div id="accordionoc" class="default-according style-1 faq-accordion job-accordion">
+                                                                    <div class="row">
+                                                                        <div style="margin-left: 180px" class="col-xl-12 xl-50 box-col-6">
+
+                                                                            <div  class="card">
+                                                                                <div class="card-header">
+                                                                                    <h5 class="mb-0">
+                                                                                        <button aria-controls="collapse" class="btn btn-link ps-0" aria-expanded="true" style="font-size: 20px">Cadre du projet
+                                                                                        </button>
+                                                                                    </h5>
+                                                                                </div>
+                                                                                <div id="collapse" class="collapse show">
+                                                                                    <div class="card-body filter-cards-view">
+
+                                                                                        <p>Cette plateforme a été élaborée dans le cadre de notre projet de fin d'études de licence. Elle repose sur une architecture moderne, utilisant Angular pour le développement de l'interface utilisateur et Spring Boot pour le Back End.  </p>
+                                                                                        <p> Cette combinaison de technologies a permis de créer une plateforme robuste et performante, offrant une expérience utilisateur fluide et intuitive.</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div style="height: 30px"></div>
+                                                                        <div style="margin-left: 180px" class="col-xl-12 xl-50 box-col-6">
+                                                                            <div class="card">
+                                                                                <div class="card-header">
+                                                                                    <h5 class="mb-0">
+                                                                                        <button aria-controls="collapse" class="btn btn-link ps-0" aria-expanded="true" style="font-size: 20px">Nos partenaires
+                                                                                        </button>
+                                                                                    </h5>
+                                                                                </div>
+                                                                                <div id="collapse" class="collapse show">
+                                                                                    <div class="card-body social-list">
+                                                                                        <div class="d-flex">
+                                                                                            <img alt="" src=" assets/img/partner/tourismeministereee.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                            <div class="flex-grow-1">
+                                                                                    <span class="d-block"> Ministère du Tourisme
+                                                                                    </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <img alt="" src=" assets/img/partner/tunisairr.jpg" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                            <div class="flex-grow-1">
+                                                                                    <span class="d-block"> Tunisair
+                                                                                    </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <img alt="" src=" assets/img/partner/decath.jpg" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                            <div class="flex-grow-1">
+                                                                                    <span class="d-block"> Decathlon
+                                                                                    </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <img alt="" src=" assets/img/partner/thedreamerrrr.jpg" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                            <div class="flex-grow-1">
+                                                                                    <span class="d-block"> The Dreamer
+                                                                                    </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <img alt="" src=" assets/img/partner/mag.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                            <div class="flex-grow-1">
+                                                                                    <span class="d-block"> MAGIC HOTELS
+                                                                                    </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <img alt="" src=" assets/img/partner/pris.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                            <div class="flex-grow-1">
+                                                                                    <span class="d-block"> Prisitne
+                                                                                    </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div style="height: 30px"></div>
+<!--                                                                        <div style="margin-left: 180px" class="col-xl-12 xl-50 box-col-6">-->
+<!--                                                                            <div class="card">-->
+<!--                                                                                <div class="card-header">-->
+<!--                                                                                    <h5 class="mb-0">-->
+<!--                                                                                        <button aria-controls="collapse" class="btn btn-link ps-0" aria-expanded="true">Evénements récents-->
+<!--                                                                                        </button>-->
+<!--                                                                                    </h5>-->
+<!--                                                                                </div>-->
+<!--                                                                                <div id="collapse" class="collapse show">-->
+<!--                                                                                    <div class="card-body photos px-0">-->
+<!--                                                                                        <ul class="text-center">-->
+<!--                                                                                            <li>-->
+<!--                                                                                                <div class="latest-post">-->
+<!--                                                                                                    <img alt="" src=" assets/images/social-app/post-1.png" class="img-fluid">-->
+<!--                                                                                                </div>-->
+<!--                                                                                            </li>-->
+<!--                                                                                            <li>-->
+<!--                                                                                                <div class="latest-post">-->
+<!--                                                                                                    <img alt="" src=" assets/images/social-app/post-2.png" class="img-fluid">-->
+<!--                                                                                                </div>-->
+<!--                                                                                            </li>-->
+<!--                                                                                            <li>-->
+<!--                                                                                                <div class="latest-post">-->
+<!--                                                                                                    <img alt="" src=" assets/images/social-app/post-3.png" class="img-fluid">-->
+<!--                                                                                                </div>-->
+<!--                                                                                            </li>-->
+<!--                                                                                            <li>-->
+<!--                                                                                                <div class="latest-post">-->
+<!--                                                                                                    <img alt="" src=" assets/images/social-app/post-4.png" class="img-fluid">-->
+<!--                                                                                                </div>-->
+<!--                                                                                            </li>-->
+<!--                                                                                            <li>-->
+<!--                                                                                                <div class="latest-post">-->
+<!--                                                                                                    <img alt="" src=" assets/images/social-app/post-5.png" class="img-fluid">-->
+<!--                                                                                                </div>-->
+<!--                                                                                            </li>-->
+<!--                                                                                            <li>-->
+<!--                                                                                                <div class="latest-post">-->
+<!--                                                                                                    <img alt="" src=" assets/images/social-app/post-6.png" class="img-fluid">-->
+<!--                                                                                                </div>-->
+<!--                                                                                            </li>-->
+<!--                                                                                            <li>-->
+<!--                                                                                                <div class="latest-post">-->
+<!--                                                                                                    <img alt="" src=" assets/images/social-app/post-7.png" class="img-fluid">-->
+<!--                                                                                                </div>-->
+<!--                                                                                            </li>-->
+<!--                                                                                            <li>-->
+<!--                                                                                                <div class="latest-post">-->
+<!--                                                                                                    <img alt="" src=" assets/images/social-app/post-8.png" class="img-fluid">-->
+<!--                                                                                                </div>-->
+<!--                                                                                            </li>-->
+<!--                                                                                            <li>-->
+<!--                                                                                                <div class="latest-post">-->
+<!--                                                                                                    <img alt="" src=" assets/images/social-app/post-9.png" class="img-fluid">-->
+<!--                                                                                                </div>-->
+<!--                                                                                            </li>-->
+<!--                                                                                        </ul>-->
+<!--                                                                                    </div>-->
+<!--                                                                                    <button type="button" class="btn btn-light text-center" style="margin-left: 65px; margin-bottom: 35px">Explorer les événements-->
+<!--                                                                                    </button>-->
+<!--                                                                                </div>-->
+
+<!--                                                                            </div>-->
+<!--                                                                        </div>-->
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 xl-60 col-lg-12 col-md-7 box-col-8a xl-60 desh-xl-60">
+                                                    <div class="row user-col2">
+                                                        <div style="margin-left: 180px" class="col-sm-12">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <div class="new-users-social">
+                                                                        <div class="d-flex">
+                                                                            <div class="flex-grow-1">
+                                                                                <h6 class="mb-0 f-w-700">Qui sommes-nous?
+                                                                                </h6>
+                                                                            </div>
+                                                                            <span class="pull-right mt-0">
+                                                                                <i data-feather="more-vertical">
+
+                                                                                </i>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <img alt="" src="assets/images/social-app/timeline-1.png" class="img-fluid">
+                                                                    <div class="timeline-content">
+                                                                        <p> SummitSells est une plateforme novatrice basée en Tunisie, pionnière dans le domaine de la réservation de circuits de randonnées et d'autres événements en pleine nature. Son objectif principal est de promouvoir le tourisme en Tunisie en mettant en avant les splendeurs naturelles et les richesses culturelles du pays.
+                                                                        </p>
+
+                                                                        <p>
+                                                                            La plateforme offre aux utilisateurs du monde entier la possibilité de découvrir les merveilles de la Tunisie à travers une variété d'activités en plein air, notamment des randonnées à travers les montagnes, des excursions dans le désert, des visites guidées de sites historiques, des séjours en écotourisme, et bien plus encore. Elle vise à offrir des expériences authentiques et enrichissantes qui permettent aux voyageurs de se connecter avec la nature et la culture locales.</p>
+
+
+                                                                        <span class="f-w-600" style="font-weight: bold">Nos Activités</span>
+                                                                        <div class="social-chat" style="padding-top: 10px">
+                                                                            <div class="your-msg">
+                                                                                <div class="d-flex">
+                                                                                    <img alt="" src="assets/img/agences/hiking.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                    <div>
+                                                                                        <span class="f-w-600" >Randonnée
+                                                                                        </span>
+                                                                                        <p>
+                                                                                            Nos participants auront le privilège de vivre des moments d'émerveillement au cours de randonnées inoubliables.</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="your-msg">
+                                                                                <div class="d-flex">
+                                                                                    <img alt="" src="assets/img/agences/kayaking.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                    <div >
+                                                                                        <span class="f-w-600">Kayak
+                                                                                        </span>
+                                                                                        <p>
+                                                                                            Nos participants auront la chance de ressentir l'excitation et la liberté de glisser sur les eaux lors d'explorations en kayak.</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="your-msg">
+                                                                                <div class="d-flex">
+                                                                                    <img alt="" src="assets/img/agences/safari.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                    <div>
+                                                                                        <span class="f-w-600">Safari
+                                                                                        </span>
+                                                                                        <p>L'exploration du désert sera une expérience inoubliable pour nos participants lors de safaris captivants.</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="your-msg">
+                                                                                <div class="d-flex">
+                                                                                    <img alt="" src="assets/img/agences/bike.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                    <div>
+                                                                                        <span class="f-w-600">VTT
+                                                                                        </span>
+                                                                                        <p>
+                                                                                            Les amateurs de sensations fortes auront l'opportunité d'explorer les paysages variés et époustouflants à travers des excursions en VTT.</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="your-msg">
+                                                                                <div class="d-flex">
+                                                                                    <img alt="" src="assets/img/agences/camping-tent.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                    <div>
+                                                                                        <span class="f-w-600">Camping
+                                                                                        </span>
+                                                                                        <p>
+                                                                                            Immergez-vous dans une aventure inoubliable et laissez-vous envoûter par la magie des nuits étoilées lors de notre expérience de camping.</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="your-msg">
+                                                                                <div class="d-flex">
+                                                                                    <img alt="" src="assets/img/agences/zipline.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                    <div>
+                                                                                        <span class="f-w-600">Tyrolienne
+                                                                                        </span>
+                                                                                        <p>
+                                                                                            Sentez votre cœur battre la chamade alors que vous survolez les paysages époustouflants lors de notre expérience de tyrolienne à couper le souffle.</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="your-msg">
+                                                                                <div class="d-flex">
+                                                                                    <img alt="" src="assets/img/agences/horse-riding.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                    <div>
+                                                                                        <span class="f-w-600">Excursion à cheval
+                                                                                        </span>
+                                                                                        <p>Laissez-vous emporter par la grâce et la liberté d'une exploration à cheval à travers les panoramas ensorcelants de notre destination.</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="your-msg">
+                                                                                <div class="d-flex">
+                                                                                    <img alt="" src="assets/img/agences/climbing-with-rope.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                    <div>
+                                                                                        <span class="f-w-600">Escalade
+                                                                                        </span>
+                                                                                        <p>Ressentez l'adrénaline monter en vous alors que vous gravissez les parois rocheuses vertigineuses lors de notre aventure d'escalade épique.</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="your-msg">
+                                                                                <div class="d-flex">
+                                                                                    <img alt="" src="assets/img/agences/mountain-formation.png" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                                    <div>
+                                                                                        <span class="f-w-600">Exploration de grottes
+                                                                                        </span>
+                                                                                        <p>Plongez dans les mystères souterrains et laissez-vous captiver par la beauté cachée lors de notre exploration de grottes palpitante.</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="comments-box">
+                                                                            <div class="d-flex">
+                                                                                <img alt="" src="assets/images/user/1.jpg" class="img-50 img-fluid m-r-20 rounded-circle margin">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div style="height: 30px"></div>
+<!--                                                        <div style="margin-left: 180px" class="col-sm-12">-->
+<!--                                                            <div class="card">-->
+<!--                                                                <div class="card-body">-->
+<!--                                                                    <div class="new-users-social">-->
+<!--                                                                        <div class="d-flex">-->
+<!--                                                                        <div class="flex-grow-1">-->
+<!--                                                                                <h6 class="mb-0 f-w-700">Nos services-->
+<!--                                                                                </h6>-->
+
+<!--                                                                            </div>-->
+<!--                                                                            <span class="pull-right mt-0">-->
+<!--                                                                                <i data-feather="more-vertical">-->
+<!--                                                                                </i>-->
+<!--                                                                            </span>-->
+<!--                                                                        </div>-->
+<!--                                                                    </div>-->
+<!--                                                                    <img alt="" src="assets/images/social-app/timeline-2.png" class="img-fluid">-->
+<!--                                                                    <div class="timeline-content">-->
+<!--                                                                        <table>-->
+<!--                                                                            <tr>-->
+<!--                                                                                <td>-->
+<!--                                                                        <figure itemprop="associatedMedia" class="col-xl-10 col-sm-6 ng-star-inserted">-->
+<!--                                                                            <a href="javascript:void(0)" itemprop="contentUrl">-->
+<!--                                                                                <img class="img-fluid" src="assets/img/evenements/ticket.jpg" style="cursor: pointer;">-->
+<!--                                                                                <div class="caption">-->
+<!--                                                                                    <h4>Réservation en ligne</h4>-->
+<!--                                                                                    <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p></div></a></figure>-->
+<!--                                                                                </td>-->
+<!--                                                                                <td>-->
+<!--                                                                                    <figure itemprop="associatedMedia" class="col-xl-10 col-sm-6 ng-star-inserted">-->
+<!--                                                                            <a href="javascript:void(0)" itemprop="contentUrl">-->
+<!--                                                                                <img class="img-fluid" src="assets/img/evenements/backpack.jpg" style="cursor: pointer;">-->
+<!--                                                                                <div class="caption">-->
+<!--                                                                                    <h4>Achat de matériel</h4>-->
+<!--                                                                                    <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p></div></a></figure>-->
+<!--                                                                                </td>-->
+<!--                                                                            </tr>-->
+<!--                                                                        </table> </div>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 xl-100 box-col-12">
+                                                    <div id="accordionoc" class="default-according style-1 faq-accordion job-accordion">
+                                                        <div class="row">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div></div></div></div></div>
+

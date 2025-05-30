@@ -1,0 +1,76 @@
+<!-- page-wrapper Start-->
+<app-loader></app-loader>
+<div class="container-fluid p-0">
+    <!-- login page start-->
+    <div class="authentication-main">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="auth-innerright">
+                    <div class="authentication-box">
+                        <div class="mt-4">
+                            <div class="card-body px-0">
+                                <div class="cont text-center b-light" [ngClass]="{'s--signup': signup}">
+                                   <router-outlet></router-outlet>
+                                    <div class="sub-cont">
+                                        <div class="img">
+                                            <div class="img__text m--up">
+                                                <h2>Nouvelle agence?</h2>
+                                                <p>Créez un compte et découvrez les meilleurs services de vente de billets en ligne!</p>
+                                            </div>
+                                            <div class="img__text m--in">
+                                                <h2>Un de nous?</h2>
+                                                <p>Si vous avez déjà un compte, connectez-vous!</p>
+                                            </div>
+                                            <div class="img__btn" (click)=toggle()><span class="m--up">Créer un compte</span><span
+                                                    class="m--in">Se connecter</span></div>
+                                        </div>
+                                        <div class="theme-form">
+
+                                                <h4 class="text-center">NOUVELLE AGENCE</h4>
+                                                <h6 class="text-center">Introduire vos informations pour créer un compte.</h6>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="text" placeholder="Responsable"
+                                                                   [(ngModel)]="register.representative">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <input class="form-control" type="text" placeholder="Agence"
+
+                                                                   [(ngModel)]="register.agency">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <input class="form-control"  type="text" placeholder="Adresse E-mail"
+                                                                   [(ngModel)]="register.email">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group"><input  class="form-control" type="text" placeholder="N° Tél"
+                                                                                   [(ngModel)]="register.phone_number"></div>
+
+                                                    <div class="form-group"><input class="form-control"
+                                                                                   type="password"
+                                                                                   placeholder="Mot de Passe"
+                                                                                   [(ngModel)]="register.password"  ></div>
+                                                    <div class="form-group"><input class="form-control" type="password" placeholder="Confirmer mot de Passe"
+                                                                                   [(ngModel)]="register.passwordConfirmation"></div>
+                                                </div>
+
+                                                    <div class="form-group form-row mt-3 mb-0"  style=" width: 45%; margin-left: 150px">
+                                                        <button class="btn btn-primary d-block w-100" type="submit" (click)="validate()" style="border-radius: 30px">Créer un compte</button>
+                                                    </div>
+                                            <div style=" margin-left: 40px">
+                                                        <div class="text-start mt-2 m-l-20">Vous êtes déjà un utilisateur de SummitSells?  <a
+                                                                class="btn-link text-capitalize" href="/">Se connecter</a>
+                                                        </div>
+                                            </div>
+
+
+                                          </div></div></div></div></div></div></div></div></div></div></div>

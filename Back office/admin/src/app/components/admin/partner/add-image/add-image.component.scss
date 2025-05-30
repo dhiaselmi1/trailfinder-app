@@ -1,0 +1,148 @@
+.file-container{
+  width: 370px;
+  height: 200px;
+  border: 2px dotted #2a9d8f;
+  background-image: url('/assets/images/cloudy.PNG');
+  background-size: cover;
+  border-radius: 7px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .file p {
+    margin: 0;
+    text-align: center;
+    line-height: 1;
+
+  }
+
+  .file{
+    opacity: 0%;
+    padding: 5rem;
+    width: auto;
+    height: 5rem;
+
+
+
+  }
+}
+.drag{
+  display: grid;
+  place-items: center;
+  padding: 25px;
+  margin-left: 40px;
+}
+
+.file-input-container {
+  position: relative;
+  width: 150px; /* Ajustez la largeur selon vos besoins */
+  height: 30px; /* Ajustez la hauteur selon vos besoins */
+  overflow: hidden;
+}
+
+.file-input {
+  position: absolute;
+  font-size: 16px;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.cancel-section {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  background-color: #f8f9fa; /* Light gray background color */
+  border: 1px solid #ced4da; /* Gray border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 20px; /* Padding around the content */
+  margin-top: 20px; /* Add some space between sections */
+}
+
+.file-info {
+  margin-bottom: 20px; /* Add space below file name */
+}
+
+.cancel-button {
+  background-color: #ee6c4d; /* Red background color */
+  color: white; /* White text color */
+  border: none;
+  padding: 10px 20px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.cancel-button:hover {
+  background-color: #ff9770; /* Darker red color on hover */
+}
+
+.is-invalid {
+  border-color: #dc3545; /* Red color for the border */
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Optional: Add a red shadow for emphasis */
+}
+.bg{
+  background-color: #ffb17a;
+}
+
+
+input[type=radio] {
+  --s: 1.3em;     /* control the size */
+  --c: #009688; /* the active color */
+
+  height: var(--s);
+  aspect-ratio: 1;
+  border: calc(var(--s)/8) solid #939393;
+  padding: calc(var(--s)/8);
+  background:
+          radial-gradient(farthest-side,var(--c) 94%,#0000)
+          50%/0 0 no-repeat content-box;
+  border-radius: 50%;
+  outline-offset: calc(var(--s)/10);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  font-size: inherit;
+  transition: .3s;
+}
+input[type=radio]:checked {
+  border-color: var(--c);
+  background-size: 100% 100%;
+}
+
+input[type=radio]:disabled {
+  background:
+          linear-gradient(#939393 0 0)
+          50%/100% 20% no-repeat content-box;
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+@media print {
+  input[type=radio] {
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    appearance: auto;
+    background: none;
+  }
+}
+
+label {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin:5px 0;
+  cursor: pointer;
+}
+body {
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  place-content:center;
+  font-family: system-ui, sans-serif;
+  font-size: 40px;
+}

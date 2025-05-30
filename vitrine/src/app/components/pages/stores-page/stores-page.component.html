@@ -1,0 +1,43 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<div class="popular-store-area ptb-100">
+    <div  class="container">
+        <div style="border-radius: 30px"  class="filter-block">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-7">
+                    <ul>
+                        <li ><a routerLink="/all-agences" [class.active]="selectedCountry === 'Pays'" (click)="selectCountry('Pays')">Pays</a></li>
+                        <li><a routerLink="/all-agences" [class.active]="selectedCountry === 'Tunisie'" (click)="selectCountry('Tunisie')">Tunisie</a></li>
+                        <li><a routerLink="/all-agences" [class.active]="selectedCountry === 'France'" (click)="selectCountry('France')">France</a></li>
+                        <li><a routerLink="/all-agences" [class.active]="selectedCountry === 'Belgique'" (click)="selectCountry('Belgique')">Belgique</a></li>
+                        <li><a routerLink="/all-agences" [class.active]="selectedCountry === 'États Unis'" (click)="selectCountry('États Unis')">États Unis</a></li>
+                        <li><a routerLink="/all-agences" [class.active]="selectedCountry === 'Canada'" (click)="selectCountry('Canada')">Canada</a></li>
+                        <li><a routerLink="/all-agences" [class.active]="selectedCountry === 'Allemagne'" (click)="selectCountry('Allemagne')">Allemagne</a></li>
+                        <li><a routerLink="/all-agences" [class.active]="selectedCountry === 'Russie'" (click)="selectCountry('Russie')">Russie</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    <form>
+                        <input style="border-radius: 30px" type="text" class="form-control" placeholder="Chercher agence" (input)="onSearchChange($event.target.value)">
+                        <button style="border-radius: 40px" type="submit"><i class='bx bx-search-alt'></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="popular-store-list">
+            <div class="row">
+                <div class="col-lg-3 col-sm-4 col-6 col-md-4" *ngFor="let Item of filteredData;">
+                    <div class="item">
+                        <a [routerLink]="['/agence', Item.id]" (click)="navigate(Item.agency.id)">
+                            <img [src]="Item.imageToShow.__zone_symbol__value" alt="image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

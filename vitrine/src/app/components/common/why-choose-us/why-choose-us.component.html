@@ -1,0 +1,23 @@
+<div class="why-choose-area ptb-100">
+    <div class="container">
+        <div class="section-title" *ngFor="let Title of sectionTitle;">
+            <h2>{{Title.title}}</h2>
+            <p>{{Title.paragraph}}</p>
+        </div>
+
+        <div  class="row justify-content-center">
+            <div  class="col-lg-4 col-sm-6 col-md-6" *ngFor="let Content of singleWhyChooseBox;">
+                <div style=" border-radius: 40px" class="single-why-choose-box">
+                    <i class='{{Content.icon}}'></i>
+                    <h3>{{Content.title}}</h3>
+                    <span>{{Content.subTitle}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="why-choose-content" *ngFor="let Content of whyChooseContent;">
+            <h3>{{Content.title}}</h3>
+            <a routerLink="/{{Content.buttonLink}}" class="default-btn" style="background-color: #FFFFFF; color: #6a3400">{{Content.buttonText}}</a>
+        </div>
+    </div>
+</div>

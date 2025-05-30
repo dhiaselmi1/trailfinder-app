@@ -1,0 +1,70 @@
+<div  class="card b-l-primary border-3">
+    <div  class="card-header ">
+        <h5 >Ajouter une réservation</h5>
+    </div>
+
+    <div class="row">
+        <div class="form theme-form ng-untouched ng-pristine ng-valid">
+            <div  class="card-body">
+                <div  class="row">
+                    <div  class="col">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nom de l'utilisateur</label>
+                            <div class="col-sm-3">
+                                <input type="text"
+                                       [(ngModel)]="last_name"
+                                       placeholder="nom"
+                                       class="form-control"
+                                       name="agencyName"
+                                       required>
+                            </div>
+                        </div>
+                            <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Prénom de l'utilisateur</label>
+                            <div class="col-sm-3">
+                                <input type="text"
+                                       [(ngModel)]="first_name"
+                                       placeholder="prénom"
+                                       class="form-control"
+                                       name="agencyName"
+                                       required>
+                            </div>
+                            </div>
+                            <div  class="form-group row" style=" margin-top: 15px" >
+                                <label  class="col-sm-3 ">Nom de l'événement</label>
+                                <div  class="col-sm-9">
+                                    <select style="width: 133px; height: 30px; margin-left: 8px; margin-bottom: 0px;"
+                                            [(ngModel)]="reservation.event_id">
+                                        <option *ngFor="let item of data" [value]="item.event.id">{{item.event.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div  class="form-group row"  style="margin-bottom: -40px">
+                                <label class="col-sm-3 col-form-label" style="margin-right: 7px; ">Nombre de tickets</label>
+                                <div style="margin-top: -25px" class="quantity">
+                                    <button type="button" class="button-quantity" (click)="minus()"><i class="fa fa-minus" ></i></button>
+                                    <input type="text" class="input-quantity" [value]="reservation.tickets_number">
+                                    <button type="button" class="button-quantity" (click)="plus()"><i class="fa fa-plus" ></i></button>
+                                </div>
+                                </div>
+                        </div>
+
+
+
+                        <!--                                <div *ngIf="representative.invalid && (representative.dirty || representative.touched)" class="text-danger">-->
+                        <!--                                    <div *ngIf="representative.errors.required">-->
+                        <!--                                        Ce champs est obligatoire-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                    </div>
+                    <div class="card-footer">
+                        <div  class="col-sm-9 offset-sm-3">
+                            <button  type="submit" class="btn btn-primary btn-pill" (click)="saveReservation()">Valider</button>
+                            <button  type="reset"  class="btn btn-light ms-1 btn-pill" (click)="resetReservation()">Annuler</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+</div>

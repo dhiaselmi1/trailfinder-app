@@ -1,0 +1,729 @@
+
+<div class="row">
+    <div class="col-md-6 col-xl-4 box-col-6 xl-50">
+        <div class="card custom-card">
+            <div class="card-header">
+                <img src="assets/images/voyage-famille.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="card-profile">
+                <img src="assets/images/traveltodo.png" alt="" class="rounded-circle">
+            </div>
+            <ul class="card-social">
+                <li >
+                    <a href="https://www.facebook.com/">
+                        <i class="fa fa-facebook">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://myaccount.google.com/">
+                        <i class="fa fa-google-plus">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://twitter.com/">
+                        <i class="fa fa-twitter">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://www.instagram.com/">
+                        <i class="fa fa-instagram">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://dashboard.rss.com/auth/sign-in/">
+                        <i class="fa fa-rss">
+
+                        </i>
+                    </a>
+                </li>
+            </ul>
+            <div class="text-center profile-details">
+                <h4 >Travel Todo
+                </h4>
+                <h6 >Tunisie
+                </h6>
+            </div>
+            <div class="card-footer row">
+                <div class="col-4 col-sm-4">
+                    <h6 >Follower
+                    </h6>
+                    <h3 class="counter">9564
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Following
+                    </h6>
+                    <h3 >
+                        <span class="counter">49
+                        </span>K
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Total Post
+                    </h6>
+                    <h3 >
+                        <span class="counter">96
+                        </span>M
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-4 box-col-6 xl-50">
+        <div class="card custom-card">
+            <div class="card-header">
+                <img src="assets/images/famous.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="card-profile">
+                <img src="assets/images/expedia.jpg" alt="" class="rounded-circle">
+            </div>
+            <ul class="card-social">
+                <li >
+                    <a href="https://www.facebook.com/">
+                        <i class="fa fa-facebook">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://myaccount.google.com/">
+                        <i class="fa fa-google-plus">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://twitter.com/">
+                        <i class="fa fa-twitter">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://www.instagram.com/">
+                        <i class="fa fa-instagram">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://dashboard.rss.com/auth/sign-in/">
+                        <i class="fa fa-rss">
+
+                        </i>
+                    </a>
+                </li>
+            </ul>
+            <div class="text-center profile-details">
+                <h4 >Expedia
+                </h4>
+                <h6 >France
+                </h6>
+            </div>
+            <div class="card-footer row">
+                <div class="col-4 col-sm-4">
+                    <h6 >Follower
+                    </h6>
+                    <h3 class="counter">2578
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Following
+                    </h6>
+                    <h3 >
+                        <span class="counter">26
+                        </span>K
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Total Post
+                    </h6>
+                    <h3 >
+                        <span class="counter">96
+                        </span>M
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-4 box-col-6 xl-50">
+        <div class="card custom-card">
+            <div class="card-header">
+                <img src="assets/images/HIKE.png" alt="" class="img-fluid">
+            </div>
+            <div class="card-profile">
+                <img src="assets/images/usa.jpg" alt="" class="rounded-circle">
+            </div>
+            <ul class="card-social">
+                <li >
+                    <a href="https://www.facebook.com/">
+                        <i class="fa fa-facebook">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://myaccount.google.com/">
+                        <i class="fa fa-google-plus">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://twitter.com/">
+                        <i class="fa fa-twitter">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://www.instagram.com/">
+                        <i class="fa fa-instagram">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://dashboard.rss.com/auth/sign-in/">
+                        <i class="fa fa-rss">
+
+                        </i>
+                    </a>
+                </li>
+            </ul>
+            <div class="text-center profile-details">
+                <h4 >Travel Solutions
+                </h4>
+                <h6 >Etats Unis
+                </h6>
+            </div>
+            <div class="card-footer row">
+                <div class="col-4 col-sm-4">
+                    <h6 >Follower
+                    </h6>
+                    <h3 class="counter">6545
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Following
+                    </h6>
+                    <h3 >
+                        <span class="counter">91
+                        </span>K
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Total Post
+                    </h6>
+                    <h3 >
+                        <span class="counter">21
+                        </span>M
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-4 box-col-6 xl-50">
+        <div class="card custom-card">
+            <div class="card-header">
+                <img src="assets/images/adve.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="card-profile">
+                <img src="assets/images/viajes.png" alt="" class="rounded-circle">
+            </div>
+            <ul class="card-social">
+                <li >
+                    <a href="https://www.facebook.com/">
+                        <i class="fa fa-facebook">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://myaccount.google.com/">
+                        <i class="fa fa-google-plus">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://twitter.com/">
+                        <i class="fa fa-twitter">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://www.instagram.com/">
+                        <i class="fa fa-instagram">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://dashboard.rss.com/auth/sign-in/">
+                        <i class="fa fa-rss">
+
+                        </i>
+                    </a>
+                </li>
+            </ul>
+            <div class="text-center profile-details">
+                <h4 >Viaje a tu estilo
+                </h4>
+                <h6 >Espagne
+                </h6>
+            </div>
+            <div class="card-footer row">
+                <div class="col-4 col-sm-4">
+                    <h6 >Follower
+                    </h6>
+                    <h3 class="counter">2578
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Following
+                    </h6>
+                    <h3 >
+                        <span class="counter">26
+                        </span>K
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Total Post
+                    </h6>
+                    <h3 >
+                        <span class="counter">96
+                        </span>M
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-4 box-col-6 xl-50">
+        <div class="card custom-card">
+            <div class="card-header">
+                <img src="assets/images/water.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="card-profile">
+                <img src="assets/images/destination.png
+" alt="" class="rounded-circle">
+            </div>
+            <ul class="card-social">
+                <li >
+                    <a href="https://www.facebook.com/">
+                        <i class="fa fa-facebook">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://myaccount.google.com/">
+                        <i class="fa fa-google-plus">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://twitter.com/">
+                        <i class="fa fa-twitter">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://www.instagram.com/">
+                        <i class="fa fa-instagram">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://dashboard.rss.com/auth/sign-in/">
+                        <i class="fa fa-rss">
+
+                        </i>
+                    </a>
+                </li>
+            </ul>
+            <div class="text-center profile-details">
+                <h4 >Travellogo
+                </h4>
+                <h6 >Belgique
+                </h6>
+            </div>
+            <div class="card-footer row">
+                <div class="col-4 col-sm-4">
+                    <h6 >Follower
+                    </h6>
+                    <h3 class="counter">6545
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Following
+                    </h6>
+                    <h3 >
+                        <span class="counter">91
+                        </span>K
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Total Post
+                    </h6>
+                    <h3 >
+                        <span class="counter">21
+                        </span>M
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-4 box-col-6 xl-50">
+        <div class="card custom-card">
+            <div class="card-header">
+                <img src="assets/images/quebec_md.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="card-profile">
+                <img src="assets/images/travel.jpg" alt="" class="rounded-circle">
+            </div>
+            <ul class="card-social">
+                <li >
+                    <a href="https://www.facebook.com/">
+                        <i class="fa fa-facebook">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://myaccount.google.com/">
+                        <i class="fa fa-google-plus">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://twitter.com/">
+                        <i class="fa fa-twitter">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://www.instagram.com/">
+                        <i class="fa fa-instagram">
+
+                        </i>
+                    </a>
+                </li>
+                <li >
+                    <a href="https://dashboard.rss.com/auth/sign-in/">
+                        <i class="fa fa-rss">
+
+                        </i>
+                    </a>
+                </li>
+            </ul>
+            <div class="text-center profile-details">
+                <h4 >Travel
+                </h4>
+                <h6 >Australie
+                </h6>
+            </div>
+            <div class="card-footer row">
+                <div class="col-4 col-sm-4">
+                    <h6 >Follower
+                    </h6>
+                    <h3 class="counter">9564
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Following
+                    </h6>
+                    <h3 >
+                        <span class="counter">49
+                        </span>K
+                    </h3>
+                </div>
+                <div class="col-4 col-sm-4">
+                    <h6 >Total Post
+                    </h6>
+                    <h3 >
+                        <span class="counter">96
+                        </span>M
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div   style="flex: 0 1 auto">
+    <div  class="card">
+        <div  class="card-header b-l-primary border-3">
+            <h5>Liste des Agences</h5>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-pill" type="submit" routerLink="/agencies/add-edit">Ajouter une agence</button>
+            <div style="margin-bottom: 20px;"></div>
+            <table  class="table">
+                <thead >
+                <tr >
+                    <th  scope="col" sortable="name">Logo</th>
+                    <th  scope="col" sortable="name">Agence</th>
+                    <th  scope="col" sortable="gender">Responsable</th>
+                    <th  scope="col" sortable="company_name">Pays</th>
+                    <th  scope="col" sortable="age">Dernière date de modification</th>
+                    <th  scope="col" sortable="action">Statut</th>
+                    <th  scope="col" sortable="action">Modifier</th>
+                    <th  scope="col" sortable="action" >Supprimer</th>
+                    <th  scope="col" sortable="action">Savoir Plus</th>
+                </tr>
+                </thead>
+                <tbody >
+                <tr  class="ng-star-inserted">
+                    <td  style="width: 20px;">
+                        <div  class="recent-images">
+                            <img  class="agency-logo-dimensions"  src="assets/images/logo/logo.png" alt>
+                        </div>
+                    </td>
+                    <td class="default-text mb-0 f-w-700 f-18" scope="row"> Agence 1 </td>
+                    <td >John Doe</td>
+                    <td >
+                        <span  class="badge rounded-pill recent-badge f-12">Autriche</span>
+                    </td>
+                    <td >22/01/2024</td>
+                    <div class="d-flex">
+                        <div class="flex-grow-1 text-end switch-sm icon-state">
+                            <label class="switch form-label">
+                                <input type="checkbox" checked="">
+                                <span class="switch-state">
+                                </span></label></div></div>
+                    <td >
+
+                        <button  class="btn">
+                            <i  class="icon-pencil"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="icon-more-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr  class="ng-star-inserted">
+                    <td  style="width: 20px;">
+                        <div  class="recent-images">
+                            <img  class="agency-logo-dimensions"  src="assets/images/logo/logo.png" alt>
+                        </div>
+                    </td>
+                    <td class="font-primary mb-0 f-w-700 f-18" scope="row"> Agence 2 </td>
+                    <td >John Doe</td>
+                    <td >
+                        <span  class="badge rounded-pill recent-badge f-12">Espagne</span>
+                    </td>
+                    <td >22/01/2024</td>
+                    <div class="d-flex">
+                        <div class="flex-grow-1 text-end switch-sm icon-state">
+                            <label class="switch form-label">
+                                <input type="checkbox" checked="">
+                                <span class="switch-state">
+                                </span></label></div></div>
+                    <td >
+
+                        <button  class="btn">
+                            <i  class="icon-pencil"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="icon-more-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr  class="ng-star-inserted">
+                    <td  style="width: 20px;">
+                        <div  class="recent-images">
+                            <img  class="agency-logo-dimensions"  src="assets/images/logo/logo.png" alt>
+                        </div>
+                    </td>
+                    <td class="font-secondary mb-0 f-w-700 f-18" scope="row"> Agence 3 </td>
+                    <td >John Doe</td>
+                    <td >
+                        <span  class="badge rounded-pill recent-badge f-12">France</span>
+                    </td>
+                    <td >22/01/2024</td>
+
+
+
+                    <div class="d-flex">
+                        <div class="flex-grow-1 text-end switch-sm icon-state">
+                            <label class="switch form-label">
+                                <input type="checkbox" checked="">
+                                <span class="switch-state">
+                                </span></label></div></div>
+
+
+
+
+                    <td >
+                        <button  class="btn">
+                            <i  class="icon-pencil"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="icon-more-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr  class="ng-star-inserted">
+                    <td  style="width: 20px;">
+                        <div  class="recent-images">
+                            <img  class="agency-logo-dimensions"  src="assets/images/logo/logo.png" alt>
+                        </div>
+                    </td>
+                    <td class="font-warning mb-0 f-w-700 f-18" scope="row"> Agence 4 </td>
+                    <td >John Doe</td>
+                    <td >
+                        <span  class="badge rounded-pill recent-badge f-12">Tunisie</span>
+                    </td>
+                    <td >22/01/2024</td>
+                    <div class="d-flex">
+                        <div class="flex-grow-1 text-end switch-sm icon-state">
+                            <label class="switch form-label">
+                                <input type="checkbox" checked="">
+                                <span class="switch-state">
+                                </span></label></div></div>
+                    <td >
+                        <button  class="btn">
+                            <i  class="icon-pencil"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="icon-more-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+            <div style="margin-bottom: 20px;"></div>
+            <div  class="d-flex justify-content-between p-2">
+                <!--               <ngb-pagination  role="navigation">&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;-->
+                <ul class="pagination"><!---->
+                    <li class="page-item disabled ng-star-inserted">
+                        <a aria-label="Previous" href="" class="page-link" tabindex="-1" aria-disabled="true">
+                            <span aria-hidden="true" class="ng-star-inserted">«</span>
+                            <!----></a></li><!---->
+                    <li class="page-item active ng-star-inserted" aria-current="page">
+                        <a href="" class="page-link ng-star-inserted">1<!----></a>
+                        <!----><!----></li><li class="page-item ng-star-inserted">
+                        <a href="" class="page-link ng-star-inserted">2<!----></a>
+                        <!----><!----></li><li class="page-item ng-star-inserted">
+                        <a href="" class="page-link ng-star-inserted">3<!----></a>
+                        <!----><!----></li><!----><!----><li class="page-item ng-star-inserted">
+                        <a aria-label="Next" href="" class="page-link">
+                            <span aria-hidden="true" class="ng-star-inserted">»</span>
+                            <!----></a></li><!----><!----></ul>
+                <!--              </ngb-pagination></div>-->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Basic Table</h5>
+                </div>
+                <div class="card-body custom-datatable noscroll">
+                    <div class="custom-datatable basic-table table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col" sortable="name" (sort)="onSort($event)">Name</th>
+                                <th scope="col" sortable="gender" (sort)="onSort($event)">Gender</th>
+                                <th scope="col" sortable="company_name" (sort)="onSort($event)">Company Name</th>
+                                <th scope="col" sortable="age" (sort)="onSort($event)">Age</th>
+                                <th scope="col" sortable="action" >Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let item of data">
+                                <td scope="row">
+                                    {{item.name}}
+                                </td>
+                                <td>{{item.adresse}}</td>
+                                <td>{{item.lieu}}</td>
+                                <td>{{item.prenom}}</td>
+                                <td>
+                                    <button class="btn" (click)="delete(item.id)"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-between p-2">
+                            <ngb-pagination
+                                    [collectionSize]="(total$ | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+                            </ngb-pagination>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="d-flex">
+    <label class="col-form-label m-r-10">Primary Color
+    </label>
+    <div class="flex-grow-1 text-end icon-state switch-outline">
+        <label class="switch form-label">
+            <input type="checkbox" checked="">
+            <span class="switch-state bg-primary">
+
+            </span>
+        </label>
+    </div>
+</div>
+
+<app-basic></app-basic>
+<!-- Container-fluid Ends -->
+
+
+

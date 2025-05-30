@@ -1,0 +1,94 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<div class="dashboard-area ptb-100">
+    <div class="container">
+        <div class="dashboard-tabs-list">
+            <ul>
+                <li><a routerLink="/dashboard">Dashboard</a></li>
+                <li><a routerLink="/dashboard-profile">Profile</a></li>
+                <li><a routerLink="/dashboard-store">Store</a></li>
+                <li><a routerLink="/dashboard-coupons">Coupons</a></li>
+                <li><a routerLink="/dashboard-deals">Deals</a></li>
+                <li><a routerLink="/dashboard-vouchers">Vouchers</a></li>
+                <li><a routerLink="/dashboard-agents" class="active">Agents</a></li>
+                <li><a routerLink="/">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="dashboard-profile-box">
+                    <div class="image">
+                        <img src="assets/img/user1.jpg" alt="image">
+                        <span>Jason Smith</span>
+                    </div>
+                    <p>You have <strong>$19,321</strong> dollars left, <a routerLink="/">earn mores</a></p>
+                    <a routerLink="/" class="logout">Log Out</a>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-12">
+                <div class="dashboard-stats">
+                    <a routerLink="/dashboard-add-agent" class="default-btn">Add Agent</a>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ryol</td>
+                                    <td>hello@ryol.com</td>
+                                    <td>
+                                        <a routerLink="/dashboard-add-agent" class="edit"><i class='bx bx-cog'></i></a>
+                                        <a routerLink="/dashboard-agents" class="remove"><i class='bx bx-x'></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>james</td>
+                                    <td>hello@james.com</td>
+                                    <td>
+                                        <a routerLink="/dashboard-add-agent" class="edit"><i class='bx bx-cog'></i></a>
+                                        <a routerLink="/dashboard-agents" class="remove"><i class='bx bx-x'></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>anderson</td>
+                                    <td>hello@anderson.com</td>
+                                    <td>
+                                        <a routerLink="/dashboard-add-agent" class="edit"><i class='bx bx-cog'></i></a>
+                                        <a routerLink="/dashboard-agents" class="remove"><i class='bx bx-x'></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>sarah</td>
+                                    <td>hello@sarah.com</td>
+                                    <td>
+                                        <a routerLink="/dashboard-add-agent" class="edit"><i class='bx bx-cog'></i></a>
+                                        <a routerLink="/dashboard-agents" class="remove"><i class='bx bx-x'></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>taylor</td>
+                                    <td>hello@taylor.com</td>
+                                    <td>
+                                        <a routerLink="/dashboard-add-agent" class="edit"><i class='bx bx-cog'></i></a>
+                                        <a routerLink="/dashboard-agents" class="remove"><i class='bx bx-x'></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

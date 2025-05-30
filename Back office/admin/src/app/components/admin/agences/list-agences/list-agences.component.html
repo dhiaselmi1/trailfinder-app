@@ -1,0 +1,575 @@
+<head xmlns="http://www.w3.org/1999/html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Tw6D6DOuZopN5r5ojflAcu1aZdmHlOuQwX0p5HlBKkW3Ay0wMmkhINz7Pu6J5d5OzvBRdgi7bkXf+nj/EO0q+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<div  style="flex: 0 1 auto">
+    <div  class="card b-l-primary border-3">
+        <div  class="card-header ">
+            <table>
+                <tr>
+                    <td style="padding-right: 640px">
+                        <h5>Liste des Agences</h5>
+                    </td>
+                    <td>
+                        <button mat-raised-button (click)="showCard()" class="btnFiltre color-warn" ><img src="assets/images/identity-card.png" style="width: 50px; padding-right: 0px"></button>
+                    </td>
+                    <td>
+                        <img src="assets/images/line.png" style="width: 7px">
+                    </td>
+                    <td>
+                        <button mat-raised-button (click)="showTable()" class="btnFiltre color-warn" style="padding-left: 22px;padding-right: 22px; padding-top: 17px;padding-bottom: 17px;"><img src="assets/images/list.png" style="width: 45px; height: 38px; padding-left: 0px"></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-footer ">
+            <button class="btn btn-primary btn-pill ajouter"  type="submit" routerLink="/agencies/add-edit">Ajouter une agence</button>
+            <div style="margin-bottom: 20px;"></div>
+            <div  [hidden]="!isTable">
+                <form class="form-inline search-form" >
+                    <div class="form-group">
+                        <div class="Typeahead Typeahead--twitterUsers">
+                            <div class="u-posRelative">
+                                <input
+                                        (input)="onSearchChange($event.target.value)"
+                                        style="margin-bottom: 20px"
+                                        class="Typeahead-input form-control-plaintext"
+                                        id="demo-input"
+                                        type="text"
+                                        name="q"
+                                        placeholder="Recherche..."
+                                        autocomplete="off"/>
+                                <div class="Typeahead-menu custom-scrollbar"  id="search-outer">
+
+                                </div>
+                                <div class="Typeahead-menu custom-scrollbar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <table  class="table" >
+                    <thead >
+                    <tr >
+                        <th  scope="col" sortable="name">Logo</th>
+                        <th  scope="col" sortable="name">Agence</th>
+                        <th  scope="col" sortable="gender">Responsable</th>
+                        <th  scope="col" sortable="company_name">Pays</th>
+                        <th  scope="col" sortable="age">Adresse E-mail</th>
+                        <th  scope="col" sortable="action">Statut</th>
+                        <th  scope="col" sortable="action">Modifier</th>
+                        <th  scope="col" sortable="action" >Supprimer</th>
+                        <th  scope="col" sortable="action">Plus</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of filteredData | paginate: { itemsPerPage: itemPerPage, currentPage: p }">
+                        <td class="default-text mb-0 f-w-700 f-18 center-vertically" scope="row">
+                            <div class="user-profile" style="margin-top: 100px; margin-bottom: 0px">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card hovercard text-center">
+                                            <!-- component.html -->
+                                            <div class="user-image rounded-circle" (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
+                                                <div class="image-containing">
+                                                    <div class="avatar">
+                                                        <img *ngIf="item.agency.logo" [src]="item.imageToShow.__zone_symbol__value"  class="rounded-circle "  alt='logo'>
+                                                        <img *ngIf="!item.agency.logo" src="assets/images/user.png"  class="rounded-circle "  alt='logo'>
+                                                    </div>
+                                                    <div class="hover-image" >
+                                                        <img src="assets/images/agences/write.png" alt="Logo" style="width: 45px" (click)="openChangeLogo(item)">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-overlay" *ngIf="showChangeLogo" (click)="closeChangeLogo()">
+                                                    <div class="modal-content" (click)="$event.stopPropagation()">
+                                                        <h1>Sélectionner une image</h1>
+                                                        <span (click)=" closeChangeLogo()" class="close-button">X</span>
+                                                        <input id="validatedCustomFile"
+                                                               type="file" required=""
+                                                               class="form-control"
+                                                               (change)="getFile($event)">
+                                                        <button mat-raised-button class="btnNon color-warn"
+                                                                style="width: 120px; height: 30px;
+                                                                 font-size: 15px; display: flex;
+                                                                  align-items: center; justify-content:
+                                                                           center; margin-left: 100px"
+                                                                (click)="changeLogo()">Valider</button>
+                                                    </div>
+                                                </div>
+                                            </div></div></div></div>
+                            </div>
+
+                        <td class="center-vertically">{{item.agency.agency}}</td>
+                        <td class="center-vertically">{{item.agency.representative}}</td>
+                        <td class="center-vertically">{{item.agency.country}}</td>
+                        <td class="center-vertically">{{item.agency.email}}</td>
+                        <td class="center-vertically">
+                            <button *ngIf="!item.agency.approved" class="tick-box-1" (click)="openApprove(item)">
+                                <div class="tick">&#10004;</div>
+                            </button>
+                            <button *ngIf="!item.agency.approved" class="cross-box-1"  (click)="openDisapprove(item)">
+                                <div class="cross">&times;</div>
+                            </button>
+                            <div class="modal-overlay" *ngIf="showApprove" (click)="closeApprove()">
+                                <div class="modal-content" (click)="$event.stopPropagation()">
+                                    <h1>Êtes-vous sur(e) de vouloir approuver cette agence?</h1>
+                                    <span class="close-button" (click)="closeApprove()">X</span>
+                                    <button mat-raised-button class="btnOui color-primary" (click)="approve()">Oui</button>
+                                    <button mat-raised-button class="btnNon color-warn" (click)="closeApprove()">Non</button>
+                                </div>
+                            </div>
+                            <div *ngIf="item.agency.approved" class="tick-box-1">
+                                <div class="tick">&#10004;</div>
+                            </div>
+                        </td>
+                        <td class="center-vertically">
+                            <button class="btn" (click)="update(item.agency.id)"><i class="fa fa-pencil"></i></button>
+                        </td>
+                        <td class="center-vertically">
+                            <button class="btn" (click)="openDelete(item)"><i class="fa fa-trash"></i></button>
+                        </td>
+                        <div class="modal-overlay" *ngIf="showDelete" (click)="closeDelete()">
+                            <div class="modal-content" (click)="$event.stopPropagation()">
+                                <span class="close-button" (click)="closeDelete()">X</span>
+                                <h1>Êtes-vous sur(e) de vouloir supprimer cette agence?</h1>
+                                <button mat-raised-button class="btnOui color-primary" (click)="delete()">Oui</button>
+                                <button mat-raised-button class="btnNon color-warn" (click)="closeDelete()">Non</button>
+                            </div>
+                        </div>
+                        <td class="center-vertically">
+                            <button class="btn position-btn-icon-more"  (click)="toggleDropdown(item)"><i class="icon-more-alt  position-icon-more-table" ></i></button>
+                            <div  class="dropdown-content" [ngClass]="{'show': item.agency.isDropdownOpen}">
+                                <div  class="rectangle">
+                                    Savoir Plus
+                                </div>
+                                <div class="rectanglee rectangle1" style="font-size: 13.5px" [class.clicked]="activeDiv === 'addevent'" (click)="changeActiveDiv('events')">
+                                    <a href="#">Ajouter un événement</a>
+                                </div>
+                                <div class="rectanglee rectangle2" style="font-size: 13.2px" [class.clicked]="activeDiv === 'events'" (click)="changeActiveDiv('events')">
+                                    <a href="#">Evénements</a>
+                                </div>
+                                <div class="rectanglee rectangle3" style="font-size: 13.2px" [class.clicked]="activeDiv === 'profile'" (click)="changeActiveDiv('profile')">
+                                    <a href="http://localhost:4200/profil/profil">Profil</a>
+                                </div>
+                                <div class="rectanglee rectangle4" style="font-size: 13.2px" [class.clicked]="activeDiv === 'activity'" (click)="changeActiveDiv('activity')">
+                                    <a href="#">Activité</a>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="mt-8 py-5 flex justify-center align-items-center">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+                <div style="margin-bottom: 20px;"></div>
+
+                <!--                <div  class="d-flex justify-content-between p-2">-->
+                <!--                  <ul class="pagination">&lt;!&ndash;&ndash;&gt;-->
+                <!--                        <li class="page-item disabled ng-star-inserted">-->
+                <!--                            <a aria-label="Previous" href="" class="page-link" tabindex="-1" aria-disabled="true">-->
+                <!--                                <span aria-hidden="true" class="ng-star-inserted">«</span>-->
+                <!--                                &lt;!&ndash;&ndash;&gt;</a></li>&lt;!&ndash;&ndash;&gt;-->
+                <!--                        <li class="page-item active ng-star-inserted" aria-current="page">-->
+                <!--                            <a href="" class="page-link ng-star-inserted">1&lt;!&ndash;&ndash;&gt;</a>-->
+                <!--                            &lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</li><li class="page-item ng-star-inserted">-->
+                <!--                            <a href="" class="page-link ng-star-inserted">2&lt;!&ndash;&ndash;&gt;</a>-->
+                <!--                            &lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</li><li class="page-item ng-star-inserted">-->
+                <!--                            <a href="" class="page-link ng-star-inserted">3&lt;!&ndash;&ndash;&gt;</a>-->
+                <!--                            &lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</li>&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;<li class="page-item ng-star-inserted">-->
+                <!--                            <a aria-label="Next" href="" class="page-link">-->
+                <!--                                <span aria-hidden="true" class="ng-star-inserted">»</span>-->
+                <!--                                &lt;!&ndash;&ndash;&gt;</a></li>&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</ul>-->
+                <!--                    &lt;!&ndash;              </ngb-pagination></div>&ndash;&gt;-->
+                <!--                </div>-->
+            </div>
+
+        </div>
+
+        <div [hidden]="isTable" class="row"  style="padding-right: 20px">
+            <div class="col-md-6 col-xl-4 box-col-6 xl-50" *ngFor="let item of data">
+                <div style="margin-left: 10px; margin-right: -10px; height: 550px" class="card custom-card">
+                    <div class="card-header-agence">
+                        <img *ngIf="item.poster" [src]="item.event.__zone_symbol__value" class="img-fluid">
+
+                        <img *ngIf="!item.poster" src="assets/images/Capturevoyage.PNG" style=" height: 235px" class="img-fluid">
+
+                    </div>
+
+                    <div class="card-profile">
+                        <div class="image-containing">
+                            <div class="avatar">
+                                <img *ngIf="item.agency.logo" [src]="item.imageToShow.__zone_symbol__value"  class="rounded-circle "  alt='logo'>
+                                <img *ngIf="!item.agency.logo" src="assets/images/user.png"  class="rounded-circle "  alt='logo'>
+                            </div>
+
+<!--
+<div style="width: 20px; height: 20px; left: 260px; top:65px" class="hover-image" >-->
+<!--                                <img src="assets/images/agences/write.png" alt="Logo" style="width: 45px" (click)="openChangeLogo(item)">-->
+<!--                            </div>-->
+                        </div>
+                        <!--                        <div class="img__btn changerlogo"  (click)="openChangeLogo(item)"><span class="m&#45;&#45;up">Changer le logo</span></div>-->
+                        <!--                        <div class="modal-overlay" *ngIf="showChangeLogo" (click)="closeChangeLogo()">-->
+                        <!--                            <div class="modal-content" (click)="$event.stopPropagation()">-->
+                        <!--                                <h1>Sélectionner une image</h1>-->
+                        <!--                                <span (click)=" closeChangeLogo()" class="close-button">X</span>-->
+                        <!--                                <input id="validatedCustomFile"-->
+                        <!--                                       type="file" required=""-->
+                        <!--                                       class="form-control"-->
+                        <!--                                       (change)="getFile($event)">-->
+                        <!--                                <button mat-raised-button class="btnNon color-warn"-->
+                        <!--                                        style="width: 120px; height: 30px;-->
+                        <!--                                 font-size: 15px; display: flex;-->
+                        <!--                                  align-items: center; justify-content:-->
+                        <!--                                  center; margin-left: 100px"-->
+                        <!--                                        (click)="changeLogo()">Valider</button>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                    </div>
+
+                    <div class="text-center profile-details">
+                        <h4 >{{item.agency.agency}}
+                        </h4>
+                        <h6 >{{item.agency.country}}
+                        </h6>
+                    </div>
+
+
+
+                    <div class="card-footer row">
+                        <div class="col-3 col-sm-3">
+                            <h6 style="font-size: 13px; margin-left: 25px">Statut </h6>
+                            <div *ngIf="item.agency.approved" class="tick-box-2">
+                                <div class="tick">&#10004;</div>
+                            </div>
+                            <button *ngIf="!item.agency.approved" class="tick-box-1" (click)="openApprove(item)">
+                                <div class="tick">&#10004;</div>
+                            </button>
+                            <button *ngIf="!item.agency.approved" class="cross-box-1"  (click)="openDisapprove(item)">
+                                <div class="cross">&times;</div>
+                            </button>
+                        </div>
+                        <div class="modal-overlay" *ngIf="showApprove" (click)="closeApprove()">
+                            <div class="modal-content" (click)="$event.stopPropagation()">
+                                <h1>Êtes-vous sur(e) de vouloir approuver cette agence?</h1>
+                                <span class="close-button" (click)="closeApprove()">X</span>
+                                <button mat-raised-button class="btnOui color-primary" (click)="approve()">Oui</button>
+                                <button mat-raised-button class="btnNon color-warn" (click)="closeApprove()">Non</button>
+                            </div>
+                        </div>
+                        <div class="modal-overlay" *ngIf="showDisapprove" (click)="closeDisapprove()">
+                            <div class="modal-content" (click)="$event.stopPropagation()">
+                                <h1>Êtes-vous sur(e) de vouloir désapprouver cette agence?</h1>
+                                <span class="close-button" (click)="closeDisapprove()">X</span>
+                                <button mat-raised-button class="btnOui color-primary" (click)="delete()">Oui</button>
+                                <button mat-raised-button class="btnNon color-warn" (click)="closeDisapprove()">Non</button>
+                            </div>
+                        </div>
+                        <div class="col-3 col-sm-3">
+                            <h6 style="font-size: 13px">Modifier
+                            </h6>
+                            <td style="margin-bottom: 20px;">
+                                <button class="btn" (click)="update(item.agency.id)"><i class="fa fa-pencil"></i></button>
+                            </td>
+                        </div>
+                        <div class="col-3 col-sm-3">
+                            <h6 style="font-size: 12px">Supprimer
+                            </h6>
+                            <td>
+                                <button class="btn" (click)="openDelete(item)"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </div>
+                        <div class="col-3 col-sm-3">
+                            <h6 style="font-size: 13px">Savoir plus</h6>
+                            <td>
+                                <button class="btn" style="width: 50px;position: relative;top: -10px; left: -10px;" (click)="toggleDropdown(item)"><i class="icon-more-alt position-icon-more" ></i></button>
+                            </td>
+                        </div>
+
+                        <div style="background-color: white;width: 70px; height: 170px; position: absolute; top: 200px; left: 257px" class="dropdown-content" [ngClass]="{'show': item.agency.isDropdownOpen}">
+                            <div class="rectangle">
+                                Savoir Plus
+                            </div>
+                            <!--                                <div  class=" rectanglee rectangle1" style="color: #0a9396; font-size: 13px"><a  (click)="addEvent(item.id)">Ajouter un événement</a></div>-->
+                            <div class=" rectanglee rectangle1" style="color: #30b1cfff; font-size: 13px"><a (click)="addEvent(item.agency.id)">Ajouter un événement</a></div>
+                            <div class=" rectanglee rectangle2" style="color: #0a9396; font-size: 13px"><a  href="http://localhost:4200/events/list">Evénements</a></div>
+                            <div class="rectanglee rectangle3" [class.clicked]="activeDiv === 'profile'" (click)="changeActiveDiv('profile')">
+                                <a href="http://localhost:4200/profil/profil">Profil</a>
+                            </div>
+                            <div class="rectanglee rectangle4" [class.clicked]="activeDiv === 'activity'" (click)="changeActiveDiv('activity')">
+                                <a href="#">Activité</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>  <div class="modal-overlay" *ngIf="showDelete" (click)="closeDelete()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close-button" (click)="closeDelete()">X</span>
+        <h1>Êtes-vous sur(e) de vouloir supprimer cette agence?</h1>
+        <button mat-raised-button class="btnOui color-primary" (click)="delete()">Oui</button>
+        <button mat-raised-button class="btnNon color-warn" (click)="closeDelete()">Non</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div   style="flex: 0 1 auto">-->
+<!--    <div  class="card">-->
+<!--        <div  class="card-header b-l-primary border-3">-->
+<!--            <h5>Liste des Agences</h5>-->
+<!--        </div>-->
+<!--        <div class="card-footer">-->
+<!--            <button class="btn btn-primary btn-pill"  type="submit" routerLink="/agencies/add-edit">Ajouter une agence</button>-->
+<!--            <div style="margin-bottom: 20px;"></div>-->
+<!--            <table  class="table">-->
+<!--                <thead >-->
+<!--                <tr >-->
+<!--                    <th  scope="col" sortable="name">Logo</th>-->
+<!--                    <th  scope="col" sortable="name">Agence</th>-->
+<!--                    <th  scope="col" sortable="gender">Responsable</th>-->
+<!--                    <th  scope="col" sortable="company_name">Pays</th>-->
+<!--                    <th  scope="col" sortable="age">Dernière date de modification</th>-->
+<!--                    <th  scope="col" sortable="action">Statut</th>-->
+<!--                    <th  scope="col" sortable="action">Modifier</th>-->
+<!--                    <th  scope="col" sortable="action" >Supprimer</th>-->
+<!--                    <th  scope="col" sortable="action">Savoir Plus</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                <tr *ngFor="let item of data">-->
+<!--                    <td class="default-text mb-0 f-w-700 f-18" scope="row">-->
+<!--                        <img style="width: 100px; height: 100px;" [src]="item.imageToShow.__zone_symbol__value">-->
+
+<!--                    </td>-->
+<!--                    <td>{{item.agency}}</td>-->
+<!--                    <td>{{item.representative}}</td>-->
+<!--                    <td>{{item.country}}</td>-->
+<!--                    <td>22/01/2024</td>-->
+<!--                    <td>-->
+<!--                        <div *ngIf="item.approved" class="tick-box-1">-->
+<!--                            <div class="tick">&#10004;</div>-->
+<!--                        </div>-->
+<!--                        <button *ngIf="!item.approved" class="tick-box-1" (click)="openApprove(item)">-->
+<!--                            <div class="tick">&#10004;</div>-->
+<!--                        </button>-->
+<!--                        <button *ngIf="!item.approved" class="cross-box-1"  (click)="openDisapprove(item)">-->
+<!--                            <div class="cross">&times;</div>-->
+<!--                        </button>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <button class="btn" (click)="update(item.id)"><i class="fa fa-pencil"></i></button>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <button class="btn" (click)="delete(item.id)"><i class="fa fa-trash"></i></button>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <button class="btn">-->
+<!--                            <i  class="icon-more-alt"></i>-->
+<!--                        </button>-->
+
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+
+
+
+
+<!--            </table>-->
+<!--            <div style="margin-bottom: 20px;"></div>-->
+<!--            <div  class="d-flex justify-content-between p-2">-->
+<!--                &lt;!&ndash;               <ngb-pagination  role="navigation">&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&ndash;&gt;-->
+<!--                <ul class="pagination">&lt;!&ndash;&ndash;&gt;-->
+<!--                    <li class="page-item disabled ng-star-inserted">-->
+<!--                        <a aria-label="Previous" href="" class="page-link" tabindex="-1" aria-disabled="true">-->
+<!--                            <span aria-hidden="true" class="ng-star-inserted">«</span>-->
+<!--                            &lt;!&ndash;&ndash;&gt;</a></li>&lt;!&ndash;&ndash;&gt;-->
+<!--                    <li class="page-item active ng-star-inserted" aria-current="page">-->
+<!--                        <a href="" class="page-link ng-star-inserted">1&lt;!&ndash;&ndash;&gt;</a>-->
+<!--                        &lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</li><li class="page-item ng-star-inserted">-->
+<!--                        <a href="" class="page-link ng-star-inserted">2&lt;!&ndash;&ndash;&gt;</a>-->
+<!--                        &lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</li><li class="page-item ng-star-inserted">-->
+<!--                        <a href="" class="page-link ng-star-inserted">3&lt;!&ndash;&ndash;&gt;</a>-->
+<!--                        &lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</li>&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;<li class="page-item ng-star-inserted">-->
+<!--                        <a aria-label="Next" href="" class="page-link">-->
+<!--                            <span aria-hidden="true" class="ng-star-inserted">»</span>-->
+<!--                            &lt;!&ndash;&ndash;&gt;</a></li>&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</ul>-->
+<!--                &lt;!&ndash;              </ngb-pagination></div>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--<div class="row">-->
+<!--    <div class="col-md-6 col-xl-4 box-col-6 xl-50" *ngFor="let item of data">-->
+<!--        <div class="card custom-card">-->
+<!--            <div class="card-header-agence">-->
+<!--                <img src="assets/images/Capturevoyage.PNG" alt="" class="img-fluid">-->
+<!--                <button class="d-flex user-header" style="margin-left: 300px" (click)="toggleDropdown(item)">-->
+<!--                    <i class="icon-more-alt"></i>-->
+<!--                </button>-->
+<!--                <div class="dropdown-content" [ngClass]="{'show': isDropdownOpen}">-->
+<!--                    <ul class="profile-dropdown" style="width: 110px; position: absolute; top: 50%; left: 210%;">-->
+<!--                        <li class="gradient-primary text-center">-->
+<!--                            <h5 class="f-w-700" style="font-size: 15px">Savoir plus</h5> </li>-->
+
+<!--                        <li [routerLink]="['user/profile']" style="text-align: center;">Profile</li>-->
+<!--                        <button>-->
+<!--                            <a  style="text-align: center;" >Évènement</a>-->
+<!--                        </button>-->
+<!--                        <li style="text-align: center;">Settings </li>-->
+<!--                        <li style="text-align: center;"><a href="javascript:void(0)">Logout </a></li>-->
+<!--                    </ul></div>-->
+<!--            </div>-->
+<!--            <div class="card-profile">-->
+<!--                <img [src]="item.imageToShow.__zone_symbol__value" alt="" class="rounded-circle" style="margin-right: 120px">-->
+<!--            </div>-->
+<!--            <div class="text-center profile-details">-->
+<!--                <h4 >{{item.agency}}-->
+<!--                </h4>-->
+<!--                <h6 >{{item.country}}-->
+<!--                </h6>-->
+<!--            </div>-->
+
+<!--            <div class="card-footer row">-->
+<!--                <div class="col-4 col-sm-3">-->
+<!--                    <h6>Statut </h6>-->
+<!--                    <div *ngIf="item.approved" class="tick-box-1">-->
+<!--                        <div class="tick">&#10004;</div>-->
+<!--                    </div>-->
+<!--                    <button *ngIf="!item.approved" class="tick-box-1" (click)="openApprove(item)">-->
+<!--                        <div class="tick">&#10004;</div>-->
+<!--                    </button>-->
+<!--                    <button *ngIf="!item.approved" class="cross-box-1"  (click)="openDisapprove(item)">-->
+<!--                        <div class="cross">&times;</div>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--                <div class="modal-overlay" *ngIf="showApprove" (click)="closeApprove()">-->
+<!--                    <div class="modal-content" (click)="$event.stopPropagation()">-->
+<!--                        <h1>Etes-vous sur(e) de vouloir approuver cette agence?</h1>-->
+<!--                        <button mat-raised-button color="primary" (click)="approve(item.id)">Oui</button>-->
+<!--                        <button mat-raised-button color="warn" (click)="closeApprove()">Non</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="modal-overlay" *ngIf="showDisapprove" (click)="closeDisapprove()">-->
+<!--                    <div class="modal-content" (click)="$event.stopPropagation()">-->
+<!--                        <h1>Etes-vous sur(e) de vouloir désapprouver cette agence?</h1>-->
+<!--                        <button mat-raised-button color="primary" (click)="delete(item.id)">Oui</button>-->
+<!--                        <button mat-raised-button color="warn" (click)="closeDisapprove()">Non</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-4 col-sm-3">-->
+<!--                    <h6 >Modifier-->
+<!--                    </h6>-->
+<!--                    <td style="margin-bottom: 20px;">-->
+<!--                        <button class="btn" (click)="update(item.id)"><i class="fa fa-pencil"></i></button>-->
+<!--                    </td>-->
+<!--                </div>-->
+<!--                <div class="col-4 col-sm-3">-->
+<!--                    <h6 >Supprimer-->
+<!--                    </h6>-->
+<!--                    <td>-->
+<!--                        <button class="btn" (click)="openDelete(item)"><i class="fa fa-trash"></i></button>-->
+<!--                    </td>-->
+<!--                </div>-->
+<!--                <div class="modal-overlay" *ngIf="showDelete" (click)="closeDelete()">-->
+<!--                    <div class="modal-content" (click)="$event.stopPropagation()">-->
+<!--                        <h1>Etes-vous sur(e)?</h1>-->
+<!--                        <button mat-raised-button color="primary" (click)="delete(item.id)">Oui</button>-->
+<!--                        <button mat-raised-button color="warn" (click)="closeDelete()">Non</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div class="sub-cont">-->
+<!--    <div class="img">-->
+
+
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--<div class="card-profile">-->
+<!--    <img src="assets/images/hikeee.jpg" alt="">-->
+<!--    <div class="img__btn changerlogo"><span class="m&#45;&#45;up" >Changer le logo</span></div>-->
+<!--    <i class="fas fa-edit edit-icon"></i>-->
+<!--</div>-->
+
+
+
+
+<!--<div class="error-wrapper">-->
+<!--    <div class="container"><img class="img-100" src="assets/images/other-images/sad.png" alt="">-->
+<!--        <div class="error-heading">-->
+<!--            <h2 style="color: #e76f51" class="headline ">Oops!</h2>-->
+<!--        </div>-->
+<!--        <div class="col-md-8 offset-md-2">-->
+<!--            <p class="sub-content">403 - Vous n'avez pas accès à cette page</p>-->
+<!--        </div>-->
+<!--        <div><a style="color: #ffffff;" class="btn btn-danger-gradien btn-lg" routerLink='/auth/login'>Se connecter</a></div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--<svg xmlns="http://www.w3.org/2000/svg" id="robot-error" viewBox="0 0 260 118.9" role="img">-->
+<!--    <title xml:lang="en">403 Error</title>-->
+
+<!--    <defs>-->
+<!--        <clipPath id="white-clip"><circle id="white-eye" fill="#cacaca" cx="130" cy="65" r="20" /> </clipPath>-->
+<!--        <text id="text-s" class="error-text" y="106"> 403 </text>-->
+<!--    </defs>-->
+<!--    <path class="alarm" fill="#e62326" d="M120.9 19.6V9.1c0-5 4.1-9.1 9.1-9.1h0c5 0 9.1 4.1 9.1 9.1v10.6" />-->
+<!--    <use xlink:href="#text-s" x="-0.5px" y="-1px" fill="black"></use>-->
+<!--    <use xlink:href="#text-s" fill="#2b2b2b"></use>-->
+<!--    <g id="robot">-->
+<!--        <g id="eye-wrap">-->
+<!--            <use xlink:href="#white-eye"></use>-->
+<!--            <circle id="eyef" class="eye" clip-path="url(#white-clip)" fill="#000" stroke="#2aa7cc" stroke-width="2" stroke-miterlimit="10" cx="130" cy="65" r="11" />-->
+<!--            <ellipse id="white-eye" fill="#2b2b2b" cx="130" cy="40" rx="18" ry="12" />-->
+<!--        </g>-->
+<!--        <circle class="lightblue" cx="105" cy="32" r="2.5" id="tornillo" />-->
+<!--        <use xlink:href="#tornillo" x="50"></use>-->
+<!--        <use xlink:href="#tornillo" x="50" y="60"></use>-->
+<!--        <use xlink:href="#tornillo" y="60"></use>-->
+<!--    </g>-->
+<!--</svg>-->
+<!--<h1>You are not allowed to enter here</h1>-->
+<!--<h2>Go <a target="_blank" href="https://www.youtube.com/watch?v=JccW-mLdNe0">Home!</a></h2>-->

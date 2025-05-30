@@ -1,0 +1,117 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<div class="dashboard-area ptb-100">
+    <div class="container">
+        <div class="dashboard-tabs-list">
+            <ul>
+                <li><a routerLink="/dashboard">Dashboard</a></li>
+                <li><a routerLink="/dashboard-profile">Profile</a></li>
+                <li><a routerLink="/dashboard-store">Store</a></li>
+                <li><a routerLink="/dashboard-coupons">Coupons</a></li>
+                <li><a routerLink="/dashboard-deals" class="active">Deals</a></li>
+                <li><a routerLink="/dashboard-vouchers">Vouchers</a></li>
+                <li><a routerLink="/dashboard-agents">Agents</a></li>
+                <li><a routerLink="/">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="dashboard-profile-box">
+                    <div class="image">
+                        <img src="assets/img/user1.jpg" alt="image">
+                        <span>Jason Smith</span>
+                    </div>
+                    <p>You have <strong>$19,321</strong> dollars left, <a routerLink="/">earn mores</a></p>
+                    <a routerLink="/" class="logout">Log Out</a>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-12">
+                <div class="dashboard-stats">
+                    <a routerLink="/dashboard-add-deal" class="default-btn">Add Deal</a>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Deal</th>
+                                    <th>Status</th>
+                                    <th>Category</th>
+                                    <th>Purchases</th>
+                                    <th>CTR</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a routerLink="/deals-details">The START Hotel, Casino</a></td>
+                                    <td>Live</td>
+                                    <td>Hotel</td>
+                                    <td>210</td>
+                                    <td>0.15%</td>
+                                    <td>
+                                        <a routerLink="/dashboard-add-deal" class="edit"><i class='bx bx-cog'></i></a><br>
+                                        <a routerLink="/deals-details" class="view"><i class='bx bx-show'></i></a><br>
+                                        <a routerLink="/dashboard-deals" class="remove"><i class='bx bx-x'></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a routerLink="/deals-details">The Music Studio</a></td>
+                                    <td>Live</td>
+                                    <td>Studio</td>
+                                    <td>210</td>
+                                    <td>0.15%</td>
+                                    <td>
+                                        <a routerLink="/dashboard-add-deal" class="edit"><i class='bx bx-cog'></i></a><br>
+                                        <a routerLink="/deals-details" class="view"><i class='bx bx-show'></i></a><br>
+                                        <a routerLink="/dashboard-deals" class="remove"><i class='bx bx-x'></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a routerLink="/deals-details">Times Square Restaurant</a></td>
+                                    <td>Archived</td>
+                                    <td>Hotel</td>
+                                    <td>210</td>
+                                    <td>0.15%</td>
+                                    <td>
+                                        <a routerLink="/dashboard-add-deal" class="edit"><i class='bx bx-cog'></i></a><br>
+                                        <a routerLink="/deals-details" class="view"><i class='bx bx-show'></i></a><br>
+                                        <a routerLink="/dashboard-deals" class="remove"><i class='bx bx-x'></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a routerLink="/deals-details">Las Vegas Strip</a></td>
+                                    <td>Live</td>
+                                    <td>Hotel</td>
+                                    <td>210</td>
+                                    <td>0.15%</td>
+                                    <td>
+                                        <a routerLink="/dashboard-add-deal" class="edit"><i class='bx bx-cog'></i></a><br>
+                                        <a routerLink="/deals-details" class="view"><i class='bx bx-show'></i></a><br>
+                                        <a routerLink="/dashboard-deals" class="remove"><i class='bx bx-x'></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a routerLink="/deals-details">Universal Studios</a></td>
+                                    <td>Live</td>
+                                    <td>Hotel</td>
+                                    <td>210</td>
+                                    <td>0.15%</td>
+                                    <td>
+                                        <a routerLink="/dashboard-add-deal" class="edit"><i class='bx bx-cog'></i></a><br>
+                                        <a routerLink="/deals-details" class="view"><i class='bx bx-show'></i></a><br>
+                                        <a routerLink="/dashboard-deals" class="remove"><i class='bx bx-x'></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

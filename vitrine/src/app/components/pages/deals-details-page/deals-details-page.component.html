@@ -1,0 +1,202 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{event.event.name}}</h1>
+    </div>
+</div>
+
+<section class="deals-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div  class="deals-details-image-slides">
+                    <owl-carousel-o  [options]="dealsDetailsImageSlides">
+                        <ng-template carouselSlide>
+                            <div class="article-image">
+                                <img style="border-top-left-radius: 40px; border-top-right-radius: 40px" [src]="event.event?.imageToShow" alt="image">
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide *ngFor="let item of event.event.images">
+                            <div class="article-image">
+                                <img style="border-top-left-radius: 40px; border-top-right-radius: 40px" [src]="item.show.__zone_symbol__value" alt="image">
+                            </div>
+                        </ng-template>
+
+                    </owl-carousel-o>
+                </div>
+                <div style="border-bottom-left-radius: 40px; border-bottom-right-radius: 40px" class="deals-details-content">
+                    <h3>{{event.event?.name}}</h3>
+                    <div class="rating d-flex align-items-center">
+                        <span class="bx bxs-star checked"></span>
+                        <span class="bx bxs-star checked"></span>
+                        <span class="bx bxs-star checked"></span>
+                        <span class="bx bxs-star checked"></span>
+                        <span class="bx bxs-star checked"></span>
+                        <span class="rating-count">(45)</span>
+                    </div>
+                    <ul class="d-flex align-items-center">
+                        <li class="phone-number">
+                            <a href="tel:+2122791456"><i class="bx bx-phone-call"></i> +{{event.agency?.phone_number}}
+                            </a>
+                        </li>
+                        <li class="location">
+                            <i class="bx bx-map"></i>
+                            <span>Lieu</span>
+                            {{event.event?.location}}
+                        </li>
+                        <li class="location">
+                            <i class="bx bx-calendar"></i>
+                            <span>Date</span>
+                            {{event.event?.date}}
+                        </li>
+                        <li class="location">
+                            <i class="bx bx-time"></i>
+                            <span>Temps</span>
+                            {{event.event?.time}}
+                        </li>
+                        <li class="location">
+                            <i class="bx bx-hourglass"></i>
+                            <span>Durée</span>
+                            {{event.event?.duration}}
+                        </li>
+                    </ul>
+                </div>
+                <div style="border-radius: 40px;" class="deals-details-desc">
+
+                    <p> {{event.event?.description}}</p>
+                    <blockquote style="border-radius: 40px;" class="wp-block-quote">
+                        <p>La Tunisie est une mosaïque vivante où les couleurs de la nature, les trésors des civilisations et les rythmes de la culture s'entrelacent pour former un tableau unique et enchanteur.</p>
+                        <cite>Tom Cruise</cite>
+                    </blockquote>
+                    </div>
+                <div  style="border-radius: 40px" class="deals-details-review-comments">
+                    <div class="user-review">
+                        <img  style="border-radius: 20px" src="assets/img/photos%20profil/01.jpg" alt="image">
+                        <div class="review-rating">
+                            <div class="review-stars">
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star"></i>
+                            </div>
+                            <span class="d-inline-block">Charles Girard</span>
+                        </div>
+                        <span class="d-block sub-comment">Exploration authentique</span>
+                        <p>Une expérience inoubliable!</p>
+                    </div>
+                    <div class="user-review" *ngFor="let item of data" >
+                        <img [src]=item.imageToShow.__zone_symbol__value alt="image">
+                        <div class="review-rating">
+                            <div class="review-stars">
+                                <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                                    <!-- Display checked star if the current star index is less than or equal to item.stars -->
+                                    <i class="bx" [ngClass]="{  'bxs-star checked': star <= item.stars }"></i>
+                                    <i class="bx bxs-star" *ngIf="star>item.stars"></i>
+                                </ng-container>
+                            </div>
+
+                            <span class="d-inline-block">{{ item.user.first_name }} {{item.user.last_name }}</span>
+                        </div>
+                        <span class="d-block sub-comment">{{ item.title }}</span>
+                        <p>{{ item.description }}</p>
+                    </div>
+                </div>
+                <div style="border-radius: 40px" class="deals-details-review-form">
+                    <h3>Ajouter un avis</h3>
+                    <p class="comment-notes">Votre adresse mail ne sera pas partagée. Les champs obligatoires sont marqués <span>*</span></p>
+                    <form>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="rating">
+                                    <input type="radio" id="star5" name="rating" value="5" [(ngModel)]="feedback.stars" [ngModelOptions]="{ standalone: true }" ><label for="star5"></label>
+                                    <input type="radio" id="star4" name="rating" value="4" [(ngModel)]="feedback.stars" [ngModelOptions]="{ standalone: true }" ><label for="star4"></label>
+                                    <input type="radio" id="star3" name="rating" value="3" [(ngModel)]="feedback.stars" [ngModelOptions]="{ standalone: true }" ><label for="star3"></label>
+                                    <input type="radio" id="star2" name="rating" value="2" [(ngModel)]="feedback.stars" [ngModelOptions]="{ standalone: true }" ><label for="star2"></label>
+                                    <input type="radio" id="star1" name="rating" value="1" [(ngModel)]="feedback.stars" [ngModelOptions]="{ standalone: true }" ><label for="star1"></label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <input style="border-radius: 30px" type="text" class="form-control" placeholder="Title" [(ngModel)]="feedback.title" [ngModelOptions]="{ standalone: true }" >
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <textarea style="border-radius: 30px" placeholder="Votre avis" class="form-control" cols="30" rows="6" spellcheck="false" [(ngModel)]="feedback.description" [ngModelOptions]="{ standalone: true }" ></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <button style="border-radius: 30px" type="submit" (click)="save()">Soumettre</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <aside class="widget-area">
+                    <div style="border-radius: 40px;" class="widget widget_deals_sidebar">
+                        <div class="price">
+                            <span class="new-price">{{event.event.ticket_price}} DT</span>
+<!--                            <span class="old-price">$330.00</span>-->
+                        </div>
+                        <div class="buy-now-btn">
+                        <a style="border-radius: 40px"  class="default-btn" (click)="addToCart(event.event)">Ajouter au panier</a>
+                            <span style="border-radius: 40px"><i  class='bx bx-cart bx-flashing'></i> 43+ ont réservé</span>
+                        </div>
+                        <ul class="deals-value">
+                            <li>TND <span>{{event.event?.ticket_price}} DT</span></li>
+                            <li>USD <span>${{dollar}}</span></li>
+                            <li>EUR <span>€{{euro}}</span></li>
+                        </ul>
+                        <div class="offer-timer" [hidden]="timeLeft<0">
+                            <p>Il vous reste...</p>
+                            <div id="timer" class="flex-wrap d-flex justify-content-center">
+                                <div  style="border-radius: 20px" id="days" class="align-items-center flex-column d-flex justify-content-center">{{days}} <span>Days</span></div>
+                                <div style="border-radius: 20px" id="hours" class="align-items-center flex-column d-flex justify-content-center">{{hours}} <span>Hours</span></div>
+                                <div style="border-radius: 20px" id="minutes" class="align-items-center flex-column d-flex justify-content-center">{{minutes}} <span>Minutes</span></div>
+                                <div style="border-radius: 20px" id="seconds" class="align-items-center flex-column d-flex justify-content-center">{{seconds}} <span>Seconds</span></div>
+                            </div>
+                        </div><div class="offer-timer" [hidden]="timeLeft>0">
+                            <p>La date de l'événement est dépassée.</p>
+
+                        </div>
+                    </div>
+                    <div style="border-radius: 40px;" class="widget widget_maps">
+                        <h3 class="widget-title">Lieu de l'événement</h3>
+                        <div  class="content">
+                            <iframe style="border-radius: 40px" [src]="url1"></iframe>
+                        </div>
+                    </div>
+                    <div style="border-radius: 40px;" class="widget widget_author">
+                        <h3 class="widget-title">A propos l'agence</h3>
+                        <div class="content">
+                            <img style="width: 176px;" [src]="event.agency?.imageToShow" alt="image">
+                            <h4>{{event.agency?.agency}}</h4>
+                            <span>{{event.agency?.country}}</span>
+                            <a routerLink="/contact" class="default-btn" [routerLink]="['/agence', event.agency.id]" (click)="navigate(event.agency.id)">Savoir Plus</a>
+                        </div>
+                    </div>
+
+                    <div style="border-radius: 40px;" class="widget widget_author">
+                        <h3 class="widget-title">Sponsors</h3>
+                        <div  class="content">
+                            <a  routerLink="/stores-details" class="d-inline-block"><img class="m-0" style="width: 150px; border-top-left-radius: 30px" src="assets/img/partner/chaudfontainesponsor.jpg" alt="image"></a>
+                            <a routerLink="/stores-details" class="d-inline-block"><img class="m-0" style="width: 150px; border-top-right-radius: 30px" src="assets/img/partner/escuyersponsor.jpg" alt="image"></a>
+                            <a routerLink="/stores-details" class="d-inline-block"><img class="m-0" style="width: 150px; border-bottom-left-radius: 30px" src="assets/img/partner/damartsponsor.jpg" alt="image"></a>
+                            <a routerLink="/stores-details" class="d-inline-block"><img class="m-0" style="width: 150px; border-bottom-right-radius: 30px" src="assets/img/partner/leplazasponsor.png" alt="image"></a>
+                        </div>
+                    </div>
+                    <div style="border-radius: 40px;" class="widget widget_socials_link">
+                        <h3 class="widget-title">Restez connecté(e)</h3>
+                        <ul>
+                            <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i> Facebook</a></li>
+                            <li><a href="#" target="_blank"><i class='bx bxl-instagram'></i> Instagram</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>

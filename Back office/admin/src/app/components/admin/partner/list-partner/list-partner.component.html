@@ -1,0 +1,72 @@
+
+
+<div  style="flex: 0 1 auto">
+    <div  style="padding-right: -10px" class="card b-l-primary border-3">
+        <div  class="card-header ">
+            <td style="padding-right: 640px">
+                <h5>Liste des partenaires</h5>
+            </td>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-pill" type="submit" routerLink="/partenaires/add-edit" style="border-radius: 25px; height: 35px;  display: flex;margin-top: -10px; margin-bottom: 30px;margin-left: 30px;   align-items: center; justify-content: center;">Ajouter un partenaire</button><div class="row">
+            <div class="col-lg-12">
+                <div class="row" style="margin-left: -20px; margin-left: -20px; ">
+                <div class="col-xl-3 xl-50 col-md-6 box-col-6" style="margin-right: 40px;margin-left: 40px; border-radius: 40px"  *ngFor="let item of data">
+                    <div style="height: 680px; width: 340px;border-radius: 30px" class="card features-faq product-box">
+                        <div  class="faq-image product-img">
+                            <img style=" border-top-left-radius: 30px; border-top-right-radius: 30px" [src]="item.imageToShow.__zone_symbol__value" alt="" class="img-fluid">
+                            <div class="product-hover">
+                                <ul>
+                                    <li>
+                                        <i (click)="update(item.id)" class="icon-pencil">
+
+                                        </i>
+                                    </li>
+                                    <li>
+                                        <i (click)="openDelete(item)" class="icon-trash"></i>
+
+                                    </li>
+                                    <li>
+                                        <i (click)="add(item.id)" class="icon-plus"></i>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6>{{ item.name }}
+                            </h6>
+                            <p>  {{ item.description }} </p>
+                        </div>
+                        <div class="card-footer">
+                    <span>{{ item.category }}
+                    </span>
+                            <span class="pull-right">
+                    <a href="javascript:void(0)" style="width: 30px; height: 20px; padding-top: 5px" class="badge rounded-pill badge-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                    </a>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div></div>
+
+
+
+
+<div class="modal-overlay" *ngIf="showDelete" (click)="closeDelete()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close-button" (click)="closeDelete()">X</span>
+        <h1 style="font-size: 24px">Etes-vous sur(e) de vouloir supprimer ce partenaire ?</h1>
+        <button mat-raised-button class="btnOui color-primary" (click)="delete()">Oui</button>
+        <button mat-raised-button class="btnNon color-warn" (click)="closeDelete()">Non</button>
+    </div>
+</div>
+</div>

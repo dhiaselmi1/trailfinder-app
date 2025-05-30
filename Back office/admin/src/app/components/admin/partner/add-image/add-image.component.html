@@ -1,0 +1,66 @@
+<div  class="card b-l-primary border-3">
+    <div  class="card-header ">
+        <h5 >Ajouter des images</h5>
+        <div >
+            <table >
+                <td style="width: 250px;"><label class="col-sm-3 col-form-label">Image1</label></td>
+                <td class="drag">
+                    <div class="file-container" *ngIf="!file">
+                        <table>
+                            <tr style="height: 100px;"><p style="padding: 50px; margin-top: 40px; font-size: 16px;">Glissez le logo de votre agence ici ou cliquez pour choisir une image.</p></tr>
+                            <tr><input type="file" (change)="getFile($event)" class="file"/></tr>
+                        </table>
+
+                    </div>
+
+                    <div class="cancel-section" *ngIf="file">
+                        <p class="file-info">File name: {{file.name}}</p>
+                        <button class="cancel-button" (click)="cancel(file.name)">Annuler</button>
+                    </div>
+                </td>
+            </table>
+        </div><div >
+            <table >
+                <td style="width: 250px;"><label class="col-sm-3 col-form-label">Image2</label></td>
+                <td class="drag">
+                    <div class="file-container" *ngIf="!file1">
+                        <table>
+                            <tr style="height: 100px;"><p style="padding: 50px; margin-top: 40px; font-size: 16px;">Glissez le logo de votre agence ici ou cliquez pour choisir une image.</p></tr>
+                            <tr><input type="file" (change)="getFile1($event) " class="file"/></tr>
+                        </table>
+
+                    </div>
+
+                    <div class="cancel-section" *ngIf="file1">
+                        <p class="file-info">File name: {{file1.name}}</p>
+                        <button class="cancel-button" (click)="cancel(file1.name)">Annuler</button>
+                    </div>
+                </td>
+            </table>
+        </div><div >
+            <table >
+                <td style="width: 250px;"><label class="col-sm-3 col-form-label">Image3</label></td>
+                <td class="drag">
+                    <div class="file-container" *ngIf="!file2">
+                        <table>
+                            <tr style="height: 100px;"><p style="padding: 50px; margin-top: 40px; font-size: 16px;">Glissez le logo de votre agence ici ou cliquez pour choisir une image.</p></tr>
+                            <tr><input type="file" (change)="getFile2($event)" class="file"/></tr>
+                        </table>
+
+                    </div>
+
+                    <div class="cancel-section" *ngIf="file2">
+                        <p class="file-info">File name: {{file2.name}}</p>
+                        <button class="cancel-button" (click)="cancel(file2.name)">Annuler</button>
+                    </div>
+                </td>
+            </table>
+        </div>
+        <div  class="card-footer">
+            <div  class="col-sm-9 offset-sm-3">
+                <button  type="submit" class="btn btn-primary btn-pill" (click)="save()" >Valider</button>
+
+            </div>
+        </div>
+    </div>
+</div>

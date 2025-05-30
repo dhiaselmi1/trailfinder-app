@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="popular-store-inner">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="popular-store-content" *ngFor="let Content of popularStoreContent;" style="background-image: url({{Content.image}});">
+                    <div class="content">
+                        <h2>{{Content.title}}</h2>
+                        <p>{{Content.paragraph}}</p>
+                        <a routerLink="/{{Content.buttonLink}}" class="default-btn">{{Content.buttonText}}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-12">
+                <div class="popular-store-list">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-4 col-6 col-md-4" *ngFor="let item of data;">
+                            <div class="item">
+                              <!--  <a routerLink="/{{Item.link}}">   </a> -->
+                                <a [routerLink]="['/agence', item.agency.id]" (click)="navigate(item.agency.id)">   <img [src]="item.imageToShow.__zone_symbol__value" alt="image"></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

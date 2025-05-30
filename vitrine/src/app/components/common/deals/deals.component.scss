@@ -1,0 +1,488 @@
+.single-deals-box {
+    border-radius: 5px;
+    margin-bottom: 30px;
+    background-color: var(--whiteColor);
+
+    .deals-image {
+        overflow: hidden;
+        position: relative;
+        border-radius: 5px 5px 0 0;
+
+        a {
+            border-radius: 5px 5px 0 0;
+
+            img {
+                border-radius: 5px 5px 0 0;
+                transition: var(--transition);
+            }
+        }
+
+        .discount {
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            color: var(--whiteColor);
+            padding: 5px 25px 5px 12px;
+            background: {
+                image: url(../../../../assets/img/ribbon-bg.png);
+                position: right center;
+                size: cover;
+                repeat: no-repeat;
+            };
+            font: {
+                size: 13.5px;
+                weight: 600;
+                family: var(--headingFontFamily);
+            };
+        }
+        .show-coupon-code {
+            position: absolute;
+            color: var(--mainColor);
+            display: inline-block;
+            left: 13px;
+            top: 13px;
+            padding: 8px 20px;
+            background-color: transparent;
+            transition: var(--transition);
+            border: 1px dashed var(--whiteColor);
+            color: var(--whiteColor);
+            font: {
+                size: 13px;
+                weight: 600;
+                family: var(--headingFontFamily);
+            };
+            &:hover {
+                color: var(--whiteColor);
+                border-color: var(--mainColor);
+                background-color: var(--mainColor);
+            }
+        }
+    }
+    .deals-content {
+        padding: 20px;
+
+        .rating {
+            i {
+                line-height: 1;
+                color: #c44118;
+                font-size: 13.5px;
+                margin-right: 2px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            .count {
+                display: inline-block;
+                color: var(--optionalColor);
+                font: {
+                    size: 13.5px;
+                    weight: 500;
+                    family: var(--headingFontFamily);
+                };
+            }
+        }
+        .status {
+            span {
+                color: #1c610e;
+                position: relative;
+                padding-left: 20px;
+                font: {
+                    size: 13.5px;
+                    weight: 500;
+                    family: var(--headingFontFamily);
+                };
+                i {
+                    position: absolute;
+                    font-size: 16px;
+                    left: 0;
+                    top: 1px;
+                }
+            }
+        }
+        h3 {
+            font-size: 16px;
+            margin: {
+                top: 13px;
+                bottom: 13px;
+            };
+            a {
+                display: inline-block;
+            }
+        }
+        .location {
+            display: block;
+            position: relative;
+            padding-left: 19px;
+            color: var(--optionalColor);
+            font: {
+                size: 13.5px;
+                weight: 500;
+                family: var(--headingFontFamily)
+            };
+            i {
+                top: 2px;
+                font-size: 16px;
+                left: 0;
+                position: absolute;
+            }
+        }
+    }
+    .box-footer {
+        padding: 20px 20px 18px;
+        border-top: 1px solid #ececec;
+
+        .price {
+            span {
+                display: inline-block;
+                line-height: 1;
+                font: {
+                    size: 18px;
+                    weight: 700;
+                    family: var(--headingFontFamily);
+                };
+                &.old-price {
+                    margin-left: 5px;
+                    font-weight: 400;
+                    color: var(--optionalColor);
+                    text-decoration: line-through;
+                }
+            }
+        }
+        .details-btn {
+            top: -2px;
+            position: relative;
+            display: inline-block;
+            color: var(--mainColor);
+            font: {
+                size: 14px;
+                weight: 600;
+                family: var(--headingFontFamily);
+            };
+            &::before {
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                content: '';
+                position: absolute;
+                background-color: var(--mainColor);
+                transition: var(--transition);
+            }
+            &:hover {
+                &::before {
+                    width: 0;
+                }
+            }
+        }
+    }
+    &:hover {
+        .deals-image {
+            a {
+                img {
+                    transform: scale(1.07);
+                }
+            }
+        }
+    }
+}
+.single-deals-coupon-box {
+    margin-bottom: 30px;
+
+    .deals-coupon-image {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        text-align: center;
+        border-radius: 10px;
+        background: {
+            position: center center;
+            size: cover;
+            repeat: no-repeat;
+        };
+        .main-image {
+            display: none;
+        }
+        &::before {
+            left: 0;
+            right: 0;
+            top: 0;
+            border-radius: 10px;
+            bottom: 0;
+            z-index: -1;
+            content: '';
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            background-color: #000000;
+        }
+        .content {
+            left: 0;
+            right: 0;
+            z-index: 1;
+            top: 50%;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            transform: translateY(-50%);
+            padding: {
+                left: 20px;
+                right: 20px;
+            };
+            img {
+                display: block;
+                margin: {
+                    left: auto;
+                    right: auto;
+                };
+            }
+            .link-btn {
+                display: inline-block;
+                color: var(--whiteColor);
+                margin-top: 15px;
+                position: relative;
+                font: {
+                    size: 14px;
+                    weight: 600;
+                    family: var(--headingFontFamily);
+                };
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    transition: var(--transition);
+                    background-color: var(--whiteColor);
+                    bottom: 0;
+                }
+                &:hover {
+                    color: var(--mainColor);
+
+                    &::before {
+                        background-color: var(--mainColor);
+                    }
+                }
+            }
+        }
+    }
+    .deals-coupon-content {
+        padding: 30.3px;
+        border-radius: 10px;
+        background-color: var(--whiteColor);
+
+        h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        p {
+            color: var(--blackColor);
+        }
+        .show-coupon-code {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e9e9e9;
+
+            span {
+                margin-right: 8px;
+                display: inline-block;
+                color: var(--optionalColor);
+                font: {
+                    size: 14px;
+                    weight: 600;
+                    family: var(--headingFontFamily);
+                };
+            }
+            .code-btn {
+                border: 1px dashed var(--mainColor);
+                position: relative;
+                transition: var(--transition);
+                color: var(--mainColor);
+                display: inline-block;
+                padding: 10px 38px 10px 20px;
+                background-color: transparent;
+                font: {
+                    size: 14px;
+                    weight: 600;
+                    family: var(--headingFontFamily);
+                };
+                i {
+                    position: absolute;
+                    right: 20px;
+                    font-size: 20px;
+                    margin-top: 1px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &:hover {
+                    color: var(--whiteColor);
+                    background-color: var(--mainColor);
+                }
+            }
+        }
+    }
+    &:hover {
+        .deals-coupon-image {
+            &::before {
+                opacity: .75;
+                visibility: visible;
+            }
+            .content {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .single-deals-box {
+        .deals-image {
+
+            .discount {
+                font-size: 13px;
+            }
+        }
+        .deals-content {
+            padding: 15px;
+
+            .rating {
+                i {
+                    font-size: 13px;
+                }
+                .average-rating {
+                    font-size: 13px;
+                }
+                .count {
+                    font-size: 13px;
+                }
+            }
+            .status {
+                span {
+                    font-size: 13px;
+
+                    i {
+                        font-size: 15px;
+                        top: 1px;
+                    }
+                }
+            }
+            h3 {
+                font-size: 14px;
+            }
+            .location {
+                font-size: 13px;
+
+                i {
+                    top: 2px;
+                    font-size: 15px;
+                    left: 0;
+                }
+            }
+        }
+        .box-footer {
+            padding: 15px;
+
+            .price {
+                span {
+                    font-size: 15px;
+                }
+            }
+            .details-btn {
+                font-size: 13px;
+            }
+        }
+    }
+    .single-deals-coupon-box {
+        .deals-coupon-image {
+            height: auto;
+            background-image: unset !important;
+
+            .main-image {
+                display: inline-block;
+            }
+            &::before {
+                z-index: 1;
+            }
+            .content {
+                .link-btn {
+                    font-size: 13px;
+                }
+            }
+        }
+        .deals-coupon-content {
+            padding: 20px 15px;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+
+            h3 {
+                font-size: 15px;
+            }
+            .show-coupon-code {
+                margin-top: 15px;
+                padding-top: 15px;
+
+                span {
+                    font-size: 13px;
+                    display: block;
+                    margin: {
+                        right: 0;
+                        bottom: 8px;
+                    };
+                }
+                .code-btn {
+                    font-size: 13px;
+                    padding: 9px 35px 9px 15px;
+
+                    i {
+                        right: 15px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+
+
+}
+
+/* Min width 1200px to Max width 1355px */
+@media only screen and (min-width: 1200px) and (max-width: 1355px) {
+
+
+
+}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {
+
+
+
+}

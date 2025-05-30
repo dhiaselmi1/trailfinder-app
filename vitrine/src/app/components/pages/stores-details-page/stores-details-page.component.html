@@ -1,0 +1,94 @@
+
+
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<div class="deals-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-md-12">
+                <div class="marxa-grid-sorting row align-items-center">
+                    <div class="col-lg-6 col-md-6 result-count">
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 ordering">
+                        <div  class="select-box">
+                            <label>Filtrer par:</label>
+                            <select style="border-radius: 40px" [(ngModel)]="selectedOption" (change)="sortData()">
+                                <option>Default</option>
+                                <option>Date plus proche</option>
+                                <option >Prix: low to high</option>
+                                <option>Prix: high to low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-sm-6 col-md-6" *ngFor="let item of data | paginate: { itemsPerPage: 9, currentPage: dealsGrid }">
+                        <div style="border-radius: 40px" class="single-deals-box">
+                            <div class="deals-image">
+                                <a [routerLink]="['/evenement', item.event.id]" (click)="navigate(item.event.id)" class="d-block">
+                                    <img style="border-top-right-radius: 40px; border-top-left-radius: 40px" [src]="item.imageToShow.__zone_symbol__value" alt="image"></a>
+
+<!--                                <a href="javascript:void(0)" class="bookmark-save"><i class='bx bx-heart'></i></a>-->
+                            </div>
+                            <div class="deals-content">
+
+                                <h3><a [routerLink]="['/evenement', item.event.id]" (click)="navigate(item.event.id)">{{item.event.name}}</a></h3>
+                                <div>   <h3 class='bx bxs-store-alt'> {{item.agencyName.__zone_symbol__value}}</h3></div>
+                                <h6 class='bx bxs-calendar'> {{item.event.date}}</h6>
+                                <span class="location"><i class='bx bxs-map'></i> {{item.event.location}}</span>
+                            </div>
+                            <div class="box-footer">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="price">
+                                        <span class="new-price">{{item.event.ticket_price}} TND</span>
+                                    </div>
+                                    <a [routerLink]="['/evenement', item.event.id]" (click)="navigate(item.event.id)" class="details-btn">Voir les détails</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div  class="pagination-area text-center">
+                            <pagination-controls previousLabel="" nextLabel="" (pageChange)="dealsGrid = $event"></pagination-controls>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-12">
+                <aside class="widget-area">
+                    <div style="border-radius: 40px" class="widget widget_search">
+                        <form class="search-box">
+<div>
+                                <input type="text" class="input-search" placeholder="Chercher événement"  (input)="onSearchChange($event.target.value)" ><label></label>
+</div></form>
+
+                    </div>
+
+                    <div style="border-radius: 40px" class="widget widget_categories">
+                        <h3 class="widget-title">Catégorie</h3>
+                        <ul>
+                            <li><a routerLink="/"><i class='bx bx-leaf'></i> Randonnée</a></li>
+                            <li><a routerLink="/"><i class='bx bx-leaf'></i> Camping</a></li>
+                            <li><a routerLink="/"><i class='bx bx-leaf'></i> VTT</a></li>
+                            <li><a routerLink="/"><i class='bx bx-leaf'></i> Exploration de grottes</a></li>
+                            <li><a routerLink="/"><i class='bx bx-leaf'></i> Tyrolienne</a></li>
+                            <li><a routerLink="/"><i class='bx bx-leaf'></i> Safari</a></li>
+                            <li><a routerLink="/"><i class='bx bx-leaf'></i> Excursion à cheval</a></li>
+                        </ul>
+                    </div>
+
+
+                </aside>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

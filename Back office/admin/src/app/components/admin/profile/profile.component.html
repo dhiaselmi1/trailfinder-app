@@ -1,0 +1,264 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div  class="card b-l-primary border-3">
+                <div style="margin-bottom: 35px" class="card-header ">
+                    <div class="card-body">
+                        <main  class="ng-tns-c1454104819-0 ng-trigger ng-trigger-fadeInAnimation" style="">
+                            <router-outlet  class="ng-tns-c1454104819-0">
+                            </router-outlet>
+                            <div class="ng-star-inserted" style="">
+                                <div class="container-fluid">
+                                    <div class="user-profile">
+                                        <div   style="width: 1050px; " class="row">
+                                            <div style="margin-left: -65px" class="col-sm-12">
+                                                <div class="card hovercard text-center">
+                                                    <div class="crop-container">
+                                                    <img alt=""  [src]="data[0].event.__zone_symbol__value">
+                                                    </div>
+                                                    <div class="user-image">
+                                                        <div  class="avatar">
+                                                            <img alt=""  [src]="data[0].imageToShow.__zone_symbol__value">
+                                                        </div>
+                                                        <div class="icon-wrapper">
+                                                            <i class="icofont icofont-pencil-alt-5" (click)="openChangeLogo1()">
+
+                                                            </i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info">
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-lg-4 order-sm-1 order-xl-0">
+                                                                <div class="row">
+                                                                    <div class="col-md-10">
+                                                                        <div class="ttl-info text-start">
+                                                                            <h6>
+                                                                                <i class="fa fa-envelope">
+
+                                                                                </i> Email
+                                                                            </h6>
+                                                                            <span>{{data[0].agency.email}}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12 col-lg-4 order-sm-0 order-xl-1">
+                                                                <div class="user-designation">
+                                                                    <div style="margin-top: 17px" class="title">{{data[0].agency.agency}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6 col-lg-4 order-sm-2 order-xl-2">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="ttl-info text-start">
+                                                                            <h6>
+                                                                                <i class="fa fa-phone">
+
+                                                                                </i>&nbsp;&nbsp;&nbsp;N° Téléphone
+                                                                            </h6>
+                                                                            <span>+{{data[0].agency.phone_number}}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="ttl-info text-start">
+                                                                            <h6>
+                                                                                <i class="fa fa-location-arrow">
+
+                                                                                </i>&nbsp;&nbsp;&nbsp;Pays
+                                                                            </h6>
+                                                                            <span>{{data[0].agency.country}}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="btn" style="  background-color: #d3d3d3;border-color: #9f9ba5;border-radius: 40px" (click)="openUpdate()">Mettre à jour mes informations
+                                                        </button>
+                                                        <hr>
+                                                        <div class="social-media">
+                                                            <ul class="list-inline">
+                                                                <li class="list-inline-item">
+                                                                    <a href="https://www.facebook.com/">
+                                                                        <i class="fa fa-facebook">
+
+                                                                        </i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="https://myaccount.google.com/">
+                                                                        <i class="fa fa-google-plus">
+
+                                                                        </i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="https://twitter.com/">
+                                                                        <i class="fa fa-twitter">
+
+                                                                        </i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="https://www.instagram.com/">
+                                                                        <i class="fa fa-instagram">
+
+                                                                        </i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="https://dashboard.rss.com/auth/sign-in/">
+                                                                        <i class="fa fa-rss">
+
+                                                                        </i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="follow">
+                                                            <div class="row">
+                                                                <div class="col-6 text-md-end border-end">
+
+                                                                </div>
+                                                                <div class="col-6 text-md-start">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12"  *ngFor="let item of data[0].agency.events">
+                                                <div  style="width: 1050px; margin-left: -80px" class="card">
+                                                    <div class="profile-img-style">
+                                                        <div class="row">
+                                                            <div class="col-sm-8">
+                                                                <div class="d-flex">
+                                                                    <img [src]="data[0].imageToShow.__zone_symbol__value" style="width: 80px;" alt="Generic placeholder image" class="img-thumbnail rounded-circle me-3">
+                                                                    <div class="flex-grow-1 align-self-center">
+                                                                        <h5 class="mt-0 user-name">{{data[0].agency.agency}}
+                                                                        </h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4 align-self-center">
+                                                                <div class="float-sm-end">
+                                                                    <small>{{item.date}}
+                                                                    </small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <h4>{{item.name}}:
+                                                        </h4>
+                                                        <p>  {{item.description}}
+                                                        </p>
+
+                                                        <div style="margin-right: -400px; margin-left: -50px" id="aniimated-thumbnials-2" class="row mt-4 pictures my-gallery">
+                                                            <div style="height: 300px; width:100%;" class=" features-faq product-box">
+
+                                                                <div class="my-gallery card-body row" itemscope="" data-pswp-uid="1" >
+                                                                    <figure  *ngFor="let item of item.images" class="col-xl-3 col-md-4 col-6" itemprop="associatedMedia" itemscope="">  <img [src]="item.show.__zone_symbol__value" alt="" class="img-fluid">  </figure>
+                                                                    <figure  class="col-xl-3 col-md-4 col-6 faq-image product-img" itemprop="associatedMedia" itemscope=""> <img [src]="item.imageToShow.__zone_symbol__value" alt="" class="img-fluid">
+
+                                                                        <div class="product-hover" *ngIf="item.images.length<2">
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <i (click)="openChangeLogo(item)"  class="icon-plus">
+
+                                                                                    </i>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </figure>
+
+
+
+
+
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-overlay" *ngIf="showUpdate" (click)="closeUpdate()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close-button" (click)="closeUpdate()">X</span>
+        <h1>Modifier vos informations</h1>
+
+            <tr><td>
+            <label style="margin-left: 50px" >E-mail   </label>
+            </td><td>
+            <input  [(ngModel)]="agency.email" class="form-control" style="width:320px ; border-radius: 30px;margin-top: 10px; margin-left: 60px; border-color: #00bbaa" type="text">
+            </td> </tr>
+            <tr><td>
+            <label style="margin-left: 50px" >Responsable</label>
+            </td><td>
+            <input class="form-control" [(ngModel)]="agency.representative" style="width:320px ;margin-top: 10px; border-radius: 30px; margin-left: 20px; border-color: #00bbaa" type="text">
+            </td></tr>
+            <tr><td>
+            <label style="margin-left: 50px" >N° Téléphone</label>
+            </td><td>
+            <input [(ngModel)]="agency.phone_number" class="form-control" style="width:320px ;margin-top: 10px; border-radius: 30px; margin-left: 17px; border-color: #00bbaa" type="text">
+            </td> </tr>
+            <tr><td><label style="margin-left: 50px" >Pays</label>
+            </td><td>
+            <input  [(ngModel)]="agency.country" class="form-control" style="width:320px ; margin-top: 10px; border-radius: 30px; margin-left: 72px; border-color: #00bbaa" type="text">
+            </td></tr>
+
+        <button style="width: 30%; margin-left: 180px; border-radius: 40px" mat-raised-button class="btnOui color-primary" (click)="updateAgence()" >Valider</button>
+
+    </div>
+</div>
+<div class="modal-overlay" *ngIf="showChangeLogo" (click)="closeChangeLogo()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <h1>Sélectionner une image</h1>
+        <span (click)=" closeChangeLogo()" class="close-button">X</span>
+        <input
+               type="file" required=""
+               class="form-control"
+               (change)="getFile($event)">
+        <button mat-raised-button class="btnNon color-warn"
+                style="width: 120px; height: 30px;
+                                                                 font-size: 15px; display: flex;
+                                                                  align-items: center; justify-content:
+                                                                           center; margin-left: 100px"
+                (click)="changeLogo()">Valider</button>
+    </div>
+</div><div class="modal-overlay" *ngIf="showChangeLogo1" (click)="closeChangeLogo1()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <h1>Sélectionner une image</h1>
+        <span (click)=" closeChangeLogo1()" class="close-button">X</span>
+        <input
+               type="file" required=""
+               class="form-control"
+               (change)="getFile1($event)">
+        <button mat-raised-button class="btnNon color-warn"
+                style="width: 120px; height: 30px;
+                                                                 font-size: 15px; display: flex;
+                                                                  align-items: center; justify-content:
+                                                                           center; margin-left: 100px"
+                (click)="changeLogo1()">Valider</button>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div  class="card b-l-primary border-3">
+                <div  class="card-header ">
+                    <h5>Ajouter une permission
+                    </h5>
+                </div>
+                <div class="card-body">
+
+                    <div class="form-row">
+
+                        <div class="col-md-8 mb-3">
+                            <label for="validationCustomUsername" class="form-label">Titre
+                            </label>
+                            <div class="input-group">
+                                <input [(ngModel)]="permission.title"
+                                        id="validationCustomUsername"
+                                        type="text" placeholder="Titre"
+                                        aria-describedby="inputGroupPrepend"
+                                        required=""
+                                       #permissionDescription="ngModel"
+                                        class="form-control input-radius">
+                            </div>
+                            <div *ngIf="permissionDescription.invalid && (permissionDescription.dirty || permissionDescription.touched)" class="text-danger">
+                                <div *ngIf="permissionDescription.errors.required" >
+                                    Ce champs est obligatoire
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-8 mb-3">
+                            <label for="validationCustom03" class="form-label">Description
+                            </label>
+                            <textarea  [(ngModel)]="permission.description"
+                                    rows="5" cols="5"
+                                    placeholder="Description de la permission"
+                                       #permissionDescription="ngModel"
+                                    class="form-control input-radius" ></textarea>
+                        </div>
+                        <div *ngIf="permissionDescription.invalid && (permissionDescription.dirty || permissionDescription.touched)" class="text-danger">
+                            <div *ngIf="permissionDescription.errors.required" >
+                                Ce champs est obligatoire
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary ms-1 btn-pill" (click)="savePermission()">Valider
+                    </button>
+                    <button  type="reset"  class="btn btn-light ms-1 btn-pill" (click)="resetPermission()">Annuler</button>
+
+                </div></div></div>
+    </div></div>

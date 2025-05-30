@@ -1,0 +1,8 @@
+{
+    "/api/v1/payment/generate": {
+        "target": "https://developers.flouci.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

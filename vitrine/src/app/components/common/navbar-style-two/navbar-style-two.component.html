@@ -1,0 +1,111 @@
+<div class="navbar-area" [ngClass]="{'sticky': isSticky}">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" [class.active]="classApplied">
+            <a class="navbar-brand" routerLink="/"><img style="width: 200px; padding-top: 10px" src="assets/img/logo/logoslogan.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" (click)="toggleClass()">
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <!--                    <li class="nav-item"><a href="javascript:void(0)" class="dropdown-toggle nav-link">Demo</a>-->
+                    <!--                        <ul class="dropdown-menu">-->
+                    <!--                            <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home Demo - 1</a></li>-->
+                    <!--                            <li class="nav-item"><a routerLink="/index-2" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home Demo - 2</a></li>-->
+                    <!--                            <li class="nav-item"><a routerLink="/index-3" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home Demo - 3</a></li>-->
+                    <!--                        </ul>-->
+                    <!--                    </li>-->
+                    <li class="nav-item megamenu"><a href="javascript:void(0)" class="dropdown-toggle nav-link">Evénements</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="submenu-title">Lieux</h6>
+                                        <ul class="megamenu-submenu">
+                                            <li><a routerLink="/search-page">Tunis<span class="count">6</span></a></li>
+                                            <li><a routerLink="/search-page">Nabeul <span class="count">5</span></a></li>
+                                            <li><a routerLink="/search-page">Beja <span class="count">4</span></a></li>
+                                            <li><a routerLink="/search-page">Ain Drahem <span class="count">3</span></a></li>
+                                            <li><a routerLink="/search-page">Djerba <span class="count">2</span></a></li>
+                                            <li><a routerLink="/search-page">Tozeur<span class="count">1</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="submenu-title">Catégories</h6>
+                                        <ul class="megamenu-submenu">
+                                            <li><a routerLink="/search-page">Randonnée <span class="count">1</span></a></li>
+                                            <li><a routerLink="/search-page">Camping <span class="count">2</span></a></li>
+                                            <li><a routerLink="/search-page">Safari <span class="count">3</span></a></li>
+                                            <li><a routerLink="/search-page">Marathon <span class="count">4</span></a></li>
+                                            <li><a routerLink="/search-page">Observation d'oiseaux <span class="count">5</span></a></li>
+                                            <li><a routerLink="/search-page">Atelier de méditation <span class="count">6</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item megamenu"><a href="javascript:void(0)" class="dropdown-toggle nav-link">Agences</a>
+                        <ul style="width: 350px" class="dropdown-menu">
+                            <li class="nav-item">
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="submenu-title">Types d'activité</h6>
+                                        <ul class="megamenu-submenu">
+                                            <li><a routerLink="/search-page">Randonnée</a></li>
+                                            <li><a routerLink="/search-page">Camping </a></li>
+                                            <li><a routerLink="/search-page">Safari </a></li>
+                                            <li><a routerLink="/search-page">Marathon</a></li>
+                                            <li><a routerLink="/search-page">Observation d'oiseaux</a></li>
+                                            <li><a routerLink="/search-page">Atelier de méditation</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a href="javascript:void(0)" class="dropdown-toggle nav-link">Partenaires</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a routerLink="/locations" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Ministère du tourisme</a></li>
+                            <li class="nav-item"><a routerLink="/categories" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Decathlon</a></li>
+                            <li class="nav-item"><a routerLink="/how-it-works" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Pristine</a></li>
+                            <li class="nav-item"><a routerLink="/locations" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Tunisair</a></li>
+                            <li class="nav-item"><a routerLink="/categories" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">The Dreamer</a></li>
+                            <li class="nav-item"><a routerLink="/how-it-works" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Magic Hotels</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="javascript:void(0)" class="dropdown-toggle nav-link">A propos</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a routerLink="/blog-grid" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Qui sommes-nous?</a></li>
+                            <li class="nav-item"><a routerLink="/blog-right-sidebar" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Nous contacter</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a routerLink="/boutique" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Boutique</a></li>
+
+                </ul>
+                <div class="others-option d-flex align-items-center">
+                    <div class="option-item">
+                        <form class="search-box">
+                            <label><i class='bx bx-search'></i></label>
+                            <input type="text" class="input-search" placeholder="Chercher événement">
+                        </form>
+                    </div>
+                    <div class="option-item">
+                        <a routerLink="/cart" class="wishlist-btn"></a>
+                    </div>
+                    <div class="option-item">
+                        <a routerLink="/cart" class="cart-btn"><i class='bx bx-shopping-bag'></i></a>
+                        <div style="font-size: 10px; background-color: #0e76a8" class="badge ">{{ totalItem }}</div>
+
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

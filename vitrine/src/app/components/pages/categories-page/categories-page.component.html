@@ -1,0 +1,40 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<div class="categories-area pt-100 pb-70">
+    <div class="container">
+        <div class="filter-block">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-7">
+                    <ul>
+                        <li><a routerLink="/categories" class="active">All</a></li>
+                        <li><a routerLink="/categories">A</a></li>
+                        <li><a routerLink="/categories">B</a></li>
+                        <li><a routerLink="/categories">C</a></li>
+                        <li><a routerLink="/categories">D</a></li>
+                        <li><a routerLink="/categories">Z</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    <form>
+                        <input type="text" class="form-control" placeholder="Search Categories">
+                        <button type="submit"><i class='bx bx-search-alt'></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let Content of categoriesBox;">
+                <div class="categories-box" style="background-image: url({{Content.bgImage}});">
+                    <h3><a routerLink="/search-page">{{Content.category}}</a></h3>
+                    <ul>
+                        <li *ngFor="let Text of Content.categoryList"><a routerLink="/{{Content.link}}">{{Text.name}} <span class="count">{{Text.count}}</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

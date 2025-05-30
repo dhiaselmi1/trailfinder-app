@@ -1,0 +1,197 @@
+
+
+
+<div *ngIf="agency.id!=0">
+<div class="col-lg-12 xl-100" >
+    <div class="row ecommerce-chart-card">
+<div class="col-sm-6 box-col-6 xl-50 col-xl-3">
+    <div style="height: 150px" class="card gradient-primary o-hidden">
+        <div class="b-r-4 card-body">
+            <div class="d-flex static-top-widget">
+                <div class="align-self-center text-center">
+                    <app-feather-icons [icon]="'tag'"></app-feather-icons>
+                </div>
+                <div class="sale-chart">
+                    <div class="flex-grow-1 m-l-40">
+                        <h6 class="f-w-100"> {{ totalCount?.totalReservations }}</h6>
+                        <h4 class="mb-0 f-w-700">Tickets vendus</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-6 box-col-6 xl-50 col-xl-3">
+    <div style="height: 150px" class="card gradient-secondary o-hidden">
+        <div class="b-r-4 card-body">
+            <div class="d-flex static-top-widget">
+                <div class="align-self-center text-center">
+                    <app-feather-icons [icon]="'dollar-sign'"></app-feather-icons>
+                </div>
+                <div class="sale-chart">
+                    <div class="flex-grow-1 m-l-40">
+<!--                        <h6 class="f-w-100">{{sum}} DT</h6>-->
+
+                        <h6 class="f-w-100">570</h6>
+                        <h4 class="mb-0 f-w-700">Chiffres d'affaires</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-6 box-col-6 xl-50 col-xl-3">
+    <div style="height: 150px" class="card gradient-warning o-hidden">
+        <div class="b-r-4 card-body">
+            <div class="d-flex static-top-widget">
+                <div class="align-self-center text-center">
+                    <div class="text-white">
+                        <app-feather-icons [icon]="'calendar'"></app-feather-icons>
+                    </div>
+                </div>
+                <div class="sale-chart">
+                    <div class="flex-grow-1 m-l-40 text-white">
+                        <h6 class="f-w-100">{{ totalCount?.totalEvents }}</h6>
+                        <h4 class="mb-0 f-w-700">Nombre d'événements</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-6 box-col-6 xl-50 col-xl-3">
+    <div style="height: 150px" class="card gradient-info o-hidden">
+        <div class="b-r-4 card-body">
+            <div class="d-flex static-top-widget">
+                <div class="align-self-center text-center">
+                    <div class="text-white">
+                        <app-feather-icons [icon]="'user-plus'"></app-feather-icons>
+                    </div>
+                </div>
+                <div class="sale-chart">
+                    <div class="flex-grow-1 m-l-40 text-white" >
+                        <h6 class="f-w-100">{{ totalCount?.totalUsers }}</h6>
+                        <h4 class="mb-0 f-w-700">Nombre d'utilisateur</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<div class="col-xl-4 xl-50 box-col-6" *ngIf="newCustomers!=null">
+    <div class="card gradient-primary o-hidden monthly-overview">
+        <div class="card-body" id="customers-ratio">
+            <div class="d-flex customers">
+                <div class="flex-grow-1">
+                    <h5>Pourcentage de reservations d'événement le plus proche</h5>
+                </div>
+                <div class="setting-dot">
+                    <div class="setting-bg-primary date-picker-setting position-set pull-right"> <i class="fa fa-spin fa-cog"></i></div> </div
+                ><span class="overview-dots full-lg-dots"
+            ><span class="dots-group"
+            ><span class="dots dots1"></span><span class="dots dots2 dot-small"></span><span class="dots dots3 dot-small"></span><span class="dots dots4 dot-medium"></span
+            ><span class="dots dots5 dot-small"></span><span class="dots dots6 dot-small"></span><span class="dots dots7 dot-small-semi"></span><span class="dots dots8 dot-small-semi"></span
+            ><span class="dots dots9 dot-small"> </span></span
+            ></span>
+            </div>
+            <apx-chart
+                    [series]="newCustomers.series"
+                    [chart]="newCustomers.chart"
+                    [plotOptions]="newCustomers.plotOptions"
+                    [labels]="newCustomers.labels"
+                    [fill]="newCustomers.fill"
+                    [stroke]="newCustomers.stroke"
+                    [colors]="newCustomers.colors"
+                    [responsive]="newCustomers.responsive"
+            ></apx-chart>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-lg-12 xl-100">
+    <div class="row ecommerce-chart-card">
+<div class="col-xl-6 xl-100 box-col-12">
+    <div class="card">
+        <div class="card-header">
+            <h5>Grid Pie Chart</h5>
+        </div>
+        <div class="card-body">
+            <div class="flot-chart-container grid-pie-chart">
+                <div class="flot-chart-placeholder ngx-chart-direction" id="github-issues">
+                    <ngx-charts-pie-grid [scheme]="pieChartColorScheme" [results]="pieChart"
+                                         (select)="onSelect($event)">
+                    </ngx-charts-pie-grid>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 col-xl-6 xl-100">
+    <div style="height: 530px" class="card">
+        <div class="card-header">
+            <h5>Pie Chart </h5>
+        </div>
+        <div class="card-body apex-chart">
+            <div id="piechart">
+                <apx-chart [series]="pie?.pieseries" [chart]="pie?.chart" [labels]="pie.labels" [responsive]="pie.responsive"
+                           [colors]="pie.colors">
+                </apx-chart>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="col-xl-12 xl-100 box-col-12">
+    <div class="card crypto-revenue">
+        <div class="card-header pb-0 d-flex">
+            <h5>Revenu annuel<span class="badge rounded-pill pill-badge-secondary f-14 f-w-600">2023/2024</span></h5>
+            <ul class="creative-dots">
+                <li class="bg-primary big-dot"></li>
+                <li class="bg-secondary semi-big-dot"></li>
+                <li class="bg-warning medium-dot"></li>
+                <li class="bg-info semi-medium-dot"></li>
+                <li class="bg-secondary semi-small-dot"></li>
+                <li class="bg-primary small-dot"></li>
+            </ul>
+            <div class="header-right pull-right text-end">
+                <h6 class="f-w-700 mb-0">Total {{ sum }} DT</h6>
+            </div>
+        </div>
+        <div class="card-body pt-0">
+            <div id="area-spaline">
+                <apx-chart
+                        [series]="revenueStatistic.series"
+                        [chart]="revenueStatistic.chart"
+                        [xaxis]="revenueStatistic.xaxis"
+                        [stroke]="revenueStatistic.stroke"
+                        [grid]="revenueStatistic.grid"
+                        [dataLabels]="revenueStatistic.dataLabels"
+                        [yaxis]="revenueStatistic.yaxis"
+                        [colors]="revenueStatistic.colors"
+                        [fill]="revenueStatistic.fill"
+                ></apx-chart>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 col-xl-6 box-col-12 xl-100">
+    <div class="card">
+
+        <div class="card-header">
+            <h5>Pourcentage d'utilisateurs par pays</h5>
+        </div>
+        <div class="card-body chart-block p-0">
+            <div class="chart-overflow" id="pie-chart3">
+                <google-chart [data]="pieChart3"></google-chart>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

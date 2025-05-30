@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="section-title text-start" *ngFor="let Title of sectionTitle;">
+        <h2>{{Title.title}}</h2>
+        <p>{{Title.paragraph}}</p>
+    </div>
+
+    <div class="deals-slides">
+        <owl-carousel-o [options]="dealsSlides">
+            <ng-template carouselSlide *ngFor="let item of data;">
+                <div style="border-radius: 40px;" class="single-deals-box">
+                    <div style="border-top-right-radius: 40px; border-top-left-radius: 40px" class="deals-image">
+                        <a [routerLink]="['/evenement', item.event.id]" (click)="navigate(item.event.id)" class="d-block">
+                            <div class= >
+                               <img [src]="item.imageToShow.__zone_symbol__value" alt="image"   >
+                            </div>
+
+
+                        </a>
+                        <a href="javascript:void(0)" class="bookmark-save"></a>
+                    </div>
+                    <div class="deals-content">
+
+                        <h3><a [routerLink]="['/evenement', item.event.id]" (click)="navigate(item.event.id)">{{item.event.name}}</a></h3>
+                     <div>   <h3 class='bx bxs-store-alt'> {{item.agencyName.__zone_symbol__value}}</h3></div>
+                        <h6 class='bx bxs-calendar'> {{item.event.date}}</h6>
+                        <span class="location"><i class='bx bxs-map'></i> {{item.event.location}}</span>
+                    </div>
+                    <div class="box-footer">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="price">
+                                <span class="new-price">{{item.event.ticket_price}} TND</span>
+                            </div>
+                            <a [routerLink]="['/evenement', item.event.id]" (click)="navigate(item.event.id)" class="details-btn">Voir les détails</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</div>

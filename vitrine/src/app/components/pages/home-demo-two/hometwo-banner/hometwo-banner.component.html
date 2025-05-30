@@ -1,0 +1,61 @@
+<div class="banner-wrapper-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-12">
+                <div class="banner-wrapper-content" *ngFor="let Content of bannerWrapperContent;">
+                    <h1>{{Content.title}}</h1>
+                    <p>{{Content.paragraph}}</p>
+                    <form>
+                        <div class="row m-0 align-items-center">
+                            <div class="col-lg-4 col-md-12 p-0">
+                                <div class="form-group">
+                                    <label><i class='bx bx-search-alt'></i></label>
+                                    <input type="text" class="form-control" placeholder="What are you looking for?">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 p-0">
+                                <div class="form-group">
+                                    <label><i class='bx bx-map'></i></label>
+                                    <input type="text" class="form-control" placeholder="Location">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 p-0">
+                                <div class="form-group category-select">
+                                    <label><i class='bx bx-category'></i></label>
+                                    <select>
+                                        <option>All Categories</option>
+                                        <option>Hotel & Resort</option>
+                                        <option>Automotive</option>
+                                        <option>Food & Drink</option>
+                                        <option>Electronics</option>
+                                        <option>Fitness</option>
+                                        <option>Gateways</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-12 p-0">
+                                <div class="submit-btn">
+                                    <button type="submit">Search Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <ul class="popular-search-list">
+                        <li>Popular:</li>
+                        <li><a routerLink="/search-page"><i class="bx bx-hotel"></i> Hotel & Resort</a></li>
+                        <li><a routerLink="/search-page"><i class="bx bxs-car-mechanic"></i> Automotive</a></li>
+                        <li><a routerLink="/search-page"><i class="bx bx-drink"></i> Food & Drink</a></li>
+                        <li><a routerLink="/search-page"><i class="bx bx-bulb"></i> Electronics</a></li>
+                        <li><a routerLink="/search-page"><i class="bx bxs-plane"></i> Gateways</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-12">
+                <div class="banner-wrapper-image" *ngFor="let Image of bannerWrapperImage;">
+                    <img [src]="Image.img" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

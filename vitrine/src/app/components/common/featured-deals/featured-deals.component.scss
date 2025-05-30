@@ -1,0 +1,13 @@
+@import "../deals/deals.component.scss";
+
+
+.square{
+    width: 300px;
+    height: 200px;
+overflow: hidden;
+    position: relative;
+}
+.cropped-image {
+    position: absolute; /* Positionnement absolu pour l'image à l'intérieur du conteneur */
+    top: -50px; /* Déplace l'image vers le haut (ajustez la valeur selon vos besoins) */
+}

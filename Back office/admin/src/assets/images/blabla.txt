@@ -1,0 +1,260 @@
+
+<div   style="flex: 0 1 auto">
+    <div  class="card">
+        <div  class="card-header b-l-primary border-3">
+            <h5>Liste des Agences</h5>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-pill" type="submit" routerLink="/agencies/add-edit">Ajouter une agence</button>
+            <div style="margin-bottom: 20px;"></div>
+            <table  class="table">
+                <thead >
+                <tr >
+                    <th  scope="col" sortable="name">Logo</th>
+                    <th  scope="col" sortable="name">Agence</th>
+                    <th  scope="col" sortable="gender">Responsable</th>
+                    <th  scope="col" sortable="company_name">Pays</th>
+                    <th  scope="col" sortable="age">Dernière date de modification</th>
+                    <th  scope="col" sortable="action">Statut</th>
+                    <th  scope="col" sortable="action">Modifier</th>
+                    <th  scope="col" sortable="action" >Supprimer</th>
+                    <th  scope="col" sortable="action">Savoir Plus</th>
+                </tr>
+                </thead>
+                <tbody >
+                <tr  class="ng-star-inserted">
+                    <td  style="width: 20px;">
+                        <div  class="recent-images">
+                            <img  class="agency-logo-dimensions"  src="assets/images/logo/logo.png" alt>
+                        </div>
+                    </td>
+                    <td class="default-text mb-0 f-w-700 f-18" scope="row"> Agence 1 </td>
+                    <td >John Doe</td>
+                    <td >
+                        <span  class="badge rounded-pill recent-badge f-12">Autriche</span>
+                    </td>
+                    <td >22/01/2024</td>
+                    <div class="d-flex">
+                        <div class="flex-grow-1 text-end switch-sm icon-state">
+                            <label class="switch form-label">
+                                <input type="checkbox" checked="">
+                                <span class="switch-state">
+                                </span></label></div></div>
+                    <td >
+
+                        <button  class="btn">
+                            <i  class="icon-pencil"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="icon-more-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr  class="ng-star-inserted">
+                    <td  style="width: 20px;">
+                        <div  class="recent-images">
+                            <img  class="agency-logo-dimensions"  src="assets/images/logo/logo.png" alt>
+                        </div>
+                    </td>
+                    <td class="font-primary mb-0 f-w-700 f-18" scope="row"> Agence 2 </td>
+                    <td >John Doe</td>
+                    <td >
+                        <span  class="badge rounded-pill recent-badge f-12">Espagne</span>
+                    </td>
+                    <td >22/01/2024</td>
+                    <div class="d-flex">
+                        <div class="flex-grow-1 text-end switch-sm icon-state">
+                            <label class="switch form-label">
+                                <input type="checkbox" checked="">
+                                <span class="switch-state">
+                                </span></label></div></div>
+                    <td >
+
+                        <button  class="btn">
+                            <i  class="icon-pencil"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="icon-more-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr  class="ng-star-inserted">
+                    <td  style="width: 20px;">
+                        <div  class="recent-images">
+                            <img  class="agency-logo-dimensions"  src="assets/images/logo/logo.png" alt>
+                        </div>
+                    </td>
+                    <td class="font-secondary mb-0 f-w-700 f-18" scope="row"> Agence 3 </td>
+                    <td >John Doe</td>
+                    <td >
+                        <span  class="badge rounded-pill recent-badge f-12">France</span>
+                    </td>
+                    <td >22/01/2024</td>
+
+
+
+                    <div class="d-flex">
+                        <div class="flex-grow-1 text-end switch-sm icon-state">
+                            <label class="switch form-label">
+                                <input type="checkbox" checked="">
+                                <span class="switch-state">
+                                </span></label></div></div>
+
+
+
+
+                    <td >
+                        <button  class="btn">
+                            <i  class="icon-pencil"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="icon-more-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr  class="ng-star-inserted">
+                    <td  style="width: 20px;">
+                        <div  class="recent-images">
+                            <img  class="agency-logo-dimensions"  src="assets/images/logo/logo.png" alt>
+                        </div>
+                    </td>
+                    <td class="font-warning mb-0 f-w-700 f-18" scope="row"> Agence 4 </td>
+                    <td >John Doe</td>
+                    <td >
+                        <span  class="badge rounded-pill recent-badge f-12">Tunisie</span>
+                    </td>
+                    <td >22/01/2024</td>
+                    <div class="d-flex">
+                        <div class="flex-grow-1 text-end switch-sm icon-state">
+                            <label class="switch form-label">
+                                <input type="checkbox" checked="">
+                                <span class="switch-state">
+                                </span></label></div></div>
+                    <td >
+                        <button  class="btn">
+                            <i  class="icon-pencil"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button  class="btn">
+                            <i  class="icon-more-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+            <div style="margin-bottom: 20px;"></div>
+            <div  class="d-flex justify-content-between p-2">
+                <!--               <ngb-pagination  role="navigation">&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;-->
+                <ul class="pagination"><!---->
+                    <li class="page-item disabled ng-star-inserted">
+                        <a aria-label="Previous" href="" class="page-link" tabindex="-1" aria-disabled="true">
+                            <span aria-hidden="true" class="ng-star-inserted">«</span>
+                            <!----></a></li><!---->
+                    <li class="page-item active ng-star-inserted" aria-current="page">
+                        <a href="" class="page-link ng-star-inserted">1<!----></a>
+                        <!----><!----></li><li class="page-item ng-star-inserted">
+                        <a href="" class="page-link ng-star-inserted">2<!----></a>
+                        <!----><!----></li><li class="page-item ng-star-inserted">
+                        <a href="" class="page-link ng-star-inserted">3<!----></a>
+                        <!----><!----></li><!----><!----><li class="page-item ng-star-inserted">
+                        <a aria-label="Next" href="" class="page-link">
+                            <span aria-hidden="true" class="ng-star-inserted">»</span>
+                            <!----></a></li><!----><!----></ul>
+                <!--              </ngb-pagination></div>-->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Basic Table</h5>
+                </div>
+                <div class="card-body custom-datatable noscroll">
+                    <div class="custom-datatable basic-table table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col" sortable="name" (sort)="onSort($event)">Name</th>
+                                <th scope="col" sortable="gender" (sort)="onSort($event)">Gender</th>
+                                <th scope="col" sortable="company_name" (sort)="onSort($event)">Company Name</th>
+                                <th scope="col" sortable="age" (sort)="onSort($event)">Age</th>
+                                <th scope="col" sortable="action" >Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let item of data">
+                                <td scope="row">
+                                    {{item.name}}
+                                </td>
+                                <td>{{item.adresse}}</td>
+                                <td>{{item.lieu}}</td>
+                                <td>{{item.prenom}}</td>
+                                <td>
+                                    <button class="btn" (click)="delete(item.id)"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-between p-2">
+                            <ngb-pagination
+                                    [collectionSize]="(total$ | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+                            </ngb-pagination>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="d-flex">
+    <label class="col-form-label m-r-10">Primary Color
+    </label>
+    <div class="flex-grow-1 text-end icon-state switch-outline">
+        <label class="switch form-label">
+            <input type="checkbox" checked="">
+            <span class="switch-state bg-primary">
+
+            </span>
+        </label>
+    </div>
+</div>
+
+
+<!-- Container-fluid Ends -->

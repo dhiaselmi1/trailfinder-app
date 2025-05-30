@@ -1,0 +1,7 @@
+<app-top-header></app-top-header>
+<app-navbar-style-one *ngIf="!(location == '/index-3' || location == '/index-2' || location == '/locations' || location == '/categories' || location == '/coupons' || location == '/how-it-works' || location == '/blog-right-sidebar' || location == '/blog-details' || location == '/cart' || location == '/checkout')"></app-navbar-style-one>
+<app-navbar-style-two *ngIf="(location == '/index-2' || location == '/categories' || location == '/coupons' || location == '/how-it-works' || location == '/blog-right-sidebar' || location == '/cart')"></app-navbar-style-two>
+<app-navbar-style-three *ngIf="(location == '/index-3' || location == '/locations' || location == '/blog-details' || location == '/checkout')"></app-navbar-style-three>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+<ngx-scrolltop></ngx-scrolltop>

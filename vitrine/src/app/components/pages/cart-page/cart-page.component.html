@@ -1,0 +1,153 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<!--<div class="ng-star-inserted" style="">-->
+<!--    <div class="container-fluid">-->
+<div class="row" *ngIf="products.length !=0">
+    <div   class="col-sm-12">
+        <div style="margin-left:275px; margin-top:30px; width: 1000px; border-radius: 20px" class="card">
+            <div class="card-header">
+                <h5>Panier
+                </h5>
+            </div>
+            <div class="card-body" >
+                <div class="row">
+                    <div class="order-history table-responsive wishlist">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th style="width: 150px">Produit
+                                </th>
+                                <th style="width: 700px">Nom
+                                </th>
+                                <th style="width: 200px">Prix
+                                </th>
+                                <th style="width: 150px">Quantité
+                                </th>
+                                <th style="width: 70px">Action
+                                </th>
+                                <th style="width: 150px">Total
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let item of products" >
+
+                                <td *ngIf="item.type=='event'" style="padding-right: -120px">
+                                    <img  [src]=item.imageToShow alt="#" class="img-fluid rounded-circle width">
+                                </td>
+                                <td *ngIf="item.type=='event'">
+                                    <div class="product-name">
+                                        Ticket de {{item.name}}
+
+                                    </div>
+                                </td >
+
+                                <td *ngIf="item.type=='event'">
+                                    {{item.ticket_price}}$
+                                </td>
+                                <td *ngIf="item.type=='event'">
+                                    <div style="margin-top:  45px; margin-left:  30px; " class="quantity">
+                                        <button type="button" class="button-quantity"(click)="minus(item)" ><i class="bx bx-minus" ></i></button>
+                                        <input type="text" class="input-quantity" [value]="item.quantity" >
+                                        <button type="button" class="button-quantity" ><i class="bx bx-plus" (click)="plus(item)" ></i></button>
+                                    </div>
+                                </td>
+                                <td *ngIf="item.type=='event'"> <div style="display: flex;justify-content: center" (click)="removeItem(item)" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle" _ngcontent-ng-c1040871746="">
+                                        <circle cx="12" cy="12" r="10">
+
+                                        </circle>
+                                        <line x1="15" y1="9" x2="9" y2="15">
+
+                                        </line>
+                                        <line x1="9" y1="9" x2="15" y2="15">
+
+                                        </line>
+                                    </svg>
+                                </div>
+                                </td>
+                                <td *ngIf="item.type=='event'"> {{item.total}}$</td>
+
+                                <td *ngIf="item.type=='article'" style="padding-right: -120px">
+                                    <img [src]=item.imageToShow.__zone_symbol__value  alt="#" class="img-fluid rounded-circle width">
+                                </td>
+                                <td *ngIf="item.type=='article'">
+                                    <div class="product-name">{{item.name}}
+
+                                    </div>
+                                </td >
+
+                                <td *ngIf="item.type=='article'">
+                                    {{item.price}}$
+                                </td>
+                                <td *ngIf="item.type=='article'">
+                                    <div style="margin-top:  45px; margin-left:  30px; " class="quantity">
+                                        <button type="button" class="button-quantity"(click)="minus(item)" ><i class="bx bx-minus" ></i></button>
+                                        <input type="text" class="input-quantity" [value]="item.quantity" >
+                                        <button type="button" class="button-quantity" ><i class="bx bx-plus" (click)="plus(item)" ></i></button>
+                                    </div>
+                                </td>
+                                <td *ngIf="item.type=='article'"> <div style="display: flex;justify-content: center" (click)="removeItem(item)" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle" _ngcontent-ng-c1040871746="">
+                                        <circle cx="12" cy="12" r="10">
+
+                                        </circle>
+                                        <line x1="15" y1="9" x2="9" y2="15">
+
+                                        </line>
+                                        <line x1="9" y1="9" x2="15" y2="15">
+
+                                        </line>
+                                    </svg>
+                                </div></td>
+                                <td *ngIf="item.type=='article'"> {{item.total}}$</td>
+
+                            </tr>
+
+
+                            <tr>
+
+
+                                <td colspan="5" class="total-amount">
+                                    <h6 class="m-0 text-end">
+                                                <span class="f-w-600">Prix total :
+                                                </span>
+                                    </h6>
+                                </td>
+                                <td>
+                                            <span>{{ grandTotal }}$
+                                            </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class="text-end">
+                                    <a  class="btn color radius " style="margin-bottom: 10px" (click)="goToPage()">Revenir à l'accueil
+                                    </a>
+                                </td>
+                                <!--                                        <td>-->
+                                <!--                                            <a  class="btn btn-success cart-btn-transform" (click)="pay()">Payer-->
+                                <!--                                            </a>-->
+                                <!--                                        </td>-->
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div style="margin-left:300px; margin-top:30px;  margin-bottom:30px;" class="cart-totals">
+            <button style="height: 45px"  class="btn color2 radius" (click)="pay()">Procéder au paiement</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+

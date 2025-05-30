@@ -1,0 +1,126 @@
+<div  class="card b-l-primary border-3">
+    <div  class="card-header ">
+        <h5 >Ajouter un article</h5>
+    </div>
+    <div class="row">
+        <div class="form theme-form ng-untouched ng-pristine ng-valid">
+
+            <div  class="card-body">
+                <div  class="row">
+                    <div  class="col">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nom du produit</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       [(ngModel)]="product.name"
+                                       placeholder="Produit"
+                                       class="form-control"
+
+                                       name="agencyName"
+                                       required
+                                > <div >  <div  >
+                                <!--                                        Ce champs est obligatoire-->
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Description</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       placeholder="Description"
+                                       class="form-control"
+                                       [(ngModel)]="product.description"
+
+                                       name="representative"
+
+                                       required
+                                > <div ><div >
+                                <!--                                        Ce champs est obligatoire-->
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Prix</label>
+                            <div class="col-sm-9">
+                                <input type="tel"
+                                       [(ngModel)]="product.price"
+
+                                       placeholder="$"
+                                       class="form-control m-input digits"
+                                       name="phoneNumber"
+                                       required>
+                                <div> <div >
+                                    <!--                                        Ce champs est obligatoire-->
+                                </div>
+                                </div>
+                            </div>
+                        </div>   </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Stock</label>
+                        <div class="col-sm-9">
+                            <input type="tel"
+                                   [(ngModel)]="product.stock"
+
+                                   placeholder="Stock"
+                                   class="form-control m-input digits"
+                                   name="Statut"
+                                   required>
+                            <div> <div >
+                                <!--                                Ce champs est obligatoire-->
+                            </div>
+                            </div>
+                        </div>
+                    </div>   </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Statut</label>
+                    <div class="col-sm-9">
+                        <input type="text"
+                               placeholder="Statut"
+                               class="form-control m-input digits"
+                               [(ngModel)]="product.status"
+
+                               required
+                        > <div > <div >
+                        <!--                                    Ce champs est obligatoire-->
+                    </div>
+                    </div>
+                    </div>
+                </div>
+
+
+
+                <div >
+                    <table>
+                        <td style="width: 250px;"><label class="col-sm-3 col-form-label">Photo</label></td>
+                        <td class="drag">
+                            <div class="file-container" *ngIf="!file">
+                                <table>
+
+
+                                    <tr style="height: 100px;"><p style="padding: 50px; margin-top: 40px; font-size: 16px;">Glissez la photo de votre produit ici ou cliquez pour choisir une image.</p></tr>
+                                    <tr><input type="file" (change)="getFile($event)" class="file"/></tr>                                </table>
+
+                            </div>
+                            <div class="cancel-section" *ngIf="file">
+                                <p class="file-info">File name: {{file.name}}</p>
+                                <button class="cancel-button" (click)="file=undefined">Annuler</button>
+                            </div>
+                        </td>
+                    </table>
+                </div>
+
+                <div  class="card-footer">
+                    <div  class="col-sm-9 offset-sm-3">
+                        <button  type="submit" class="btn btn-primary btn-pill" (click)="saveProduct()" >Valider</button>
+                        <button  type="reset"  class="btn btn-light ms-1 btn-pill" >Annuler</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

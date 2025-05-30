@@ -1,0 +1,711 @@
+.image-container {
+  position: relative;
+}
+.overlay-text-parent {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.overlay-text-child {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.overlay-text-date {
+  position: absolute;
+  bottom: 140px;
+  right: 270px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.image-container img {
+  filter: brightness(70%) contrast(80%);
+
+}
+
+.agency-logo-dimensions {
+  width: 70px;
+  height: auto;
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.th {
+  border: 1px;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.td {
+  height: 150px;
+  vertical-align: middle;
+  width: 400px;
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(244, 162, 97, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+button.mat-raised-button {
+  transition: background-color 0.3s ease;
+}
+
+button.mat-raised-button:hover {
+  cursor: pointer;
+}
+
+.btnOui {
+  background-color: rgba(220,220,220,0.7);
+
+  &:hover {
+    background-color: #2a9d8f;
+  }
+}
+
+.btnNon {
+  background-color: rgba(220,220,220,0.7);
+
+  &:hover {
+    background-color: #ffb17a;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #aaa;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.modal-content h1 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.edit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  font-size: 2em;
+}
+
+.card-profile:hover .edit-icon {
+  opacity: 1;
+}
+
+
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+
+.center-vertically{
+  vertical-align: middle;
+}
+
+
+.agency-logo-dimensions {
+  width: 70px;
+  height: auto;
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.th {
+  border: 1px;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle; /* Vertically center the content */
+}
+
+.td {
+  height: 150px; /* Adjust height as needed */
+  vertical-align: middle;
+  width: 400px;
+}
+
+.tick-box-1 {
+  width: 40px;
+  height: 20px;
+  background-color: #2a9d8d;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  margin-top: 20px;
+
+}
+
+.tick-box-2 {
+  width: 40px;
+  height: 20px;
+  background-color: #2a9d8d;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  margin-top: 30px;
+
+}
+.tick {
+  font-size: 17px;
+}
+
+
+.cross-box-1 {
+  width: 40px;
+  height: 20px;
+  background-color: #ffb17a;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.cross-box-2{
+  width: 40px;
+  height: 20px;
+  background-color: #ffb17a;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.cross {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-header-agence {
+  position: relative;
+}
+
+.btn-agence {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+}
+.modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(244, 162, 97, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+button.mat-raised-button {
+  transition: background-color 0.3s ease;
+}
+
+button.mat-raised-button:hover {
+  cursor: pointer;
+}
+
+button.mat-raised-button.color-primary:hover {
+  background-color: #1976d2; /* Change to your desired color */
+}
+
+button.mat-raised-button.color-warn:hover {
+  background-color: #d32f2f; /* Change to your desired color */
+}
+
+.btnOui {
+  background-color: rgba(220,220,220,0.7);
+
+  &:hover {
+    background-color: #2a9d8f; /* Background color on hover */
+  }
+}
+
+.btnNon {
+  background-color: rgba(220,220,220,0.7);
+
+  &:hover {
+    background-color: #ffb17a; /* Background color on hover */
+  }
+}
+
+.btnFiltre {
+  background-color: rgba(255,255,255,0.7);
+
+  &:hover {
+    background-color: #ffddd2; /* Background color on hover */
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #aaa;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.modal-content h1 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+.card-profile {
+  position: relative;
+  display: inline-block;
+}
+
+.card-profile img {
+  transition: filter 0.3s ease;
+}
+
+.card-profile:hover img {
+  filter: grayscale(70%) blur(4px); /* Apply grayscale and blur on hover */
+}
+
+.edit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  font-size: 2em;
+}
+
+.card-profile:hover .edit-icon {
+  opacity: 1;
+}
+
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+
+button.primary {
+  background-color: #4caf50;
+  color: white;
+}
+
+button.primary:hover {
+  background-color: #45a049;
+}
+
+button.warn {
+  background-color: #f44336;
+  color: white;
+}
+
+button.warn:hover {
+  background-color: #d32f2f;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+
+
+.ajouter{
+  border-radius: 40px;
+  width: 200px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+}
+
+
+.input-radius{
+  border-radius: 30px;
+}
+
+
+.changerlogo{
+  width: 90px;
+  height: 20px;
+  position: relative;
+  top: -55px;
+  left: 90px;
+  font-size: 8px;
+}
+
+
+.iconechangerlogo{
+  width: 60px;
+  height: 60px;
+  position: relative;
+  top: -120px;
+  left: 19px;
+  display: none;
+
+}
+
+.rounded-circle:hover + .img__btn + .hover-container .iconechangerlogo {
+  display: inline-block; /* Show iconechangerlogo when rounded-circle is hovered */
+}
+
+
+.card-profile .changerlogo {
+  display: none; /* Initially hide the "Changer le logo" text */
+}
+
+.card-profile:hover .changerlogo {
+  display: block; /* Display the "Changer le logo" text when hovering over the parent element */
+}
+
+.position-icon-more{
+  width: 60px;
+  height: 10px;
+  position: relative;
+  top: 0px;
+  left: -25px;
+
+}
+
+.position-icon-more-table{
+  width: 60px;
+  height: 10px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+
+}
+
+.position-btn-icon-more{
+  width: 50px;
+  position: relative;
+  top: 1px;
+  left:1px;
+}
+
+
+
+.position-dropdown{
+  background-color: white;
+  width: 15%;
+  height: 180px;
+  position: absolute;
+  top: 430px;
+  left: 900px;
+}
+
+.rectangle {
+  width: 95%;
+  height: 20px;
+  background-color: #0e9594;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; top: 1px; left: 2.5px;
+  margin: 0;
+  color: white;
+  font-size: 14px;
+}
+
+.rectangle1 {
+  width: 95%;
+  height: 20px;
+  //background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; top: 20px; left: 2.5px;
+  margin: 0;
+  color: black;
+  font-size: 14px;
+}
+
+.rectangle2 {
+  width: 98%;
+  height: 20px;
+  //background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; top: 75px; left: 2.5px;
+  margin: 0;
+  color: black;
+  font-size: 14px;
+}
+
+.rectangle3 {
+  width: 95%;
+  height: 20px;
+  //background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; top: 103px; left: 2.5px;
+  margin: 0;
+  color: black;
+  font-size: 14px;
+}
+
+.rectangle4 {
+  width: 95%;
+  height: 20px;
+  //background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; top: 130px; left: 2.5px;
+  margin: 0;
+  color: black;
+  font-size: 14px;
+}
+
+.btn-add-event{
+  position: absolute; top: 13px; left: 0.5px;
+  width: 90%;
+  font-size: 12px;
+  background-color: white;
+}
+
+
+/* component.css or global styles */
+.icon-wrapper {
+  position: absolute; /* or any position you want */
+  top: 0; /* adjust according to your layout */
+  left: 0; /* adjust according to your layout */
+  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent background */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+
+.rectanglee {
+  display: inline-block;
+  padding: 10px 20px;
+  //margin: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.rectanglee:hover {
+  background-color: white;
+}
+
+.clicked {
+  background-color: #aaaaaa;
+}
+
+
+.card-profiling {
+  position: relative;
+  width: 200px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+
+.image-containing {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+.hover-image {
+  position: absolute;
+  top: 80px;
+  left: 90%;
+  transform: translate(-50%, -50%) scale(1.5); /* Adjust scale as needed */
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.image-containing:hover .hover-image {
+  position: absolute;
+  top: 80px;
+  left: 90%;
+  transform: translate(-50%, -50%) scale(1.2); /* Adjust scale as needed */
+  opacity: 1;
+}
+
+
+::ng-deep{
+  .ngx-pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .ngx-pagination li{
+    width: 35px;
+    height: 35px;
+    border-radius: 50% !important;
+    background:#f8f8f8;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &.small-screen{
+      display: none !important;
+    }
+
+    &.pagination-previous,
+    &.pagination-next{
+    a,span{
+width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      color: #f8f8f8;
+    }
+    }
+  }
+
+
+
+
+  .ngx-pagination .pagination-previous a:before,
+  .ngx-pagination .pagination-previous.disabled:before,
+  .ngx-pagination .pagination-next::before{
+    margin-right: 0px !important;
+    font-size: 26px;
+    margin-top: -8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    color: #721c24;
+    left: 0;
+    //top:0px;
+    pointer-events:none;
+  }
+
+  .ngx.pagination .pagination-next::before{
+    content: '\bb';
+  }
+
+  .ngx.pagination .pagination-next::after{
+    display: none !important;
+  }
+
+  .ngx.pagination .pagination-previous.disabled.pagination-previous.disabled:before,
+  .ngx.pagination .pagination-next.disabled:before{
+    opacity: 0.4;
+  }
+
+  .ngx.pagination .pagination-previous.disabled:hover{
+    background: #f8f8f8 !important;
+  }
+
+  .ngx-pagination a:hover,
+  .ngx-pagination button:hover{
+    background: initial !important;
+  }
+
+
+
+}

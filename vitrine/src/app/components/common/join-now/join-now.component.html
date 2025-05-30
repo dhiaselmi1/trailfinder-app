@@ -1,0 +1,11 @@
+<!-- Start Join Now Area -->
+<div style="background-image: url('assets/img/qr/mpl.png') ;background-size: cover; background-repeat: no-repeat;" class="join-now-area ptb-100">
+    <div  class="container">
+        <div class="join-now-content" *ngFor="let Content of joinNowContent;">
+            <h2>{{Content.title}}</h2>
+            <p>{{Content.paragraph}}</p>
+<!--            <a routerLink="/{{Content.buttonLink}}"  style="background-color: #8899a6" class="default-btn">{{Content.buttonText}}</a>-->
+        </div>
+    </div>
+</div>
+<!-- End Join Now Area -->

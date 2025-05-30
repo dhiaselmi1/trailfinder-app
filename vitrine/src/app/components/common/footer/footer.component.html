@@ -1,0 +1,70 @@
+<footer class="footer-area pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 col-md-6" style="margin-left: -60px; margin-right: 50px">
+                <div class="single-footer-widget" *ngFor="let Content of singleFooterWidget;">
+                    <a routerLink="/" class="logo d-inline-block">
+                        <img style="padding-right: 10px" src="assets/img/logo/logoslogan.png" alt="Logo">
+                    </a>
+                    <p>{{Content.paragraph}}</p>
+                    <ul class="social-links">
+                        <li><a href="#" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="bx bxl-linkedin"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-md-6">
+                <div class="single-footer-widget pl-4">
+                    <h3>Explorer</h3>
+                    <ul class="links-list">
+                        <li><a routerLink="/evenements">Nos événements</a></li>
+                        <li><a routerLink="/all-agences">Nos agences</a></li>
+                        <li><a routerLink="/boutique">Notre boutique</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-md-6">
+                <div class="single-footer-widget">
+                    <h3>SummitSells</h3>
+                    <ul class="links-list">
+
+                        <li><a routerLink="/stores-details">Termes & Conditions</a></li>
+                        <li><a routerLink="/créer-compte">Joindre SummitSells</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-md-6">
+                <div class="single-footer-widget">
+                    <h3>Contacts</h3>
+                    <ul class="footer-contact-info">
+                        <li>Adresse: Immeuble Essadi Tour C-D </li>
+                        <li>E-mail: <a href="mailto:hello@marxa.com">Summitsells1@gmail.ocm</a></li>
+                        <li>Tél: <a href="tel:+44587154756">+216 93 317 718</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 col-md-10 col-sm-10">
+                    <p>Cette plateforme a été développée en Angular-Springboot dans le cadre du projet de fin d'études de Mohamed Dhia Selmi et Rahma Ouerfelli</p>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <ul>
+                        <li><a routerLink="/customer-service">2023/2024</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-6 col-sm-6" *ngFor="let Content of singleCategoriesBox;">
+            <div class="single-categories-box">
+                <img [src]="Content.img" alt="image">
+                <div class="content">
+                    <h3>{{Content.title}}</h3>
+                    <span>{{Content.number}}</span>
+                </div>
+                <a routerLink="/{{Content.link}}" class="link-btn"></a>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let Content of singleDealsBox;">
+            <div class="single-deals-box">
+                <div class="deals-image">
+                    <a routerLink="/{{Content.detailsLink}}" class="d-block">
+                        <img [src]="Content.image" alt="image">
+                    </a>
+                    <a href="javascript:void(0)" class="bookmark-save"></a>
+                    <div class="discount" *ngIf="Content.discount">{{Content.discount}}</div>
+                </div>
+                <div class="deals-content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="rating">
+                            <i class="{{Icon.icon}}" *ngFor="let Icon of Content.ratingStar"></i>
+                            <span class="count">({{Content.ratingCount}})</span>
+                        </div>
+                        <div class="status">
+                            <span *ngIf="Content.trending"><i class='bx bx-trending-up'></i> {{Content.trending}}</span>
+                        </div>
+                    </div>
+                    <h3><a routerLink="/{{Content.detailsLink}}">{{Content.title}}</a></h3>
+                    <span class="location"><i class='bx bxs-map'></i> {{Content.location}}</span>
+                </div>
+                <div class="box-footer">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="price">
+                            <span class="new-price">{{Content.newPrice}}</span>
+                            <span class="old-price" *ngIf="Content.oldPrice">{{Content.oldPrice}}</span>
+                        </div>
+                        <a routerLink="/{{Content.detailsLink}}" class="details-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

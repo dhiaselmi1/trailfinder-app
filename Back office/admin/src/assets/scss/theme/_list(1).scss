@@ -1,0 +1,61 @@
+/**=====================
+     16. List CSS Start
+==========================**/
+.vertical-tab {
+  .nav-tabset {
+    display: inline-block;
+    width: 28%;
+    margin-right: 2%;
+    margin-bottom: 0;
+    .nav-tab {
+      border: 1px solid $horizontal-border-color;
+      border-bottom: 0;
+      padding: 0.75rem 1.25rem;
+      color: $theme-body-font-color;
+      &:last-child{
+        border-bottom: 1px solid $horizontal-border-color;
+      }
+      &.active {
+        background-color: $primary-color;
+        color: $white;
+      }
+    }
+    .nav-item {
+      border-color: $horizontal-border-color;
+      &.show {
+        .nav-link {
+          background-color: $primary-color;
+          color: $white;
+        }
+      }
+    }
+  }
+  .tabs-container {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+  }
+}
+.list-group-item.active {
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+.list-group-item.active:hover {
+  color: $white;
+}
+.list-group-item{
+  padding: .75rem 1.25rem;
+}
+.list-group {
+  i {
+    margin-right: $list-group-margin;
+  }
+  img {
+    height: 40px;
+    width: 40px;
+    margin-right: $list-group-margin;
+  }
+}
+/**=====================
+     16. List CSS Ends
+==========================**/

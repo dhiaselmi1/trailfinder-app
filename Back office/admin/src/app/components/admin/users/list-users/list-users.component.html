@@ -1,0 +1,129 @@
+<div   style="flex: 0 1 auto">
+    <div  class="card b-l-primary border-3">
+        <div  class="card-header ">
+            <h5>Liste des Utilisateurs</h5>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary btn-pill" type="submit" routerLink="/users/add-edit" style="border-radius: 25px; height: 32px;  display: flex;   align-items: center; justify-content: center;">Ajouter un utilisateur</button>
+            <form class="form-inline search-form" >
+                <div style="padding-top: 5px" class="form-group">
+                    <div class="Typeahead Typeahead--twitterUsers">
+                        <div class="u-posRelative" >
+                            <input
+                                    (input)="onSearchChange($event.target.value)"
+                                    class="Typeahead-input form-control-plaintext"
+                                    id="demo-input"
+                                    type="text"
+                                    name="q"
+                                    placeholder="Recherche..."
+                                    autocomplete="off"/>
+                            <div class="Typeahead-menu custom-scrollbar"  id="search-outer">
+
+                            </div>
+                        <div class="Typeahead-menu custom-scrollbar"></div>
+                    </div>
+                </div>
+                </div>
+            </form>
+
+            <div style="margin-bottom: 20px;"></div>
+            <table  class="table">
+                <thead >
+                <tr >
+                    <th  scope="col" sortable="name">Photo</th>
+                    <th  scope="col" sortable="name">Nom</th>
+                    <th  scope="col" sortable="name">Prénom</th>
+                    <th  scope="col" sortable="company_name">Email</th>
+                    <th  scope="col" sortable="company_name">N° Tél</th>
+                    <th  scope="col" sortable="age">Role</th>
+                    <th  scope="col" sortable="action">Modifier</th>
+                    <th  scope="col" sortable="action" >Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of filteredData | paginate: { itemsPerPage: itemPerPage, currentPage: p }">
+                    <td class="default-text mb-0 f-w-700 f-18" scope="row">
+
+
+
+                        <div class="user-image rounded-circle" (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
+                            <div class="image-containing">
+                                <div class="avatar">
+                                    <img class="rounded-circle" style="width: 100px; height: 100px;" [src]="item.imageToShow.__zone_symbol__value">
+<!--                                    <img [src]="item.imageToShow.__zone_symbol__value" alt="Logo" style="width: 125px">-->
+                                </div>
+                                <div class="hover-image" >
+                                    <img src="assets/images/agences/write.png" alt="Logo" style="width: 45px;  " (click)="openChangeLogo(item)">
+                                </div>
+                            </div>
+                            <div class="modal-overlay" *ngIf="showChangeLogo" (click)="closeChangeLogo()">
+                                <div class="modal-content" (click)="$event.stopPropagation()">
+                                    <h1>Sélectionner une image</h1>
+                                    <span (click)=" closeChangeLogo()" class="close-button">X</span>
+                                    <input id="validatedCustomFile"
+                                           type="file" required=""
+                                           class="form-control"
+                                           (change)="getFile($event)">
+                                    <button mat-raised-button class="btnNon color-warn"
+                                            style="width: 120px; height: 30px;
+                                                                 font-size: 15px; display: flex;
+                                                                  align-items: center; justify-content:
+                                                                           center; margin-left: 100px"
+                                            (click)="changeLogo()">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td > {{item.last_name}}</td>
+                    <td>{{item.first_name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phone_number}}</td>
+                    <td>{{item.authorities[0].authority}}</td>
+                    <td>
+                        <button class="btn" (click)="update(item.id)"><i class="fa fa-pencil"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn" (click)="openDelete(item)"><i class="fa fa-trash"></i></button>
+                    </td>
+
+
+                    <div class="modal-overlay" *ngIf="showDelete" (click)="closeDelete()">
+                        <div class="modal-content" (click)="$event.stopPropagation()">
+                            <span class="close-button" (click)="closeDelete()">X</span>
+                            <h1 style="font-size: 24px">Etes-vous sur(e) de vouloir supprimer cet utilisateur ?</h1>
+                            <button mat-raised-button class="btnOui color-primary" (click)="delete()">Oui</button>
+                            <button mat-raised-button class="btnNon color-warn" (click)="closeDelete()">Non</button>
+                        </div>
+                    </div>
+                </tr>
+                </tbody>
+            </table>
+<div class="mt-8 py-5 flex justify-center align-items-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+<!--            <div style="margin-bottom: 20px;"></div>-->
+<!--            <div  class="d-flex justify-content-between p-2">-->
+<!--                &lt;!&ndash;               <ngb-pagination  role="navigation">&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&ndash;&gt;-->
+<!--                <ul class="pagination">&lt;!&ndash;&ndash;&gt;-->
+<!--                    <li class="page-item disabled ng-star-inserted">-->
+<!--                        <a aria-label="Previous" href="" class="page-link" tabindex="-1" aria-disabled="true">-->
+<!--                            <span aria-hidden="true" class="ng-star-inserted">«</span>-->
+<!--                            &lt;!&ndash;&ndash;&gt;</a></li>&lt;!&ndash;&ndash;&gt;-->
+<!--                    <li class="page-item active ng-star-inserted" aria-current="page">-->
+<!--                        <a href="" class="page-link ng-star-inserted">1&lt;!&ndash;&ndash;&gt;</a>-->
+<!--                        &lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</li><li class="page-item ng-star-inserted">-->
+<!--                        <a href="" class="page-link ng-star-inserted">2&lt;!&ndash;&ndash;&gt;</a>-->
+<!--                        &lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</li><li class="page-item ng-star-inserted">-->
+<!--                        <a href="" class="page-link ng-star-inserted">3&lt;!&ndash;&ndash;&gt;</a>-->
+<!--                        &lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</li>&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;<li class="page-item ng-star-inserted">-->
+<!--                        <a aria-label="Next" href="" class="page-link">-->
+<!--                            <span aria-hidden="true" class="ng-star-inserted">»</span>-->
+<!--                            &lt;!&ndash;&ndash;&gt;</a></li>&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;</ul>-->
+<!--                &lt;!&ndash;              </ngb-pagination></div>&ndash;&gt;-->
+
+
+<!--            </div>-->
+        </div>
+
+    </div>
+</div>

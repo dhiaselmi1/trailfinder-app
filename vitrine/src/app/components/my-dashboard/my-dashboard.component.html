@@ -1,0 +1,73 @@
+<div class="page-title-area" *ngFor="let Content of pageTitle;" style="background-image: url({{Content.bgImage}});">
+    <div class="container">
+        <h1>{{Content.title}}</h1>
+    </div>
+</div>
+
+<div class="dashboard-area ptb-100">
+    <div class="container">
+        <div class="dashboard-tabs-list">
+            <ul>
+                <li><a routerLink="/dashboard" class="active">Dashboard</a></li>
+                <li><a routerLink="/dashboard-profile">Profile</a></li>
+                <li><a routerLink="/dashboard-store">Store</a></li>
+                <li><a routerLink="/dashboard-coupons">Coupons</a></li>
+                <li><a routerLink="/dashboard-deals">Deals</a></li>
+                <li><a routerLink="/dashboard-vouchers">Vouchers</a></li>
+                <li><a routerLink="/dashboard-agents">Agents</a></li>
+                <li><a routerLink="/">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="dashboard-profile-box">
+                    <div class="image">
+                        <img src="assets/img/user1.jpg" alt="image">
+                        <span>Jason Smith</span>
+                    </div>
+                    <p>You have <strong>$19,321</strong> dollars left, <a routerLink="/">earn mores</a></p>
+                    <a routerLink="/" class="logout">Log Out</a>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-12">
+                <div class="dashboard-stats">
+                    <p>Hi <strong>Vendor</strong> here's quick overview of your stats.</p>
+                    <ul class="stats">
+                        <li>
+                            <div class="icon">
+                                <i class='bx bx-bar-chart-alt-2'></i>
+                            </div>
+                            Sales: <span class="badge bg-primary">540</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class='bx bx-purchase-tag'></i>
+                            </div>
+                            Coupons: <span class="badge bg-primary">55</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class='bx bxs-hand-right'></i>
+                            </div>
+                            Deals: <span class="badge bg-primary">5</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class='bx bx-dollar-circle'></i>
+                            </div>
+                            Earnings Due: <span class="badge bg-primary">$54,541</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class='bx bx-dollar'></i>
+                            </div>
+                            Earnings Sent: <span class="badge bg-primary">$1,000</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

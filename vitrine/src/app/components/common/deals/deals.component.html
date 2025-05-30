@@ -1,0 +1,44 @@
+<!--<div class="container">-->
+<!--    <div class="section-title text-start" *ngFor="let Title of sectionTitle;">-->
+<!--        <h2>{{Title.title}}</h2>-->
+<!--        <p>{{Title.paragraph}}</p>-->
+<!--    </div>-->
+
+<!--    <div class="deals-slides">-->
+<!--        <owl-carousel-o [options]="dealsSlides">-->
+<!--            <ng-template carouselSlide *ngFor="let Content of singleDealsBox;">-->
+<!--                <div class="single-deals-box">-->
+<!--                    <div class="deals-image">-->
+<!--                        <a routerLink="/{{Content.detailsLink}}" class="d-block">-->
+<!--                            <img [src]="Content.image" alt="image">-->
+<!--                        </a>-->
+<!--                        <a href="javascript:void(0)" class="bookmark-save"><i class='bx bx-heart'></i></a>-->
+<!--                        <div class="discount" *ngIf="Content.discount">{{Content.discount}}</div>-->
+<!--                    </div>-->
+<!--                    <div class="deals-content">-->
+<!--                        <div class="d-flex align-items-center justify-content-between">-->
+<!--                            <div class="rating">-->
+<!--                                <i class="{{Icon.icon}}" *ngFor="let Icon of Content.ratingStar"></i>-->
+<!--                                <span class="count">({{Content.ratingCount}})</span>-->
+<!--                            </div>-->
+<!--                            <div class="status">-->
+<!--                                <span *ngIf="Content.trending"><i class='bx bx-trending-up'></i> {{Content.trending}}</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <h3><a routerLink="/{{Content.detailsLink}}">{{Content.title}}</a></h3>-->
+<!--                        <span class="location"><i class='bx bxs-map'></i> {{Content.location}}</span>-->
+<!--                    </div>-->
+<!--                    <div class="box-footer">-->
+<!--                        <div class="d-flex align-items-center justify-content-between">-->
+<!--                            <div class="price">-->
+<!--                                <span class="new-price">{{Content.newPrice}}</span>-->
+<!--                                <span class="old-price" *ngIf="Content.oldPrice">{{Content.oldPrice}}</span>-->
+<!--                            </div>-->
+<!--                            <a routerLink="/{{Content.detailsLink}}" class="details-btn">View Details</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </ng-template>-->
+<!--        </owl-carousel-o>-->
+<!--    </div>-->
+<!--</div>-->

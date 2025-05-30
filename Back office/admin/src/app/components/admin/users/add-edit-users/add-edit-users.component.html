@@ -1,0 +1,194 @@
+<div  class="card b-l-primary border-3">
+    <div  class="card-header ">
+        <h5 >Ajouter un utilisateur</h5>
+    </div>
+    <div class="row">
+        <div class="form theme-form ng-untouched ng-pristine ng-valid">
+
+            <div  class="card-body">
+                <div  class="row">
+                    <div  [hidden]="!isCreateUser" class="form-group row" >
+                        <label  class="col-sm-3 col-form-label">Role</label>
+                        <div  class="col-sm-9">
+                            <div  class="col-sm-9">
+                                <select style="width: 133px; height: 30px; margin-top: 5px;"
+                                        [(ngModel)]="user.role_id"
+                               >
+                                    <option *ngFor="let item of data" [value]="item.id" >
+                                      {{item.name}}  </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="col">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Prénom</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       placeholder="Prénom"
+                                       class="form-control"
+                                       [(ngModel)]="user.first_name"
+                                       name="first_name"
+                                       #first_name="ngModel"
+                                       required
+                                       [ngClass]="{ 'is-invalid': first_name.invalid && (first_name.dirty || first_name.touched) }">
+                                <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)" class="text-danger">
+                                    <div *ngIf="first_name.errors.required">
+                                        Ce champs est obligatoire
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nom</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       placeholder="Nom"
+                                       class="form-control"
+                                       [(ngModel)]="user.last_name"
+                                       name="last_name"
+                                       #last_name="ngModel"
+                                       required
+                                       [ngClass]="{ 'is-invalid': last_name.invalid && (last_name.dirty || last_name.touched) }">
+                                <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)" class="text-danger">
+                                    <div *ngIf="last_name.errors.required">
+                                        Ce champs est obligatoire
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">N° Téléphone</label>
+                            <div class="col-sm-9">
+                                <input type="tel"
+                                       placeholder="+216 11 111 111"
+                                       class="form-control m-input digits"
+                                       [(ngModel)]="user.phone_number"
+                                       name="phoneNumber"
+                                       #phoneNumber="ngModel"
+                                       required
+                                       (keypress)="validatePhoneNumber($event)"
+                                       [ngClass]="{ 'is-invalid': phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched) }">
+                                <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="text-danger">
+                                    <div *ngIf="phoneNumber.errors.required">
+                                        Ce champs est obligatoire
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">E-mail</label>
+                        <div class="col-sm-9">
+                            <input type="email"
+                                   placeholder="monadresse@summitsells.com"
+                                   class="form-control"
+                                   [(ngModel)]="user.email"
+                                   name="email"
+                                   #email="ngModel"
+                                   required
+                                   email
+                                   [ngClass]="{ 'is-invalid': email.invalid && (email.dirty || email.touched) }">
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                                <div *ngIf="email.errors.required">
+                                    Ce champs est obligatoire
+                                </div>
+                                <div *ngIf="email.errors.email">
+                                    Le format de l'e-mail est invalide
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Pays</label>
+                        <div class="col-sm-9">
+                            <input type="text"
+                                   placeholder="Tunisie"
+                                   class="form-control m-input digits"
+                                   [(ngModel)]="user.country"
+                                   name="country"
+                                   #country="ngModel"
+                                   required
+                                   [ngClass]="{ 'is-invalid': country.invalid && (country.dirty || country.touched) }">
+                            <div *ngIf="country.invalid && (country.dirty || country.touched)" class="text-danger">
+                                <div *ngIf="country.errors.required">
+                                    Ce champs est obligatoire
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row"  [hidden]="!isCreateUser">
+                        <label class="col-sm-3 col-form-label">Mot de passe</label>
+                        <div class="col-sm-9">
+                            <input type="password"
+                                   placeholder="Choisir un mot de passe"
+                                   class="form-control"
+                                   [(ngModel)]="user.password"
+                                   name="password"
+                                   #password="ngModel"
+                                   required
+                                   [ngClass]="{ 'is-invalid': password.invalid && (password.dirty || password.touched) }">
+                            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+                                <div *ngIf="password.errors.required">
+                                    Ce champ est obligatoire
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" [hidden]="!isCreateUser">
+                        <label class="col-sm-3 col-form-label">Confirmer mot de passe</label>
+                        <div class="col-sm-9">
+                            <input type="password"
+                                   placeholder="Confirmer le mot de passe"
+                                   class="form-control"
+                                   [(ngModel)]="user.passwordConfirmation"
+                                   name="passwordConfirmation"
+                                   #passwordConfirmation="ngModel"
+                                   required
+                                   [ngClass]="{ 'is-invalid': passwordConfirmation.invalid && (passwordConfirmation.dirty || passwordConfirmation.touched) }"
+                            >
+                            <div *ngIf="passwordConfirmation.invalid && passwordConfirmation.errors.required && (passwordConfirmation.dirty || passwordConfirmation.touched)" class="text-danger">
+                                Ce champ est obligatoire
+                            </div>
+                            <div *ngIf="passwordConfirmation.value !== user.password && passwordConfirmation.value !== '' && (passwordConfirmation.dirty || passwordConfirmation.touched)" class="text-danger">
+                                Les mots de passe ne correspondent pas
+                            </div>
+                            </div>
+                        </div>
+
+                    <div [hidden]="!isCreateUser">
+                        <table>
+                            <td style="width: 250px;"><label class="col-sm-3 col-form-label">Photo</label></td>
+                            <td class="drag">
+                                <div class="file-container" *ngIf="!user.image">
+                                    <table>
+                                        <tr style="height: 100px;"><p style="padding: 50px; margin-top: 40px; font-size: 16px;">Glissez   votre photo ici ou cliquez pour choisir une image.</p></tr>
+                                        <tr><input type="file" (change)="getFile($event)"  class="file" /></tr>
+                                    </table>
+                                </div>
+
+                                <div class="cancel-section" *ngIf="user.image">
+                                    <p class="file-info">Nom du fichier: {{user.image.name}}</p>
+                                    <button class="cancel-button" (click)="user.image=undefined">Annuler</button>
+                                </div>
+                            </td>
+                        </table>
+                    </div>
+
+                    <div  class="card-footer">
+                        <div  class="col-sm-9 offset-sm-3">
+                            <button  type="submit" class="btn btn-primary btn-pill" (click)="saveUser()" >Valider</button>
+                            <button  type="reset"  class="btn btn-light ms-1 btn-pill" (click)="resetUser()">Annuler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

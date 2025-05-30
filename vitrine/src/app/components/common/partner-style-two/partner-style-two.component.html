@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="section-title" *ngFor="let Title of sectionTitle;">
+        <h2>{{Title.title}}</h2>
+        <p>{{Title.paragraph}}</p>
+    </div>
+
+    <div class="partner-slides">
+        <owl-carousel-o [options]="partnerSlides">
+            <ng-template carouselSlide *ngFor="let Item of partnerItem;">
+                <div class="item">
+                    <img [src]="Item.img" alt="image">
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</div>
